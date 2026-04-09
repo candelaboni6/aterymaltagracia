@@ -154,7 +154,43 @@ header h1 strong{font-weight:600;}
 .info-note{font-size:12px;color:#0a5a8a;background:var(--sky-light);border:1px solid rgba(29,175,230,0.25);border-radius:7px;padding:10px 14px;margin-top:1.5rem;display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
 .info-note::before{content:'ℹ';font-size:13px;flex-shrink:0;margin-top:1px;}
 
-/* Campaign cards */
+/* Feed de campañas */
+.feed-year-block{ margin-bottom:3rem; }
+.feed-year-label{
+  font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--text-muted);margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:.75rem;
+}
+.feed-year-label::after{content:'';flex:1;height:1px;background:var(--border-mid);}
+.feed-month-block{ margin-bottom:2rem; }
+.feed-month-title{
+  font-size:1.1rem;font-weight:500;color:var(--text-primary);
+  margin-bottom:1rem;letter-spacing:-.01em;
+}
+.feed-cards{ display:flex;flex-direction:column;gap:.75rem; }
+.feed-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-left:3px solid var(--sky);
+  border-radius:0 10px 10px 0;
+  padding:1.25rem 1.5rem;
+  box-shadow:0 1px 4px rgba(36,75,108,0.05);
+  transition:box-shadow .2s;
+}
+.feed-card:hover{ box-shadow:0 4px 14px rgba(36,75,108,0.1); }
+.feed-card-top{
+  display:flex;align-items:flex-start;
+  justify-content:space-between;gap:1rem;margin-bottom:.75rem;
+}
+.feed-card-titulo{ font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:3px; }
+.feed-card-fecha{ font-size:12px;color:var(--text-muted); }
+.feed-card-desc{ font-size:13px;color:var(--text-secondary);line-height:1.65;margin-bottom:.9rem; }
+.feed-card-meta{ display:flex;flex-direction:column;gap:5px;margin-bottom:.75rem; }
+.feed-meta-row{ display:flex;gap:.5rem;font-size:12px; }
+.feed-meta-key{ color:var(--text-muted);font-weight:500;min-width:70px; }
+.feed-meta-val{ color:var(--text-secondary); }
+
+/* Campaign cards (mantener por compatibilidad) */
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.25rem;margin-top:1rem;}
 .campaign-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(36,75,108,0.05);transition:box-shadow .2s;}
 .campaign-card:hover{box-shadow:0 4px 16px rgba(36,75,108,0.12);}
@@ -182,8 +218,56 @@ header h1 strong{font-weight:600;}
 .prod-count{font-size:2rem;font-weight:300;letter-spacing:-.03em;color:var(--text-primary);line-height:1;margin-bottom:4px;}
 .prod-label{font-size:12px;color:var(--text-secondary);}
 
-/* Empty */
-.empty-state{text-align:center;padding:3rem 2rem;color:var(--text-muted);}
+/* Botón ver acciones */
+.acciones-btn{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--navy);background:var(--sky-light);border:1px solid rgba(29,175,230,0.35);border-radius:8px;padding:10px 20px;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:6px;}
+.acciones-btn:hover{background:var(--sky);color:#fff;border-color:var(--sky);}
+
+/* Instagram card grid */
+.ig-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:1rem;
+  margin-top:1rem;
+  align-items:start;
+}
+.ig-card{
+  display:block;
+  text-decoration:none;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 1px 4px rgba(36,75,108,0.06);
+  transition:box-shadow .2s,transform .2s;
+}
+.ig-card:hover{box-shadow:0 6px 20px rgba(36,75,108,0.14);transform:translateY(-2px);}
+.ig-card-img{
+  width:100%;
+  aspect-ratio:1/1;
+  background-size:cover;
+  background-position:center;
+  background-color:var(--surface2);
+  position:relative;
+}
+.ig-card-overlay{
+  position:absolute;inset:0;
+  background:rgba(36,75,108,0);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.ig-card:hover .ig-card-overlay{background:rgba(36,75,108,0.45);}
+.ig-card-icon{
+  font-size:1.5rem;color:#fff;
+  opacity:0;transition:opacity .2s;
+  font-weight:300;
+}
+.ig-card:hover .ig-card-icon{opacity:1;}
+.ig-card-foot{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:8px 12px;
+}
+.ig-card-label{font-size:11px;font-weight:500;color:var(--text-secondary);}
+.ig-card-num{font-size:11px;color:var(--text-muted);}
 .empty-state .es-icon{font-size:2rem;margin-bottom:.75rem;opacity:.35;}
 .empty-state p{font-size:13.5px;line-height:1.7;}
 .empty-state strong{color:var(--text-secondary);font-weight:500;}
@@ -247,8 +331,9 @@ footer p strong{color:rgba(255,255,255,0.68);font-weight:500;}
 
     <div id="kpi-grid" class="kpi-grid"></div>
     <div id="highlight-wrap"></div>
-
-    <!-- Comparador -->
+    <div style="margin-bottom:2rem;">
+      <button id="metricas-acciones-btn" class="acciones-btn">Ver acciones realizadas este mes →</button>
+    </div>
     <div class="section-hdr" style="margin-top:2.5rem;">
       <h2>Comparar períodos</h2>
       <span>Elegí dos períodos para comparar visualmente</span>
@@ -272,41 +357,12 @@ footer p strong{color:rgba(255,255,255,0.68);font-weight:500;}
       <button class="cmp-btn" onclick="buildComparador()">Comparar</button>
     </div>
     <div id="comparador-wrap"></div>
-
-    <!-- Evolución del período seleccionado -->
-    <div class="section-hdr" style="margin-top:2rem;">
-      <h2>Evolución semanal</h2>
-      <span id="chart-subtitle"></span>
-    </div>
-    <div id="legend-wrap" class="legend"></div>
-    <div class="chart-card">
-      <p class="chart-title" id="chart-title-viz">Visualizaciones / Alcance</p>
-      <div class="chart-wrap" style="height:240px;"><canvas id="chartViz" role="img" aria-label="Métrica principal semanal"></canvas></div>
-    </div>
-    <div class="chart-card">
-      <p class="chart-title">Interacciones</p>
-      <div class="chart-wrap" style="height:210px;"><canvas id="chartInt" role="img" aria-label="Interacciones semanales"></canvas></div>
-    </div>
-    <div class="chart-card" id="chart-card-seg">
-      <p class="chart-title">Seguidores (al cierre de semana)</p>
-      <div class="chart-wrap" style="height:180px;"><canvas id="chartSeg" role="img" aria-label="Seguidores"></canvas></div>
-    </div>
     <div id="metricas-note"></div>
   </div>
 
   <!-- ══════════ CAMPAÑAS ══════════ -->
   <div id="sec-campanas" class="section-panel">
-    <div class="controls-row">
-      <div class="control-group">
-        <label class="control-label">Año</label>
-        <span class="year-fixed-badge">2026</span>
-      </div>
-      <div class="control-group">
-        <label class="control-label">Mes</label>
-        <div class="month-nav" id="month-nav-campanas"></div>
-      </div>
-    </div>
-    <div id="camp-content"></div>
+    <div id="camp-feed"></div>
   </div>
 
   <!-- ══════════ PRODUCCIÓN ══════════ -->
@@ -392,21 +448,74 @@ const METRICAS = {
 };
 
 const CAMPANAS = {
+  /* Estructura: año → mes → array de campañas
+     Orden de renderizado: más reciente primero (se invierte automáticamente) */
   2026: {
-    Marzo: [{titulo:'Día Mundial del Riñón',estado:'done',fecha:'8 al 14 de marzo de 2026',objetivo:'Concientización y alcance orgánico',canales:'Instagram, Facebook',marcas:['@aterymnefrología']}]
+    Marzo: [
+      {
+        titulo: 'Día Mundial del Riñón',
+        estado: 'done',
+        fecha: '8 al 14 de marzo de 2026',
+        objetivo: 'Concientización y alcance orgánico',
+        canales: 'Instagram, Facebook',
+        descripcion: 'Campaña conjunta con @laboratoriobyb para el Día Mundial del Riñón. Pico de alcance más alto del trimestre con 43.060 visualizaciones en la semana del 08 al 14 de marzo.',
+        marcas: ['@aterymnefrología']
+      }
+    ],
+    Febrero: [],
+    Enero: []
   }
 };
 
 const PRODUCCION = {
-  2026: {},
+  2026: {
+    Enero: {
+      social: '7', impresa: '—', video: '—', web: '—',
+      posts: [
+        'https://www.instagram.com/p/DTKrNLnig_S/',
+        'https://www.instagram.com/p/DTcstZegQ78/',
+        'https://www.instagram.com/p/DTuuXyxlOjV/',
+        'https://www.instagram.com/p/DT5BZqmialk/',
+        'https://www.instagram.com/p/DUAv4wZlC6u/',
+        'https://www.instagram.com/p/DUDgzZ2kgmk/',
+        'https://www.instagram.com/p/DUIeQTMj0HM/',
+      ]
+    },
+    Febrero: {
+      social: '—', impresa: '—', video: '—', web: '—',
+      posts: []
+    },
+    Marzo: {
+      social: '10', impresa: '—', video: '—', web: '—',
+      posts: [
+        'https://www.instagram.com/p/DWW69QtCOPu/',
+        'https://www.instagram.com/p/DVzBA2pEc2K/',
+        'https://www.instagram.com/p/DVyC0a_jejz/',
+        'https://www.instagram.com/p/DVv48uCDR3Q/',
+        'https://www.instagram.com/p/DVv09wIDrXi/',
+        'https://www.instagram.com/p/DVtoAk7kff3/',
+        'https://www.instagram.com/p/DVtTYm8DcFm/',
+        'https://www.instagram.com/p/DVqNqMZgbqL/',
+        'https://www.instagram.com/p/DVgLUznj20Q/',
+        'https://www.instagram.com/p/DVbQ9HPDUBw/',
+      ]
+    },
+    Abril: {
+      social: '1', impresa: '—', video: '—', web: '—',
+      posts: [
+        'https://www.instagram.com/p/DW35mk8gIgV/',
+      ]
+    },
+  },
   2025: {},
   2024: {},
   2023: {}
 };
 
 /* ══ Estado ══ */
+const MES_ACTUAL = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Sept','Oct','Nov','Dic'][new Date().getMonth()];
 let currentSection = 'metricas';
-let state = { metricas:{year:2026,mes:'Marzo'}, campanas:{year:2026,mes:'Marzo'}, produccion:{year:2026,mes:'Marzo'} };
+let state = { metricas:{year:2026,mes:MES_ACTUAL}, campanas:{year:2026,mes:MES_ACTUAL}, produccion:{year:2026,mes:MES_ACTUAL} };
 
 /* ══ Nav principal ══ */
 function setSection(id, btn) {
@@ -566,8 +675,6 @@ function buildMetricas() {
   const is2526 = (y==2025||y==2026);
   const mesLabel = MESES_FULL[m]||m;
 
-  document.getElementById('chart-subtitle').textContent = mesLabel+' '+y;
-
   // KPIs
   const mainMetric = is2526 ? d.viz : d.alc;
   const mainLabel  = is2526 ? 'Visualizaciones' : 'Alcance';
@@ -586,31 +693,16 @@ function buildMetricas() {
   const hw = document.getElementById('highlight-wrap');
   hw.innerHTML = d.highlight ? `<div class="highlight-box"><div class="hi-icon">${d.highlight.icon}</div><div class="hi-body"><p class="hi-eye">${d.highlight.eye}</p><p>${d.highlight.text}</p></div></div>` : '';
 
-  // Legend
-  const legendWrap = document.getElementById('legend-wrap');
-  legendWrap.innerHTML = `<span class="li"><span class="ld" style="background:#1dafe6;"></span>${mainLabel}</span>
-    <span class="li"><span class="ld" style="background:#244b6c;"></span>${secLabel}</span>`;
-
-  // Chart labels
-  const labels = d.sem.map(s=>(mesLabel.substring(0,3)+' '+s));
-
-  // Chart Viz/Alcance
-  document.getElementById('chart-title-viz').textContent = mainLabel+' / '+secLabel;
-  buildChart('chartViz', labels, [
-    {label:mainLabel, data:toNaN(mainMetric), color:'#1dafe6'},
-    {label:secLabel,  data:toNaN(secMetric),  color:'#244b6c'},
-  ]);
-
-  // Chart Int
-  buildChart('chartInt', labels, [
-    {label:'Interacciones', data:toNaN(d.int), color:'#2d5f8a'},
-  ]);
-
-  // Chart Seg
-  const segCard = document.getElementById('chart-card-seg');
-  const hasSeg = d.seg && d.seg.some(v=>v!=null);
-  segCard.style.display = hasSeg ? 'block' : 'none';
-  if(hasSeg) buildChart('chartSeg', labels, [{label:'Seguidores', data:toNaN(d.seg), color:'#868686'}]);
+  // Botón ver acciones
+  document.getElementById('metricas-acciones-btn').onclick = () => {
+    state.produccion.mes = m;
+    state.produccion.year = y;
+    const navBtn = document.querySelector('.nav-btn:nth-child(3)');
+    setSection('produccion', navBtn);
+    renderProdMonthNav();
+    buildProduccion();
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
 
   // Note
   const noteEl = document.getElementById('metricas-note');
@@ -618,7 +710,7 @@ function buildMetricas() {
     noteEl.innerHTML = `<p class="info-note">En ${y} se registraban <strong>Alcance</strong> e <strong>Impresiones</strong> en lugar de Visualizaciones y Cuentas alcanzadas. Los datos son comparables en tendencia pero no en escala exacta.</p>`;
   } else {
     const hasNull = [...(mainMetric||[]),...(d.int||[])].some(v=>v===null);
-    noteEl.innerHTML = hasNull ? `<p class="note">Algunas semanas no tienen datos registrados por error interno del área. Se visualizan como cortes en la línea.</p>` : '';
+    noteEl.innerHTML = hasNull ? `<p class="note">Algunas semanas no tienen datos registrados por error interno del área.</p>` : '';
   }
 }
 
@@ -650,66 +742,85 @@ function buildChart(id, labels, datasets) {
   });
 }
 
-/* ══ CAMPAÑAS ══ */
+/* ══ CAMPAÑAS — feed scrolleable ══ */
 function initCampanas() {
-  document.getElementById('year-select-campanas').value = state.campanas.year;
-  renderCampMonthNav();
-  buildCampanas();
+  buildCampFeed();
 }
-function renderCampMonthNav() {
-  const y = state.campanas.year;
-  const meses = MESES_ORDEN.filter(m => METRICAS[y] && METRICAS[y][m]);
-  const el = document.getElementById('month-nav-campanas');
-  el.innerHTML = meses.map(m=>`<button class="month-btn${m==state.campanas.mes?' active':''}" onclick="setCampMes('${m}',this)">${MESES_FULL[m]||m}</button>`).join('');
-}
-function setCampYear(y) {
-  state.campanas.year = y;
-  const meses = MESES_ORDEN.filter(m => METRICAS[y][m]);
-  state.campanas.mes = meses[meses.length-1];
-  renderCampMonthNav();
-  buildCampanas();
-}
-function setCampMes(m, btn) {
-  state.campanas.mes = m;
-  document.querySelectorAll('#month-nav-campanas .month-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  buildCampanas();
-}
+
 const BADGE={done:'badge-done',progress:'badge-progress',planned:'badge-planned'};
 const BADGE_L={done:'Finalizada',progress:'En curso',planned:'Planificada'};
-function buildCampanas() {
-  const y=state.campanas.year, m=state.campanas.mes;
-  const items=(CAMPANAS[y]&&CAMPANAS[y][m])||[];
-  const mesLabel=MESES_FULL[m]||m;
-  const wrap=document.getElementById('camp-content');
-  let html=`<div class="section-hdr"><h2>Campañas</h2><span>${mesLabel} ${y}</span></div><div class="cards-grid">`;
-  if(items.length===0){
-    html+=`</div><div class="empty-state"><div class="es-icon">📋</div><p>No hay campañas registradas para <strong>${mesLabel} ${y}</strong>.</p></div>`;
-  } else {
-    items.forEach(c=>{
-      html+=`<div class="campaign-card"><div class="cc-header"><span class="cc-title">${c.titulo}</span><span class="cc-badge ${BADGE[c.estado]}">${BADGE_L[c.estado]}</span></div>
-      <div class="cc-body"><div class="cc-row"><span class="cc-key">Fecha</span><span class="cc-val">${c.fecha}</span></div>
-      <div class="cc-row"><span class="cc-key">Objetivo</span><span class="cc-val">${c.objetivo}</span></div>
-      <div class="cc-row"><span class="cc-key">Canales</span><span class="cc-val">${c.canales}</span></div>
-      <div class="cc-brands">${c.marcas.map(b=>`<span class="brand-pill">${b}</span>`).join('')}</div></div></div>`;
+
+function buildCampFeed() {
+  const wrap = document.getElementById('camp-feed');
+  let html = '';
+
+  // Recorrer años de más nuevo a más viejo
+  const years = Object.keys(CAMPANAS).map(Number).sort((a,b)=>b-a);
+
+  years.forEach(y => {
+    // Meses de más nuevo a más viejo
+    const mesesConCampanas = MESES_ORDEN
+      .slice().reverse()
+      .filter(m => CAMPANAS[y][m] && CAMPANAS[y][m].length > 0);
+
+    if(mesesConCampanas.length === 0) return;
+
+    html += `<div class="feed-year-block">
+      <div class="feed-year-label">${y}</div>`;
+
+    mesesConCampanas.forEach(m => {
+      const items = CAMPANAS[y][m];
+      html += `<div class="feed-month-block">
+        <div class="feed-month-title">${MESES_FULL[m]||m}</div>
+        <div class="feed-cards">`;
+
+      items.forEach(c => {
+        html += `
+          <div class="feed-card">
+            <div class="feed-card-top">
+              <div>
+                <p class="feed-card-titulo">${c.titulo}</p>
+                <p class="feed-card-fecha">${c.fecha}</p>
+              </div>
+              <span class="cc-badge ${BADGE[c.estado]}">${BADGE_L[c.estado]}</span>
+            </div>
+            ${c.descripcion ? `<p class="feed-card-desc">${c.descripcion}</p>` : ''}
+            <div class="feed-card-meta">
+              <div class="feed-meta-row"><span class="feed-meta-key">Objetivo</span><span class="feed-meta-val">${c.objetivo}</span></div>
+              <div class="feed-meta-row"><span class="feed-meta-key">Canales</span><span class="feed-meta-val">${c.canales}</span></div>
+            </div>
+            <div class="cc-brands">${c.marcas.map(b=>`<span class="brand-pill">${b}</span>`).join('')}</div>
+          </div>`;
+      });
+
+      html += `</div></div>`;
     });
-    html+=`<div class="card-placeholder"><div class="card-placeholder-inner"><div style="font-size:1.5rem;opacity:.35;margin-bottom:.4rem;">+</div><p style="font-size:13px;color:var(--text-muted)">Agregar campaña</p></div></div>`;
-    html+=`</div>`;
+
+    html += `</div>`;
+  });
+
+  if(!html) {
+    html = `<div class="empty-state"><div class="es-icon">📋</div><p>Todavía no hay campañas cargadas.</p></div>`;
   }
-  wrap.innerHTML=html;
+
+  wrap.innerHTML = html;
 }
+
+function setCampYear(y) { buildCampFeed(); }
+function setCampMes(m, btn) { buildCampFeed(); }
+function renderCampMonthNav() {}
 
 /* ══ PRODUCCIÓN ══ */
 function initProduccion() {
-  document.getElementById('year-select-produccion').value = state.produccion.year;
+  state.produccion.year = 2026;
+  state.produccion.mes = 'Enero';
   renderProdMonthNav();
   buildProduccion();
 }
 function renderProdMonthNav(){
-  const y=state.produccion.year;
-  const meses=MESES_ORDEN.filter(m=>METRICAS[y]&&METRICAS[y][m]);
-  const el=document.getElementById('month-nav-produccion');
-  el.innerHTML=meses.map(m=>`<button class="month-btn${m==state.produccion.mes?' active':''}" onclick="setProdMes('${m}',this)">${MESES_FULL[m]||m}</button>`).join('');
+  const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Sept','Oct','Nov','Dic'];
+  const el = document.getElementById('month-nav-produccion');
+  el.innerHTML = meses.map(m=>`<button class="month-btn${m==state.produccion.mes?' active':''}" onclick="setProdMes('${m}',this)">${MESES_FULL[m]||m}</button>`).join('');
 }
 function setProdYear(y){
   state.produccion.year=y;
@@ -723,19 +834,44 @@ function setProdMes(m,btn){
   btn.classList.add('active');buildProduccion();
 }
 function buildProduccion(){
-  const y=state.produccion.year,m=state.produccion.mes;
+  const y=state.produccion.year, m=state.produccion.mes;
   const d=(PRODUCCION[y]&&PRODUCCION[y][m])||{};
   const mesLabel=MESES_FULL[m]||m;
   const wrap=document.getElementById('prod-content');
+
   let html=`<div class="section-hdr"><h2>Piezas producidas</h2><span>${mesLabel} ${y}</span></div>
   <div class="prod-grid">
     <div class="prod-card"><div class="prod-icon ic-social">📱</div><p class="prod-type">Redes sociales</p><p class="prod-count">${d.social||'—'}</p><p class="prod-label">Feed, stories, reels</p></div>
     <div class="prod-card"><div class="prod-icon ic-print">🖨</div><p class="prod-type">Gráfica impresa</p><p class="prod-count">${d.impresa||'—'}</p><p class="prod-label">Afiches, folletos, cartelería</p></div>
     <div class="prod-card"><div class="prod-icon ic-video">🎬</div><p class="prod-type">Video / Motion</p><p class="prod-count">${d.video||'—'}</p><p class="prod-label">Animaciones, clips</p></div>
     <div class="prod-card"><div class="prod-icon ic-web">🌐</div><p class="prod-type">Web / Digital</p><p class="prod-count">${d.web||'—'}</p><p class="prod-label">Banners, landing pages</p></div>
-  </div>
-  <div class="empty-state" style="padding-top:2rem;"><div class="es-icon">📂</div><p>El detalle de piezas de <strong>${mesLabel} ${y}</strong> se va completando a medida que cargues el contenido.</p></div>`;
-  wrap.innerHTML=html;
+  </div>`;
+
+  if(d.posts && d.posts.length > 0){
+    html += `<div class="section-hdr" style="margin-top:2rem;"><h2>Contenido publicado</h2><span>${mesLabel} ${y}</span></div>
+    <div class="ig-grid">
+      ${d.posts.map((url, i) => {
+        // Extraer shortcode limpio de la URL
+        const code = url.replace(/\?.*$/,'').split('/').filter(Boolean).pop();
+        const thumb = `https://www.instagram.com/p/${code}/media/?size=m`;
+        return `<a class="ig-card" href="${url}" target="_blank" rel="noopener">
+          <div class="ig-card-img" style="background-image:url('${thumb}');">
+            <div class="ig-card-overlay">
+              <span class="ig-card-icon">↗</span>
+            </div>
+          </div>
+          <div class="ig-card-foot">
+            <span class="ig-card-label">Ver en Instagram</span>
+            <span class="ig-card-num">#${i+1}</span>
+          </div>
+        </a>`;
+      }).join('')}
+    </div>`;
+  } else {
+    html += `<div class="empty-state" style="padding-top:2rem;"><div class="es-icon">📂</div><p>El detalle de piezas de <strong>${mesLabel} ${y}</strong> se va completando a medida que cargues el contenido.</p></div>`;
+  }
+
+  wrap.innerHTML = html;
 }
 
 /* ══ INIT ══ */
