@@ -225,49 +225,52 @@ header h1 strong{font-weight:600;}
 /* Instagram card grid */
 .ig-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
   gap:1rem;
   margin-top:1rem;
-  align-items:start;
 }
 .ig-card{
-  display:block;
+  display:flex;flex-direction:column;
   text-decoration:none;
   background:var(--surface);
   border:1px solid var(--border);
   border-radius:10px;
   overflow:hidden;
   box-shadow:0 1px 4px rgba(36,75,108,0.06);
-  transition:box-shadow .2s,transform .2s;
+  transition:box-shadow .2s,transform .18s;
 }
-.ig-card:hover{box-shadow:0 6px 20px rgba(36,75,108,0.14);transform:translateY(-2px);}
-.ig-card-img{
-  width:100%;
+.ig-card:hover{box-shadow:0 6px 20px rgba(36,75,108,0.13);transform:translateY(-2px);}
+.ig-card-visual{
   aspect-ratio:1/1;
-  background-size:cover;
-  background-position:center;
-  background-color:var(--surface2);
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);
+  display:flex;align-items:center;justify-content:center;
   position:relative;
 }
-.ig-card-overlay{
-  position:absolute;inset:0;
-  background:rgba(36,75,108,0);
-  display:flex;align-items:center;justify-content:center;
-  transition:background .2s;
+.ig-card-num-big{
+  font-size:2.5rem;font-weight:200;
+  color:rgba(255,255,255,0.15);
+  letter-spacing:-.05em;
+  position:absolute;bottom:10px;right:14px;
+  line-height:1;
 }
-.ig-card:hover .ig-card-overlay{background:rgba(36,75,108,0.45);}
-.ig-card-icon{
-  font-size:1.5rem;color:#fff;
-  opacity:0;transition:opacity .2s;
-  font-weight:300;
+.ig-card-ig-icon{
+  color:rgba(255,255,255,0.5);
 }
-.ig-card:hover .ig-card-icon{opacity:1;}
 .ig-card-foot{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:8px 12px;
+  padding:10px 12px;
+  display:flex;flex-direction:column;gap:4px;
+  flex:1;
 }
-.ig-card-label{font-size:11px;font-weight:500;color:var(--text-secondary);}
-.ig-card-num{font-size:11px;color:var(--text-muted);}
+.ig-card-titulo{
+  font-size:12px;font-weight:500;
+  color:var(--text-primary);
+  line-height:1.4;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.ig-card-link{
+  font-size:11px;font-weight:500;
+  color:var(--sky);margin-top:2px;
+}
 .empty-state .es-icon{font-size:2rem;margin-bottom:.75rem;opacity:.35;}
 .empty-state p{font-size:13.5px;line-height:1.7;}
 .empty-state strong{color:var(--text-secondary);font-weight:500;}
@@ -302,7 +305,7 @@ footer p strong{color:rgba(255,255,255,0.68);font-weight:500;}
     <nav class="main-nav" role="tablist">
       <button class="nav-btn active" role="tab" onclick="setSection('metricas',this)">Métricas de RRSS</button>
       <button class="nav-btn" role="tab" onclick="setSection('campanas',this)">Campañas y acciones</button>
-      <button class="nav-btn" role="tab" onclick="setSection('produccion',this)">Producción gráfica</button>
+      <button class="nav-btn" role="tab" onclick="setSection('produccion',this)">Contenidos</button>
     </nav>
   </div>
 </header>
@@ -332,7 +335,7 @@ footer p strong{color:rgba(255,255,255,0.68);font-weight:500;}
     <div id="kpi-grid" class="kpi-grid"></div>
     <div id="highlight-wrap"></div>
     <div style="margin-bottom:2rem;">
-      <button id="metricas-acciones-btn" class="acciones-btn">Ver acciones realizadas este mes →</button>
+      <button id="metricas-acciones-btn" class="acciones-btn">Ver contenidos publicados este mes →</button>
     </div>
     <div class="section-hdr" style="margin-top:2.5rem;">
       <h2>Comparar períodos</h2>
@@ -472,13 +475,13 @@ const PRODUCCION = {
     Enero: {
       social: '7', impresa: '—', video: '—', web: '—',
       posts: [
-        'https://www.instagram.com/p/DTKrNLnig_S/',
-        'https://www.instagram.com/p/DTcstZegQ78/',
-        'https://www.instagram.com/p/DTuuXyxlOjV/',
-        'https://www.instagram.com/p/DT5BZqmialk/',
-        'https://www.instagram.com/p/DUAv4wZlC6u/',
-        'https://www.instagram.com/p/DUDgzZ2kgmk/',
-        'https://www.instagram.com/p/DUIeQTMj0HM/',
+        { url:'https://www.instagram.com/p/DTKrNLnig_S/', titulo:'Post #1' },
+        { url:'https://www.instagram.com/p/DTcstZegQ78/', titulo:'Post #2' },
+        { url:'https://www.instagram.com/p/DTuuXyxlOjV/', titulo:'Post #3' },
+        { url:'https://www.instagram.com/p/DT5BZqmialk/', titulo:'Post #4' },
+        { url:'https://www.instagram.com/p/DUAv4wZlC6u/', titulo:'Post #5' },
+        { url:'https://www.instagram.com/p/DUDgzZ2kgmk/', titulo:'Post #6' },
+        { url:'https://www.instagram.com/p/DUIeQTMj0HM/', titulo:'Post #7' },
       ]
     },
     Febrero: {
@@ -488,22 +491,22 @@ const PRODUCCION = {
     Marzo: {
       social: '10', impresa: '—', video: '—', web: '—',
       posts: [
-        'https://www.instagram.com/p/DWW69QtCOPu/',
-        'https://www.instagram.com/p/DVzBA2pEc2K/',
-        'https://www.instagram.com/p/DVyC0a_jejz/',
-        'https://www.instagram.com/p/DVv48uCDR3Q/',
-        'https://www.instagram.com/p/DVv09wIDrXi/',
-        'https://www.instagram.com/p/DVtoAk7kff3/',
-        'https://www.instagram.com/p/DVtTYm8DcFm/',
-        'https://www.instagram.com/p/DVqNqMZgbqL/',
-        'https://www.instagram.com/p/DVgLUznj20Q/',
-        'https://www.instagram.com/p/DVbQ9HPDUBw/',
+        { url:'https://www.instagram.com/p/DWW69QtCOPu/', titulo:'Día Mundial del Riñón 2026 — ¿por qué es tan importante esta efeméride?' },
+        { url:'https://www.instagram.com/p/DVzBA2pEc2K/', titulo:'Post #2' },
+        { url:'https://www.instagram.com/p/DVyC0a_jejz/', titulo:'Post #3' },
+        { url:'https://www.instagram.com/p/DVv48uCDR3Q/', titulo:'Post #4' },
+        { url:'https://www.instagram.com/p/DVv09wIDrXi/', titulo:'Post #5' },
+        { url:'https://www.instagram.com/p/DVtoAk7kff3/', titulo:'Post #6' },
+        { url:'https://www.instagram.com/p/DVtTYm8DcFm/', titulo:'Día Mundial del Riñón 2026 — ¿Cómo funciona el Circuito Renal?' },
+        { url:'https://www.instagram.com/p/DVqNqMZgbqL/', titulo:'Post #8' },
+        { url:'https://www.instagram.com/p/DVgLUznj20Q/', titulo:'Post #9' },
+        { url:'https://www.instagram.com/p/DVbQ9HPDUBw/', titulo:'Post #10' },
       ]
     },
     Abril: {
       social: '1', impresa: '—', video: '—', web: '—',
       posts: [
-        'https://www.instagram.com/p/DW35mk8gIgV/',
+        { url:'https://www.instagram.com/p/DW35mk8gIgV/', titulo:'Post #1' },
       ]
     },
   },
@@ -839,30 +842,27 @@ function buildProduccion(){
   const mesLabel=MESES_FULL[m]||m;
   const wrap=document.getElementById('prod-content');
 
-  let html=`<div class="section-hdr"><h2>Piezas producidas</h2><span>${mesLabel} ${y}</span></div>
-  <div class="prod-grid">
-    <div class="prod-card"><div class="prod-icon ic-social">📱</div><p class="prod-type">Redes sociales</p><p class="prod-count">${d.social||'—'}</p><p class="prod-label">Feed, stories, reels</p></div>
-    <div class="prod-card"><div class="prod-icon ic-print">🖨</div><p class="prod-type">Gráfica impresa</p><p class="prod-count">${d.impresa||'—'}</p><p class="prod-label">Afiches, folletos, cartelería</p></div>
-    <div class="prod-card"><div class="prod-icon ic-video">🎬</div><p class="prod-type">Video / Motion</p><p class="prod-count">${d.video||'—'}</p><p class="prod-label">Animaciones, clips</p></div>
-    <div class="prod-card"><div class="prod-icon ic-web">🌐</div><p class="prod-type">Web / Digital</p><p class="prod-count">${d.web||'—'}</p><p class="prod-label">Banners, landing pages</p></div>
-  </div>`;
+  let html=`<div class="section-hdr"><h2>Contenido publicado</h2><span>${mesLabel} ${y}</span></div>`;
 
   if(d.posts && d.posts.length > 0){
-    html += `<div class="section-hdr" style="margin-top:2rem;"><h2>Contenido publicado</h2><span>${mesLabel} ${y}</span></div>
-    <div class="ig-grid">
-      ${d.posts.map((url, i) => {
-        // Extraer shortcode limpio de la URL
-        const code = url.replace(/\?.*$/,'').split('/').filter(Boolean).pop();
-        const thumb = `https://www.instagram.com/p/${code}/media/?size=m`;
-        return `<a class="ig-card" href="${url}" target="_blank" rel="noopener">
-          <div class="ig-card-img" style="background-image:url('${thumb}');">
-            <div class="ig-card-overlay">
-              <span class="ig-card-icon">↗</span>
+    html += `<div class="ig-grid">
+      ${d.posts.map((p, i) => {
+        const url = typeof p === 'string' ? p : p.url;
+        const titulo = typeof p === 'string' ? `Publicación #${i+1}` : (p.titulo || `Publicación #${i+1}`);
+        return `<a class="ig-card" href="${url}" target="_blank" rel="noopener" title="${titulo}">
+          <div class="ig-card-visual">
+            <span class="ig-card-num-big">#${i+1}</span>
+            <div class="ig-card-ig-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+              </svg>
             </div>
           </div>
           <div class="ig-card-foot">
-            <span class="ig-card-label">Ver en Instagram</span>
-            <span class="ig-card-num">#${i+1}</span>
+            <span class="ig-card-titulo">${titulo}</span>
+            <span class="ig-card-link">Ver →</span>
           </div>
         </a>`;
       }).join('')}
