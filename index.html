@@ -6,93 +6,88 @@
 <title>Área de Imagen Institucional — Aterym Alta Gracia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..600;1,9..40,300..400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..600;1,14..32,300..400&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#1a3a52;--sky:#1DB3E8;--sky-light:#e6f7fd;--sky-mid:#a8ddf5;
-  --navy-mid:#2a5272;--bg:#f2f5f8;--surface:#fff;--surface2:#eaf2f8;
-  --border:rgba(26,58,82,0.09);--border-mid:rgba(26,58,82,0.18);
-  --text-primary:#0c1e2d;--text-secondary:#3a566d;--text-muted:#7a96a8;
+  /* Aterym brand — Manual de Imagen Institucional 2026 */
+  --aterym:#00aeea;--aterym-dark:#0f2232;--aterym-gray:#868686;
+  --bg:#f0f4f8;--surface:#fff;--surface2:#e8f6fd;
+  --border:rgba(0,174,234,0.12);--border-mid:rgba(0,174,234,0.22);
+  --text-primary:#0c1e2d;--text-secondary:#3a566d;--text-muted:#868686;
   --green:#1a7a4a;--green-bg:#e6f5ee;--amber:#b06a00;--amber-bg:#fff3e0;
-  /* Brand colors from logos */
-  --c-aterym:#1DB3E8;--c-aterym-bg:#e6f7fd;--c-aterym-dark:#0f2232;
-  --c-nc:#1E6B5A;--c-nc-bg:#e8f4f1;--c-nc-dark:#0d3329;
-  --c-byb:#1B3A6B;--c-byb-bg:#e8edf5;--c-byb-accent:#F5A623;
-  --c-boni:#1A2760;--c-boni-bg:#e8eaf3;--c-boni-gold:#C9A227;
+  /* Brand colors extracted from logos */
+  --c-aterym:#00aeea;--c-aterym-bg:#e6f7fd;
+  --c-nc:#1E6B5A;--c-nc-bg:#e8f4f1;
+  --c-byb:#1B3A6B;--c-byb-accent:#F5A623;--c-byb-bg:#e8edf5;
+  --c-boni:#1A2760;--c-boni-gold:#C9A227;--c-boni-bg:#e8eaf3;
 }
 html{font-size:16px;scroll-behavior:smooth}
-body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text-primary);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased}
-.topbar{height:3px;background:linear-gradient(90deg,var(--c-aterym),var(--navy-mid),var(--c-aterym))}
-header{background:var(--navy);position:relative;overflow:hidden}
-header::after{content:'';position:absolute;right:-60px;top:-60px;width:320px;height:320px;border-radius:50%;border:1px solid rgba(29,175,230,0.1);pointer-events:none}
-header::before{content:'';position:absolute;right:80px;top:40px;width:160px;height:160px;border-radius:50%;border:1px solid rgba(29,175,230,0.06);pointer-events:none}
+body{font-family:'Inter',system-ui,sans-serif;font-optical-sizing:auto;background:var(--bg);color:var(--text-primary);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased}
+.topbar{height:3px;background:linear-gradient(90deg,var(--aterym),#0077cc,var(--aterym))}
+header{background:var(--aterym-dark);position:relative;overflow:hidden}
+header::after{content:'';position:absolute;right:-60px;top:-60px;width:320px;height:320px;border-radius:50%;border:1px solid rgba(0,174,234,0.1);pointer-events:none}
+header::before{content:'';position:absolute;right:80px;top:40px;width:160px;height:160px;border-radius:50%;border:1px solid rgba(0,174,234,0.06);pointer-events:none}
 .header-inner{max-width:1200px;margin:0 auto;padding:2.25rem 2rem 0;position:relative;z-index:1}
 .header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.75rem}
-.header-eyebrow{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--c-aterym);opacity:.9;margin-bottom:.6rem}
-header h1{font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:400;line-height:1.15;color:#fff;letter-spacing:-.01em}
-header h1 em{font-style:italic;color:var(--sky-mid)}
-.header-meta{display:flex;gap:.75rem;flex-wrap:wrap;align-items:flex-start;margin-top:.35rem}
-.header-pill{background:rgba(29,175,230,0.13);border:1px solid rgba(29,175,230,0.28);color:var(--sky-mid);font-size:11px;font-weight:500;padding:4px 12px;border-radius:20px;white-space:nowrap}
-.main-nav{display:flex;overflow-x:auto;position:relative;z-index:2;gap:2px;padding-right:1rem}
-.nav-btn{padding:13px 22px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:400;background:transparent;border:none;border-bottom:2px solid transparent;cursor:pointer;color:rgba(255,255,255,0.45);transition:all .2s;white-space:nowrap}
+header h1{font-size:clamp(1.4rem,3vw,2rem);font-weight:300;line-height:1.2;color:#fff;letter-spacing:-.01em}
+header h1 strong{font-weight:600;color:var(--aterym)}
+.header-meta{display:flex;gap:.75rem;flex-wrap:wrap;align-items:flex-start;margin-top:.5rem}
+.header-pill{background:rgba(0,174,234,0.12);border:1px solid rgba(0,174,234,0.28);color:rgba(168,221,245,0.9);font-size:11px;font-weight:500;padding:4px 12px;border-radius:20px;white-space:nowrap}
+.main-nav{display:flex;overflow-x:auto;position:relative;z-index:2;gap:2px}
+.nav-btn{padding:13px 22px;font-family:'Inter',sans-serif;font-size:13px;font-weight:400;background:transparent;border:none;border-bottom:2px solid transparent;cursor:pointer;color:rgba(255,255,255,0.45);transition:all .2s;white-space:nowrap}
 .nav-btn:hover{color:rgba(255,255,255,0.8)}
-.nav-btn.active{color:#fff;font-weight:500;border-bottom-color:var(--c-aterym)}
+.nav-btn.active{color:#fff;font-weight:500;border-bottom-color:var(--aterym)}
 .page-wrap{max-width:1200px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
 .section-panel{display:none}
 .section-panel.active{display:block;animation:fadeUp .28s ease both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-/* ── EQUIPO ── */
-.equipo-hero{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:2rem;margin-bottom:2rem;box-shadow:0 2px 12px rgba(26,58,82,0.06)}
-.equipo-hero-title{font-family:'DM Serif Display',serif;font-size:1.5rem;font-weight:400;color:var(--navy);margin-bottom:.5rem}
+/* EQUIPO */
+.equipo-hero{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:2rem;margin-bottom:2rem;box-shadow:0 2px 12px rgba(0,174,234,0.06)}
+.equipo-hero-title{font-size:1.4rem;font-weight:300;color:var(--aterym-dark);margin-bottom:.5rem;letter-spacing:-.01em}
+.equipo-hero-title strong{font-weight:600}
 .equipo-hero-desc{font-size:14px;color:var(--text-secondary);max-width:640px;line-height:1.7}
 .equipo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;margin-bottom:2rem}
-.persona-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 1px 6px rgba(26,58,82,0.05);transition:box-shadow .2s,transform .2s}
-.persona-card:hover{box-shadow:0 6px 20px rgba(26,58,82,0.1);transform:translateY(-2px)}
+.persona-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 1px 6px rgba(0,174,234,0.05);transition:box-shadow .2s,transform .2s}
+.persona-card:hover{box-shadow:0 6px 20px rgba(0,174,234,0.12);transform:translateY(-2px)}
 .pc-top{padding:1.5rem 1.5rem 1.25rem;display:flex;align-items:flex-start;gap:1rem}
-.pc-avatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:1.2rem;flex-shrink:0}
-.pc-name{font-size:16px;font-weight:600;color:var(--text-primary);margin-bottom:3px}
+.pc-avatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:600;flex-shrink:0;letter-spacing:-.02em}
+.pc-name{font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:3px}
 .pc-rol{font-size:11px;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:.07em}
 .pc-divider{height:1px;background:var(--border);margin:0 1.5rem}
 .pc-body{padding:1.25rem 1.5rem}
 .pc-section-lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);margin-bottom:.6rem}
 .pc-tasks{list-style:none;display:flex;flex-direction:column;gap:5px}
 .pc-tasks li{font-size:12.5px;color:var(--text-secondary);display:flex;align-items:flex-start;gap:7px;line-height:1.45}
-.pc-tasks li::before{content:'→';color:var(--c-aterym);font-size:11px;flex-shrink:0;margin-top:2px}
-.pc-marcas{display:flex;flex-wrap:wrap;gap:5px;margin-top:.9rem}
-.marca-pill{font-size:10px;font-weight:600;padding:2px 9px;border-radius:10px;background:rgba(26,58,82,0.07);color:var(--navy)}
+.pc-tasks li::before{content:'→';color:var(--aterym);font-size:11px;flex-shrink:0;margin-top:2px}
+.pc-marcas{margin-top:.9rem}
+.todas-las-empresas{display:inline-flex;align-items:center;font-size:11px;font-weight:500;padding:4px 12px;border-radius:20px;background:var(--surface2);color:var(--aterym);border:1px solid rgba(0,174,234,0.25)}
 
-/* ── EMPRESAS ── */
+/* EMPRESAS */
 .empresa-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.75rem}
-.emp-tab{padding:8px 18px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:400;background:var(--surface);border:1px solid var(--border-mid);border-radius:20px;cursor:pointer;color:var(--text-secondary);transition:all .15s;display:flex;align-items:center;gap:8px}
-.emp-tab:hover{background:var(--sky-light);color:var(--navy);border-color:var(--sky)}
+.emp-tab{padding:8px 16px;font-family:'Inter',sans-serif;font-size:13px;font-weight:400;background:var(--surface);border:1px solid var(--border-mid);border-radius:20px;cursor:pointer;color:var(--text-secondary);transition:all .15s;display:flex;align-items:center}
+.emp-tab:hover{background:var(--surface2);color:var(--aterym-dark);border-color:var(--aterym)}
 .emp-tab.active{color:#fff;font-weight:500;border-color:transparent}
-.emp-tab-logo{height:18px;width:auto;max-width:70px;object-fit:contain;filter:brightness(0) invert(0.4);transition:filter .15s}
+.emp-tab-logo{height:20px;width:auto;max-width:80px;object-fit:contain;filter:brightness(0) invert(0.45);transition:filter .15s}
 .emp-tab.active .emp-tab-logo{filter:brightness(0) invert(1)}
 .empresa-panel{display:none}
 .empresa-panel.active{display:block;animation:fadeUp .25s ease both}
-
-/* Hero con logo */
-.emp-hero{border-radius:12px;padding:2rem;margin-bottom:1.5rem;border:1px solid transparent;position:relative;overflow:hidden}
-.emp-hero-logo{height:56px;width:auto;max-width:260px;object-fit:contain;margin-bottom:1.25rem;display:block}
-.emp-tagline{font-size:13.5px;max-width:560px;line-height:1.7;margin-bottom:1rem;opacity:.82}
+.emp-hero{border-radius:12px;padding:2rem;margin-bottom:1.5rem;border:1px solid transparent}
+.emp-hero-logo{height:52px;width:auto;max-width:260px;object-fit:contain;margin-bottom:1.25rem;display:block}
+.emp-tagline{font-size:13.5px;max-width:560px;line-height:1.7;margin-bottom:1rem;opacity:.85}
 .emp-chips{display:flex;flex-wrap:wrap;gap:7px}
 .emp-chip{font-size:11px;font-weight:500;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.4)}
-
-/* Info grid */
 .emp-info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-bottom:1.5rem}
-.emp-info-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;box-shadow:0 1px 4px rgba(26,58,82,0.04)}
+.emp-info-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;box-shadow:0 1px 4px rgba(0,174,234,0.04)}
 .emp-info-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.13em;color:var(--text-muted);margin-bottom:.6rem}
 .emp-info-val{font-size:14px;color:var(--text-primary);line-height:1.5}
-
-/* Campañas */
 .emp-campanas-hdr{display:flex;align-items:center;gap:.75rem;margin:2rem 0 1.25rem;padding-bottom:.75rem;border-bottom:1px solid var(--border-mid)}
-.emp-campanas-hdr h3{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
+.emp-campanas-hdr h3{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--aterym-dark)}
 .emp-campanas-hdr span{font-size:12px;color:var(--text-muted)}
 .feed-cards{display:flex;flex-direction:column;gap:.75rem}
-.feed-card{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--sky);border-radius:0 10px 10px 0;padding:1.25rem 1.5rem;box-shadow:0 1px 4px rgba(26,58,82,0.05);transition:box-shadow .2s}
-.feed-card:hover{box-shadow:0 4px 14px rgba(26,58,82,0.1)}
+.feed-card{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--aterym);border-radius:0 10px 10px 0;padding:1.25rem 1.5rem;box-shadow:0 1px 4px rgba(0,174,234,0.05);transition:box-shadow .2s}
+.feed-card:hover{box-shadow:0 4px 14px rgba(0,174,234,0.1)}
 .feed-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.75rem}
 .feed-card-titulo{font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:3px}
 .feed-card-fecha{font-size:12px;color:var(--text-muted)}
@@ -106,12 +101,11 @@ header h1 em{font-style:italic;color:var(--sky-mid)}
 .badge-progress{background:var(--amber-bg);color:var(--amber)}
 .badge-planned{background:#f0eaf8;color:#5a3e8a}
 .cc-brands{display:flex;gap:6px;flex-wrap:wrap}
-.brand-pill{font-size:11px;font-weight:500;padding:3px 9px;border-radius:20px;background:rgba(26,58,82,0.08);color:var(--navy)}
+.brand-pill{font-size:11px;font-weight:500;padding:3px 9px;border-radius:20px;background:rgba(0,174,234,0.08);color:var(--aterym-dark)}
 .camp-empty{padding:2rem;text-align:center;color:var(--text-muted);font-size:13px;background:var(--surface);border:1px dashed var(--border-mid);border-radius:10px}
 
-/* Footer */
-.footer-topbar{height:2px;background:linear-gradient(90deg,var(--c-aterym),var(--navy-mid))}
-footer{background:var(--navy)}
+.footer-topbar{height:2px;background:linear-gradient(90deg,var(--aterym),#0077cc)}
+footer{background:var(--aterym-dark)}
 .footer-inner{max-width:1200px;margin:0 auto;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}
 footer p{font-size:11.5px;color:rgba(255,255,255,0.38);font-weight:300}
 footer p strong{color:rgba(255,255,255,0.62);font-weight:500}
@@ -124,8 +118,7 @@ footer p strong{color:rgba(255,255,255,0.62);font-weight:500}
   <div class="header-inner">
     <div class="header-top">
       <div>
-        <p class="header-eyebrow">Aterym Alta Gracia · Grupo Empresario</p>
-        <h1>Área de <em>Imagen Institucional</em></h1>
+        <h1><strong>Área de Imagen Institucional</strong></h1>
         <div class="header-meta">
           <span class="header-pill">Portal interno del área</span>
           <span class="header-pill">Alta Gracia, Córdoba</span>
@@ -142,7 +135,7 @@ footer p strong{color:rgba(255,255,255,0.62);font-weight:500}
 <div class="page-wrap">
   <div id="sec-equipo" class="section-panel active">
     <div class="equipo-hero">
-      <p class="equipo-hero-title">El equipo</p>
+      <p class="equipo-hero-title"><strong>El equipo</strong></p>
       <p class="equipo-hero-desc">El área coordina la comunicación y presencia digital de cuatro marcas del grupo. Cada integrante tiene un rol definido que se articula bajo la dirección estratégica de la coordinadora.</p>
     </div>
     <div class="equipo-grid" id="equipo-grid"></div>
@@ -170,35 +163,33 @@ const LOGOS = {
 };
 
 const EQUIPO=[
-  {nombre:'Candela Boni',iniciales:'CB',color:'#1E6B5A',colorBg:'#e8f4f1',rol:'Coordinadora del Área',
-   tareas:['Define los objetivos y la dirección estratégica del área para las cuatro marcas','Coordina y supervisa a todo el equipo','Produce dirección de arte y proyectos editoriales (revistas, folletos)','Aprueba todos los contenidos antes de su publicación','Gestiona sesiones de foto y video'],
-   marcas:['Natural Chef','Aterym','ByB','Boni Pasta']},
+  {nombre:'Candela Boni',iniciales:'CB',color:'#00aeea',colorBg:'#e6f7fd',rol:'Coordinadora del Área',
+   tareas:['Define los objetivos y la dirección estratégica del área para las cuatro marcas','Coordina y supervisa a todo el equipo','Produce dirección de arte y proyectos editoriales (revistas, folletos)','Aprueba todos los contenidos antes de su publicación','Gestiona sesiones de foto y video']},
   {nombre:'Tomás Fernández',iniciales:'TF',color:'#1B3A6B',colorBg:'#e8edf5',rol:'Desarrollo digital',
-   tareas:['Desarrolla y mantiene los sitios web y landing pages','Integra sistemas de pago y plataformas digitales','Construye herramientas internas (sistema de turnos, portal B2B)','Genera reportes de performance digital'],
-   marcas:['Natural Chef','Aterym','ByB','Boni Pasta']},
-  {nombre:'Úrsula Hebenstreit',iniciales:'UH',color:'#1DB3E8',colorBg:'#e6f7fd',rol:'Estrategia digital',
-   tareas:['Define la estrategia digital y de campaña por marca','Plantea el calendario tentativo de contenidos para Valentina','Desarrolla campañas de captación y posicionamiento','Analiza competidores y propone diferenciación'],
-   marcas:['Natural Chef','ByB','Aterym']},
+   tareas:['Desarrolla y mantiene los sitios web y landing pages','Integra sistemas de pago y plataformas digitales','Construye herramientas internas (sistema de turnos, portal B2B)','Genera reportes de performance digital']},
+  {nombre:'Úrsula Hebenstreit',iniciales:'UH',color:'#1E6B5A',colorBg:'#e8f4f1',rol:'Estrategia digital',
+   tareas:['Define la estrategia digital y de campaña por marca','Plantea el calendario tentativo de contenidos para Valentina','Desarrolla campañas de captación y posicionamiento','Analiza competidores y propone diferenciación']},
   {nombre:'Valentina Severini',iniciales:'VS',color:'#C9A227',colorBg:'#fdf6e3',rol:'CM · Redacción · Monitoreo',
-   tareas:['Ejecuta el calendario de contenidos definido por Úrsula','Redacta copies, stories y reels para todas las marcas','Publica notas web SEO en los cuatro sitios (7 por mes)','Gestiona DMs y comentarios en redes sociales','Monitorea competidores y tendencias del sector'],
-   marcas:['Natural Chef','Aterym','ByB','Boni Pasta']},
+   tareas:['Ejecuta el calendario de contenidos definido por Úrsula','Redacta copies, stories y reels para todas las marcas','Publica notas web SEO en los cuatro sitios (7 por mes)','Gestiona DMs y comentarios en redes sociales','Monitorea competidores y tendencias del sector']},
   {nombre:'Tebi Rodríguez',iniciales:'TR',color:'#1A2760',colorBg:'#e8eaf3',rol:'Diseño gráfico',
-   tareas:['Produce todas las piezas gráficas del área','Diseña material de campaña, impreso y digital','Trabaja en revistas, folletos y credenciales institucionales','Da soporte a Valentina con los artes para redes'],
-   marcas:['Natural Chef','Aterym','ByB','Boni Pasta']},
+   tareas:['Produce todas las piezas gráficas del área','Diseña material de campaña, impreso y digital','Trabaja en revistas, folletos y credenciales institucionales','Da soporte a Valentina con los artes para redes']},
 ];
 
 const EMPRESAS=[
-  {id:'aterym',
-   nombre:'Aterym Alta Gracia',
-   logoKey:'aterym',
-   color:'#1DB3E8',bg:'#0f2232',textColor:'#e6f7fd',chipColor:'rgba(29,179,232,0.25)',
+  {id:'aterym',nombre:'Aterym Alta Gracia',logoKey:'aterym',
+   color:'#00aeea',bg:'#0f2232',textColor:'#e6f7fd',chipColor:'rgba(0,174,234,0.22)',
    tagline:'Centro de nefrología y hemodiálisis. Único centro acreditado por ITAES en Córdoba. Sede en Alta Gracia.',
    chips:['Nefrología','Hemodiálisis','ITAES 2023–2026','Salud renal'],
    info:[
      {label:'Rubro',val:'Salud · Centro de diálisis'},
      {label:'Dirección médica',val:'Dra. Carolina Nadaya'},
+     {label:'Misión',val:'Hacer nefrología y hemodiálisis jerarquizada, comprometidos con mejorar la calidad de vida del paciente renal'},
+     {label:'Visión',val:'Ser institución de referencia regional en el cuidado personalizado del paciente renal'},
      {label:'Web',val:'aterym.com'},
+     {label:'Dirección',val:'Brasil 151, Alta Gracia'},
      {label:'Instagram',val:'@aterymnefrologia · 2.509 seguidores'},
+     {label:'Tipografía institucional',val:'Inter (Manual de Marca 2026)'},
+     {label:'Color primario',val:'#00aeea · Pantone 115-7 C'},
      {label:'Prioridad digital',val:'Web actualizada · Landing Jornada de Calidad · Notas SEO'},
    ],
    campanas:[
@@ -207,9 +198,7 @@ const EMPRESAS=[
       descripcion:'Campaña conjunta con @laboratoriobyb. Pico de alcance más alto del trimestre: 43.060 visualizaciones y 7.879 cuentas alcanzadas.',
       marcas:['Aterym','ByB']}
    ]},
-  {id:'nc',
-   nombre:'Natural Chef',
-   logoKey:'nc',
+  {id:'nc',nombre:'Natural Chef',logoKey:'nc',
    color:'#1E6B5A',bg:'#0d3329',textColor:'#e8f4f1',chipColor:'rgba(30,107,90,0.35)',
    tagline:'Soluciones gastronómicas Cook & Chill para empresas, hoteles, clínicas y geriátricos en Alta Gracia y la región.',
    chips:['Cook & Chill','B2B','Ultracongelados','BPM'],
@@ -228,9 +217,7 @@ const EMPRESAS=[
       descripcion:'Campaña de posicionamiento del método Cook & Chill como solución operativa para el segmento B2B. Incluye serie educativa, piezas por público y propuesta de difusión paga.',
       marcas:['Natural Chef']}
    ]},
-  {id:'byb',
-   nombre:'ByB Laboratorio',
-   logoKey:'byb',
+  {id:'byb',nombre:'ByB Laboratorio',logoKey:'byb',
    color:'#F5A623',bg:'#1B3A6B',textColor:'#e8edf5',chipColor:'rgba(245,166,35,0.25)',
    tagline:'Laboratorio de análisis clínicos en Alta Gracia. Infraestructura moderna, tecnología de punta y recursos humanos idóneos.',
    chips:['Análisis clínicos','Bioquímica','Obras sociales','Alta Gracia'],
@@ -242,9 +229,7 @@ const EMPRESAS=[
      {label:'Prioridad digital',val:'Sistema de turnos interno · Web pública · Awareness local'},
    ],
    campanas:[]},
-  {id:'boni',
-   nombre:'Boni Pasta',
-   logoKey:'boni',
+  {id:'boni',nombre:'Boni Pasta',logoKey:'boni',
    color:'#C9A227',bg:'#1A2760',textColor:'#f5f0e8',chipColor:'rgba(201,162,39,0.25)',
    tagline:'Il Pastificio. Pastas artesanales frescas: sorrentinos, panzottis, ravioles y pastas ahumadas con leña. Sub-marca de Natural Chef.',
    chips:['Pastas artesanales','Ahumadas','Frescas','Sin conservantes'],
@@ -278,21 +263,19 @@ function renderEquipo(){
       <div class="pc-body">
         <div class="pc-section-lbl">Funciones</div>
         <ul class="pc-tasks">${p.tareas.map(t=>`<li>${t}</li>`).join('')}</ul>
-        <div class="pc-marcas">${p.marcas.map(m=>`<span class="marca-pill">${m}</span>`).join('')}</div>
+        <div style="margin-top:.9rem"><span class="todas-las-empresas">Todas las empresas</span></div>
       </div>
     </div>`).join('');
 }
 
 function renderEmpresas(){
-  // Tabs with logos
   document.getElementById('empresa-tabs').innerHTML=EMPRESAS.map((e,i)=>`
     <button class="emp-tab${i===0?' active':''}"
       style="${i===0?`background:${e.color};border-color:${e.color}`:''}"
-      data-idx="${i}" onclick="setEmpresa(${i},this)">
+      onclick="setEmpresa(${i},this)">
       <img class="emp-tab-logo" src="${LOGOS[e.logoKey]}" alt="${e.nombre}"/>
     </button>`).join('');
 
-  // Panels
   document.getElementById('empresa-panels').innerHTML=EMPRESAS.map((e,i)=>`
     <div id="emp-${e.id}" class="empresa-panel${i===0?' active':''}">
       <div class="emp-hero" style="background:${e.bg};border-color:${e.color}40">
