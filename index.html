@@ -1,657 +1,1907 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Área de Imagen Institucional</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..400&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual de Imagen Institucional · ATERYM Alta Gracia 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --aterym:#00aeea;--aterym-dark:#0f2232;
-  --bg:#f0f4f8;--surface:#fff;--surface2:#e8f6fd;
-  --border:rgba(0,174,234,0.12);--border-mid:rgba(0,174,234,0.22);
-  --text-primary:#0c1e2d;--text-secondary:#3a566d;--text-muted:#868686;
-  --green:#1a7a4a;--green-bg:#e6f5ee;--amber:#b06a00;--amber-bg:#fff3e0;
-}
-html{font-size:16px;scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;font-optical-sizing:auto;background:var(--bg);color:var(--text-primary);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased}
-.topbar{height:3px;background:linear-gradient(90deg,var(--aterym),#0077cc,var(--aterym))}
-header{background:var(--aterym-dark);position:relative;overflow:hidden}
-header::after{content:'';position:absolute;right:-80px;top:-80px;width:360px;height:360px;border-radius:50%;border:1px solid rgba(0,174,234,0.08);pointer-events:none}
-header::before{content:'';position:absolute;right:60px;top:50px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(0,174,234,0.05);pointer-events:none}
-.header-inner{max-width:1200px;margin:0 auto;padding:2.5rem 1.5rem 0;position:relative;z-index:1}
-.header-top{margin-bottom:2rem}
-header h1{font-size:clamp(1.2rem,4vw,1.8rem);font-weight:300;line-height:1.2;color:#fff;letter-spacing:-.01em;margin-bottom:.6rem}
-header h1 strong{font-weight:700;color:var(--aterym)}
-.header-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7;max-width:540px;font-weight:300}
-.header-desc em{color:rgba(0,174,234,0.8);font-style:normal}
-.header-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem}
-.header-pill{background:rgba(0,174,234,0.1);border:1px solid rgba(0,174,234,0.2);color:rgba(168,221,245,0.8);font-size:10px;font-weight:500;padding:3px 10px;border-radius:20px;white-space:nowrap}
-.main-nav{display:flex;overflow-x:auto;position:relative;z-index:2;-webkit-overflow-scrolling:touch}
-.main-nav::-webkit-scrollbar{display:none}
-.nav-btn{padding:13px 20px;font-family:'Inter',sans-serif;font-size:13px;font-weight:400;background:transparent;border:none;border-bottom:2px solid transparent;cursor:pointer;color:rgba(255,255,255,0.4);transition:all .2s;white-space:nowrap;flex-shrink:0}
-.nav-btn:hover{color:rgba(255,255,255,0.8)}
-.nav-btn.active{color:#fff;font-weight:500;border-bottom-color:var(--aterym)}
-.nav-btn.nav-tomas.active{border-bottom-color:#F5A623;color:#F5A623}
-.page-wrap{max-width:1200px;margin:0 auto;padding:2rem 1.5rem 5rem}
-.section-panel{display:none}
-.section-panel.active{display:block;animation:fadeUp .25s ease both}
-@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  :root {
+    --primary: #00aeea;
+    --primary-dark: #0095c9;
+    --primary-soft: #e6f7fd;
+    --gray: #868686;
+    --gray-light: #d4d4d4;
+    --gray-lighter: #f4f4f4;
+    --ink: #1a1a1a;
+    --paper: #fafafa;
+    --white: #ffffff;
+  }
 
-/* EQUIPO */
-.equipo-intro{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
-.equipo-intro p{font-size:14px;color:var(--text-secondary);line-height:1.7}
-.equipo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
-.persona-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:box-shadow .2s,transform .2s}
-.persona-card:hover{box-shadow:0 5px 18px rgba(0,174,234,0.1);transform:translateY(-2px)}
-.pc-top{padding:1.25rem 1.25rem 1rem;display:flex;align-items:flex-start;gap:.875rem}
-.pc-avatar{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;flex-shrink:0}
-.pc-name{font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:2px}
-.pc-rol{font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.07em}
-.pc-divider{height:1px;background:var(--border);margin:0 1.25rem}
-.pc-body{padding:1rem 1.25rem}
-.pc-section-lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:.5rem}
-.pc-tasks{list-style:none;display:flex;flex-direction:column;gap:4px}
-.pc-tasks li{font-size:12.5px;color:var(--text-secondary);display:flex;align-items:flex-start;gap:6px;line-height:1.45}
-.pc-tasks li::before{content:"\2192";color:var(--aterym);font-size:10px;flex-shrink:0;margin-top:3px}
-.todas-tag{display:inline-flex;align-items:center;font-size:10px;font-weight:500;padding:3px 10px;border-radius:20px;background:var(--surface2);color:var(--aterym);border:1px solid rgba(0,174,234,0.2);margin-top:.75rem}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* EMPRESAS */
-.empresa-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem}
-.emp-tab{height:38px;padding:0 18px;background:var(--surface);border:1px solid var(--border-mid);border-radius:21px;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:600;font-family:'Inter',sans-serif;color:var(--text-secondary)}
-.emp-tab:hover{background:var(--surface2);border-color:var(--aterym)}
-.emp-tab.active{color:#fff;border-color:transparent}
-.empresa-panel{display:none}
-.empresa-panel.active{display:block;animation:fadeUp .22s ease both}
-.emp-hero{border-radius:12px;padding:2rem;margin-bottom:1.25rem;border:1px solid transparent}
-.emp-brand-name{font-size:1.6rem;font-weight:700;margin-bottom:1rem;letter-spacing:-.02em}
-.emp-tagline{font-size:14px;max-width:560px;line-height:1.75;margin-bottom:1rem;font-weight:300}
-.emp-chips{display:flex;flex-wrap:wrap;gap:6px}
-.emp-chip{font-size:11px;font-weight:500;padding:3px 12px;border-radius:20px}
-.emp-info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-bottom:1.25rem}
-.emp-info-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem}
-.emp-info-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);margin-bottom:.45rem}
-.emp-info-val{font-size:13.5px;color:var(--text-primary);line-height:1.5}
-.emp-campanas-hdr{display:flex;align-items:center;gap:.75rem;margin:1.75rem 0 1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border-mid)}
-.emp-campanas-hdr h3{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--aterym-dark)}
-.emp-campanas-hdr span{font-size:12px;color:var(--text-muted)}
-.feed-cards{display:flex;flex-direction:column;gap:.75rem}
-.feed-card{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--aterym);border-radius:0 10px 10px 0;padding:1.25rem 1.5rem;transition:box-shadow .2s}
-.feed-card:hover{box-shadow:0 4px 14px rgba(0,174,234,0.1)}
-.feed-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;margin-bottom:.75rem;flex-wrap:wrap}
-.feed-card-titulo{font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:3px}
-.feed-card-fecha{font-size:12px;color:var(--text-muted)}
-.feed-card-desc{font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:.75rem}
-.feed-card-meta{display:flex;flex-direction:column;gap:4px;margin-bottom:.75rem}
-.feed-meta-row{display:flex;gap:.5rem;font-size:12px;flex-wrap:wrap}
-.feed-meta-key{color:var(--text-muted);font-weight:500;min-width:68px}
-.feed-meta-val{color:var(--text-secondary)}
-.cc-badge{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0}
-.badge-done{background:var(--green-bg);color:var(--green)}
-.badge-progress{background:var(--amber-bg);color:var(--amber)}
-.badge-planned{background:#f0eaf8;color:#5a3e8a}
-.cc-brands{display:flex;gap:6px;flex-wrap:wrap}
-.brand-pill{font-size:11px;font-weight:500;padding:3px 9px;border-radius:20px;background:rgba(0,174,234,0.08);color:var(--aterym-dark)}
-.camp-empty{padding:1.75rem;text-align:center;color:var(--text-muted);font-size:13px;background:var(--surface);border:1px dashed var(--border-mid);border-radius:10px}
+  html { scroll-behavior: smooth; }
 
-/* PLANNING GENERAL */
-.planning-header{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1.75rem;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.planning-period{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--aterym);margin-bottom:.3rem}
-.planning-desc{font-size:13px;color:var(--text-secondary);line-height:1.6}
-.planning-legend{display:flex;gap:.875rem;align-items:center;flex-wrap:wrap;flex-shrink:0}
-.leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text-muted)}
-.leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-.planning-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
-.plan-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
-.plan-card-top{padding:1.1rem 1.25rem;display:flex;align-items:center;gap:.875rem;border-bottom:1px solid var(--border)}
-.plan-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0}
-.plan-name{font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:1px}
-.plan-rol{font-size:10px;color:var(--text-muted)}
-.plan-pct{font-size:17px;font-weight:300;margin-left:auto;flex-shrink:0}
-.plan-progress-bar{height:3px;background:var(--border-mid)}
-.plan-progress-fill{height:100%;transition:width .35s ease}
-.plan-body{padding:.875rem 1.25rem;flex:1}
-.plan-fase-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);margin:1rem 0 .4rem;display:flex;align-items:center;gap:.5rem}
-.plan-fase-label::after{content:'';flex:1;height:1px;background:var(--border)}
-.plan-fase-label.first{margin-top:0}
-.plan-task{display:flex;align-items:flex-start;gap:.6rem;padding:.5rem .25rem;border-bottom:1px solid var(--border);cursor:pointer;border-radius:4px;transition:background .12s}
-.plan-task:last-child{border-bottom:none}
-.plan-task:hover{background:var(--bg)}
-.plan-check{width:17px;height:17px;border-radius:3px;border:1.5px solid var(--border-mid);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:9px;transition:all .18s}
-.plan-check.done{background:#1a7a4a;border-color:#1a7a4a;color:#fff}
-.plan-task-body{flex:1;min-width:0}
-.plan-task-title{font-size:12.5px;font-weight:500;color:var(--text-primary);line-height:1.35}
-.plan-task-title.struck{text-decoration:line-through;color:var(--text-muted);font-weight:400}
-.plan-task-meta{display:flex;align-items:center;gap:.4rem;margin-top:3px;flex-wrap:wrap}
-.plan-deadline{font-size:10px;color:var(--text-muted)}
-.plan-marca-tag{font-size:9px;font-weight:600;padding:1px 7px;border-radius:10px}
-.plan-stats{display:flex;justify-content:space-between;align-items:center;padding:.625rem 1.25rem;background:var(--bg);border-top:1px solid var(--border);font-size:11.5px;color:var(--text-muted)}
-.plan-stats strong{color:var(--text-primary);font-weight:600}
+  body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    font-feature-settings: "ss01", "cv11";
+  }
 
-/* ─── TAREAS TOMÁS FERNÁNDEZ ─────────────────────────────── */
-.tomas-hero{background:#0f2232;border-radius:14px;padding:1.75rem 2rem;margin-bottom:1.75rem;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1.25rem}
-.tomas-hero-left{}
-.tomas-hero-eyebrow{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,166,35,.7);margin-bottom:.4rem}
-.tomas-hero-name{font-size:1.5rem;font-weight:300;color:#fff;letter-spacing:-.01em;margin-bottom:.25rem}
-.tomas-hero-name strong{font-weight:700;color:#F5A623}
-.tomas-hero-sub{font-size:12px;color:rgba(255,255,255,.38);margin-bottom:1.1rem}
-.tomas-prog-label{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.35);margin-bottom:.4rem}
-.tomas-prog-track{width:260px;max-width:100%;height:4px;background:rgba(255,255,255,.1);border-radius:4px;overflow:hidden}
-.tomas-prog-fill{height:100%;background:linear-gradient(90deg,#F5A623,#f5d06a);border-radius:4px;transition:width .4s ease}
-.tomas-hero-stats{display:flex;gap:.75rem;flex-wrap:wrap;align-self:center}
-.t-stat{background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.2);border-radius:10px;padding:.65rem 1rem;text-align:center;min-width:72px}
-.t-stat-n{font-size:1.4rem;font-weight:300;color:#F5A623;line-height:1}
-.t-stat-l{font-size:10px;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
+  /* ============= TIPOGRAFÍA ============= */
+  .display {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
 
-.tomas-brand-block{margin-bottom:1.75rem}
-.tomas-brand-hdr{display:flex;align-items:center;gap:.6rem;margin-bottom:.875rem;padding-bottom:.6rem;border-bottom:2px solid}
-.tomas-brand-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.tomas-brand-count{font-size:11px;color:var(--text-muted);margin-left:auto}
+  h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.02em; }
 
-.tomas-phase-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;color:var(--text-muted);margin:.875rem 0 .4rem;display:flex;align-items:center;gap:.5rem}
-.tomas-phase-label::after{content:'';flex:1;height:1px;background:var(--border)}
-.tomas-phase-label.first{margin-top:0}
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
 
-.tomas-task{display:flex;align-items:flex-start;gap:.75rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.875rem 1rem;margin-bottom:.5rem;cursor:pointer;transition:all .15s}
-.tomas-task:hover{border-color:var(--border-mid);box-shadow:0 2px 8px rgba(0,0,0,.05)}
-.tomas-task.t-done{opacity:.5}
-.t-check{width:20px;height:20px;border-radius:5px;border:1.5px solid #d0d8e0;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;transition:all .18s;color:transparent}
-.t-check.done{background:#1a7a4a;border-color:#1a7a4a;color:#fff}
-.t-body{flex:1;min-width:0}
-.t-title{font-size:13.5px;font-weight:500;color:var(--text-primary);line-height:1.4;margin-bottom:.3rem}
-.t-title.struck{text-decoration:line-through;color:var(--text-muted);font-weight:400}
-.t-meta{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
-.t-dl{font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;white-space:nowrap}
-.t-dl.urgent{background:#fff0e6;color:#c05000;border:1px solid #f0b890}
-.t-dl.normal{background:#f0f4f8;color:var(--text-muted);border:1px solid #e0e5ea}
-.t-dl.ongoing{background:#f0f8f0;color:#2a7a2a;border:1px solid #a8d8a8}
-.t-pend{font-size:10px;padding:2px 7px;border-radius:6px;background:#fff9e6;color:#997700;border:1px solid #f0d870;font-weight:500}
+  /* ============= LAYOUT ============= */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
 
-/* FOOTER */
-.footer-topbar{height:2px;background:linear-gradient(90deg,var(--aterym),#0077cc)}
-footer{background:var(--aterym-dark)}
-.footer-inner{max-width:1200px;margin:0 auto;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
-footer p{font-size:11px;color:rgba(255,255,255,0.32)}
-footer p strong{color:rgba(255,255,255,0.55);font-weight:500}
+  section {
+    padding: 6rem 0;
+    position: relative;
+  }
 
-@media(max-width:600px){
-  .header-inner{padding:1.75rem 1rem 0}
-  .page-wrap{padding:1.25rem 1rem 4rem}
-  .nav-btn{padding:11px 13px;font-size:12px}
-  .equipo-grid,.planning-grid{grid-template-columns:1fr}
-  .emp-hero{padding:1.25rem}
-  .emp-info-grid{grid-template-columns:1fr 1fr}
-  .empresa-tabs{gap:6px}
-  .planning-header{flex-direction:column}
-  .tomas-hero{flex-direction:column}
-  .tomas-prog-track{width:100%}
-}
-@media(min-width:601px) and (max-width:900px){
-  .equipo-grid{grid-template-columns:repeat(2,1fr)}
-  .planning-grid{grid-template-columns:repeat(2,1fr)}
-}
+  section + section { border-top: 1px solid var(--gray-light); }
+
+  /* ============= NAV ============= */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(250, 250, 250, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(134, 134, 134, 0.15);
+  }
+
+  nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+
+  .nav-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--primary); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--primary); }
+
+  /* ============= HERO ============= */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 8rem 0 4rem;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(0, 174, 234, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: end;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 0.95;
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--primary);
+    font-weight: 300;
+  }
+
+  .hero-meta {
+    padding-bottom: 0.5rem;
+  }
+
+  .hero-meta-item {
+    padding: 1rem 0;
+    border-top: 1px solid var(--gray-light);
+  }
+  .hero-meta-item:last-child { border-bottom: 1px solid var(--gray-light); }
+
+  .hero-meta-item .label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-meta-item .value {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+
+  .hero-logo-preview {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .hero-logo-preview img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+  }
+
+  /* ============= ÍNDICE ============= */
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--gray-light);
+    border: 1px solid var(--gray-light);
+    margin-top: 3rem;
+  }
+
+  .toc-item {
+    background: var(--paper);
+    padding: 2.5rem 2rem;
+    text-decoration: none;
+    color: var(--ink);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+  }
+
+  .toc-item:hover {
+    background: var(--white);
+    transform: translateY(-2px);
+  }
+
+  .toc-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.75rem;
+    font-weight: 300;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+  }
+
+  .toc-item h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .toc-item p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: auto;
+  }
+
+  /* ============= SECTION HEADER ============= */
+  .section-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3rem;
+    align-items: baseline;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .section-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--gray);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.05em;
+  }
+
+  .section-head h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+  }
+
+  /* ============= INTRO ============= */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .intro-text p {
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+
+  .pull-quote {
+    padding: 3rem;
+    background: var(--white);
+    border-left: 3px solid var(--primary);
+    position: relative;
+  }
+
+  .pull-quote .quote-mark {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 5rem;
+    line-height: 0.5;
+    color: var(--primary);
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+  }
+
+  .pull-quote p {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.45;
+    padding-top: 2rem;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .pull-quote footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--gray-light);
+    font-size: 0.85rem;
+    color: var(--gray);
+    letter-spacing: 0.05em;
+  }
+
+  /* ============= MISIÓN / VISIÓN / VALORES ============= */
+  .mvv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .mvv-card {
+    background: var(--white);
+    padding: 3rem 2.5rem;
+    border-top: 4px solid var(--primary);
+    transition: transform 0.3s;
+  }
+
+  .mvv-card:hover { transform: translateY(-4px); }
+
+  .mvv-card.gray-accent { border-top-color: var(--gray); }
+
+  .mvv-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+  }
+
+  .mvv-card p { color: #333; font-size: 0.95rem; }
+
+  .mvv-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .mvv-card li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--gray-lighter);
+    font-size: 0.95rem;
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .mvv-card li:last-child { border-bottom: none; }
+
+  .mvv-card li::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+    margin-top: 0.6rem;
+    flex-shrink: 0;
+  }
+
+  /* ============= LOGO VERSIONS ============= */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .logo-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    overflow: hidden;
+  }
+
+  .logo-card .logo-display {
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 320px;
+    background: var(--white);
+  }
+
+  .logo-card .logo-display.dark {
+    background: var(--ink);
+  }
+
+  .logo-card .logo-display.primary-bg {
+    background: var(--primary);
+  }
+
+  .logo-card .logo-display.gray-bg {
+    background: var(--gray);
+  }
+
+  .logo-card .logo-display img {
+    max-width: 90%;
+    max-height: 240px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .logo-card .logo-display.grayscale img {
+    filter: grayscale(100%);
+  }
+
+  .logo-card .logo-meta {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--gray-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-card .logo-meta h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .logo-card .logo-meta p {
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-top: 0.25rem;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    background: var(--primary-soft);
+    color: var(--primary-dark);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ============= 25 AÑOS ============= */
+  .anniversary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: 5rem 0;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .anniversary::before {
+    content: '25';
+    position: absolute;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 40rem;
+    line-height: 0.8;
+    right: -3rem;
+    bottom: -8rem;
+    color: rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+    letter-spacing: -0.05em;
+  }
+
+  .anniversary .container { position: relative; z-index: 1; }
+
+  .anniversary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .anniversary .eyebrow { color: rgba(255,255,255,0.8); }
+
+  .anniversary h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    line-height: 1.05;
+    margin: 1rem 0 1.5rem;
+    letter-spacing: -0.035em;
+  }
+
+  .anniversary p {
+    opacity: 0.9;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+  }
+
+  .anniversary-logos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .anniversary-logos .logo-box {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .anniversary-logos .logo-box.dark {
+    background: var(--ink);
+  }
+
+  .anniversary-logos img {
+    max-width: 95%;
+    max-height: 180px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .anniversary-logos .logo-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-top: 0.75rem;
+    text-align: center;
+  }
+
+  .anniversary-logo-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ============= DON'TS ============= */
+  .donts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .dont-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    padding: 2rem;
+    position: relative;
+  }
+
+  .dont-card::before {
+    content: '✕';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 28px;
+    height: 28px;
+    background: #ff4444;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .dont-preview {
+    background: var(--gray-lighter);
+    height: 120px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .dont-preview img { max-width: 60%; max-height: 80%; object-fit: contain; }
+  .dont-preview.tilted img { transform: rotate(12deg); }
+  .dont-preview.stretched img { transform: scaleX(1.5); }
+  .dont-preview.bad-bg { background: repeating-linear-gradient(45deg, #d4d4d4, #d4d4d4 10px, #a0a0a0 10px, #a0a0a0 20px); }
+  .dont-preview.wrong-color img { filter: hue-rotate(180deg) saturate(2); }
+
+  .dont-card h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .dont-card p {
+    font-size: 0.85rem;
+    color: var(--gray);
+  }
+
+  /* ============= PALETA DE COLORES ============= */
+  .color-intro {
+    max-width: 620px;
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 4rem;
+  }
+
+  .color-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .color-card {
+    border: 1px solid var(--gray-light);
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  .color-swatch {
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .color-swatch.primary { background: var(--primary); }
+  .color-swatch.gray { background: var(--gray); }
+
+  .color-swatch .hex-large {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 2.75rem;
+    color: var(--white);
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .color-swatch::before {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+  }
+
+  .color-swatch.primary::after,
+  .color-swatch.gray::after {
+    content: attr(data-label);
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .color-data {
+    padding: 2rem;
+  }
+
+  .color-data h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.35rem;
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.02em;
+  }
+
+  .color-data > p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+  }
+
+  .color-codes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--gray-light);
+    border: 1px solid var(--gray-light);
+  }
+
+  .color-codes > div {
+    background: var(--white);
+    padding: 1rem;
+  }
+
+  .color-codes .code-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 0.25rem;
+  }
+
+  .color-codes .code-value {
+    font-family: 'Inter', monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* ============= TIPOGRAFÍA ============= */
+  .type-showcase {
+    background: var(--white);
+    padding: 4rem 3rem;
+    border: 1px solid var(--gray-light);
+  }
+
+  .type-sample {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(4rem, 12vw, 9rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+  }
+
+  .type-sample em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--primary);
+  }
+
+  .type-alphabet {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    color: var(--gray);
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-light);
+    word-break: break-all;
+  }
+
+  .type-weights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .weight-sample {
+    padding: 2rem 1.5rem;
+    background: var(--paper);
+  }
+
+  .weight-sample .glyph {
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    color: var(--ink);
+  }
+
+  .weight-sample .weight-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .weight-sample.w300 .glyph { font-weight: 300; }
+  .weight-sample.w400 .glyph { font-weight: 400; }
+  .weight-sample.w500 .glyph { font-weight: 500; }
+  .weight-sample.w700 .glyph { font-weight: 700; }
+
+  .type-downloads {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  /* ============= BUTTONS / LINKS ============= */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .btn:hover {
+    background: var(--ink);
+    color: var(--white);
+    border-color: var(--ink);
+  }
+
+  .btn.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+  }
+
+  .btn.btn-primary:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+  }
+
+  .btn .arrow {
+    transition: transform 0.2s;
+  }
+
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  /* ============= RECURSOS ============= */
+  .resources-intro {
+    max-width: 680px;
+    color: #444;
+    margin-bottom: 3rem;
+    font-size: 1.05rem;
+  }
+
+  .resources-cat {
+    margin-bottom: 3rem;
+  }
+
+  .resources-cat h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    letter-spacing: -0.02em;
+  }
+
+  .resources-cat h3 .count {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--gray);
+  }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .resource-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    padding: 2rem;
+    text-decoration: none;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .resource-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .resource-card:hover::after { transform: scaleX(1); }
+  .resource-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+
+  .resource-card .cat-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .resource-card h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .resource-card p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+
+  .resource-card .specs {
+    font-size: 0.75rem;
+    color: var(--gray);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--gray-light);
+    margin-bottom: 1.5rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .resource-card .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  .resource-card .open-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .resource-card .platform-tag {
+    font-size: 0.7rem;
+    color: var(--gray);
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--gray-light);
+    border-radius: 2px;
+  }
+
+  /* ============= ZONA DE PROTECCIÓN ============= */
+  .protection-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .protection-demo {
+    background: var(--white);
+    padding: 3rem;
+    border: 1px solid var(--gray-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    position: relative;
+  }
+
+  .protection-visual {
+    position: relative;
+    display: inline-block;
+  }
+
+  .protection-visual img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .protection-visual .protection-box {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    right: -30px;
+    bottom: -30px;
+    border: 1px dashed var(--primary);
+    z-index: 1;
+  }
+
+  .protection-visual .measure {
+    position: absolute;
+    font-size: 0.7rem;
+    color: var(--primary);
+    font-weight: 600;
+    background: var(--white);
+    padding: 0 0.4rem;
+  }
+
+  .measure-top { top: -40px; left: 50%; transform: translateX(-50%); }
+  .measure-left { left: -50px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+
+  .protection-text p {
+    margin-bottom: 1.25rem;
+    color: #333;
+  }
+
+  .formula-box {
+    background: var(--primary-soft);
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+    border-left: 3px solid var(--primary);
+  }
+
+  .formula-box .formula {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .formula-box p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin: 0;
+  }
+
+  /* ============= PROPORCIONES ============= */
+  .proportions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .proportion-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .proportion-card .min-logo {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    margin-bottom: 2rem;
+  }
+
+  .proportion-card .min-logo img {
+    max-height: 160px;
+    max-width: 85%;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .proportion-card h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .proportion-card .size {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary);
+    font-weight: 300;
+    margin: 0.5rem 0;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .proportion-card p { font-size: 0.85rem; color: var(--gray); }
+
+  /* ============= FOOTER ============= */
+  footer.site-footer {
+    background: var(--ink);
+    color: var(--white);
+    padding: 5rem 0 2rem;
+  }
+
+  footer .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  footer h4 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1.5rem;
+  }
+
+  footer .brand {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.035em;
+  }
+
+  footer .brand span { color: var(--primary); }
+
+  footer .tagline {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.1rem;
+    max-width: 320px;
+    opacity: 0.7;
+    letter-spacing: -0.01em;
+  }
+
+  footer ul { list-style: none; }
+
+  footer ul li { padding: 0.3rem 0; }
+
+  footer a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+
+  footer a:hover { color: var(--primary); }
+
+  footer .contact-item {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    padding: 0.3rem 0;
+  }
+
+  footer .footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.8rem;
+    opacity: 0.5;
+  }
+
+  /* ============= RESPONSIVE ============= */
+  @media (max-width: 900px) {
+    .container { padding: 0 1.25rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.7rem; }
+    .hero-grid,
+    .intro-grid,
+    .mvv-grid,
+    .logo-grid,
+    .color-grid,
+    .protection-grid,
+    .anniversary-grid,
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .toc-grid,
+    .donts-grid,
+    .resources-grid,
+    .proportions-grid,
+    .type-weights,
+    .type-downloads { grid-template-columns: 1fr; }
+    .hero-logo-preview { grid-template-columns: 1fr; }
+    .section-head { grid-template-columns: 1fr; gap: 0.5rem; }
+    section { padding: 4rem 0; }
+    .pull-quote { padding: 2rem; }
+    .pull-quote p { font-size: 1.2rem; }
+    .type-showcase { padding: 2rem 1.5rem; }
+    .anniversary::before { font-size: 20rem; }
+  }
+
+  /* Animations on scroll */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 </style>
 </head>
 <body>
-<div class="topbar"></div>
-<header>
-  <div class="header-inner">
-    <div class="header-top">
-      <h1><strong>Área de Imagen Institucional</strong></h1>
-      <p class="header-desc">Coordinamos la <em>identidad visual y la comunicación</em> del grupo empresario para que cada marca proyecte, con consistencia, quiénes somos y cómo queremos ser reconocidos.</p>
-      <div class="header-pills">
-        <span class="header-pill">Portal interno</span>
-        <span class="header-pill">Alta Gracia, Córdoba</span>
-        <span class="header-pill">4 marcas</span>
-        <span class="header-pill">5 integrantes</span>
+
+<!-- ============= NAV ============= -->
+<nav>
+  <div class="container">
+    <a href="#top" class="nav-logo">ATERYM<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#intro">01 Intro</a></li>
+      <li><a href="#institucional">02 Institucional</a></li>
+      <li><a href="#identidad">03 Identidad</a></li>
+      <li><a href="#colores">04 Color</a></li>
+      <li><a href="#tipografia">05 Tipografía</a></li>
+      <li><a href="#recursos">06 Recursos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============= HERO ============= -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow" style="margin-bottom: 2rem;">Manual de Imagen Institucional · Edición 2026</div>
+        <h1 class="display">Una identidad <em>que cuida</em>, como lo hacemos nosotros.</h1>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <div class="label">Institución</div>
+          <div class="value">ATERYM Alta Gracia</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="label">Edición</div>
+          <div class="value">2026 · v1.0</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="label">Responsable</div>
+          <div class="value">Área de Imagen Institucional</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="label">Aniversario</div>
+          <div class="value">25 años de trayectoria</div>
+        </div>
       </div>
     </div>
-    <nav class="main-nav">
-      <button class="nav-btn active" onclick="setSection('equipo',this)">Equipo</button>
-      <button class="nav-btn" onclick="setSection('empresas',this)">Empresas</button>
-      <button class="nav-btn" onclick="setSection('planning',this)">Planificación</button>
-      <button class="nav-btn nav-tomas" onclick="setSection('tomas',this)">⚙ Tareas Tomás Fernández</button>
-    </nav>
-  </div>
-</header>
 
-<div class="page-wrap">
-
-<!-- EQUIPO -->
-<div id="sec-equipo" class="section-panel active">
-  <div class="equipo-intro"><p>El área coordina la comunicación y presencia digital de las cuatro marcas. Para poder lograrlo, cada integrante tiene un rol definido.</p></div>
-  <div class="equipo-grid" id="equipo-grid"></div>
-</div>
-
-<!-- EMPRESAS -->
-<div id="sec-empresas" class="section-panel">
-  <div class="empresa-tabs" id="empresa-tabs"></div>
-  <div id="empresa-panels"></div>
-</div>
-
-<!-- PLANNING GENERAL -->
-<div id="sec-planning" class="section-panel">
-  <div class="planning-header">
-    <div>
-      <div class="planning-period">13 abril — 15 junio 2026</div>
-      <div class="planning-desc">Tareas y deadlines por integrante. Tocá una tarea para marcarla completada.</div>
-    </div>
-    <div class="planning-legend">
-      <span class="leg-item"><span class="leg-dot" style="background:#1a7a4a"></span>Completada</span>
-      <span class="leg-item"><span class="leg-dot" style="background:var(--aterym)"></span>En curso</span>
-      <span class="leg-item"><span class="leg-dot" style="background:#5a3e8a"></span>Pendiente</span>
+    <div class="hero-logo-preview">
+      <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Logo ATERYM Alta Gracia" onerror="this.style.display='none'">
+      <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(3).png" alt="Logo 25 años ATERYM" onerror="this.style.display='none'">
     </div>
   </div>
-  <div class="planning-grid" id="planning-grid"></div>
-</div>
+</section>
 
-<!-- TAREAS TOMÁS FERNÁNDEZ -->
-<div id="sec-tomas" class="section-panel">
-  <div class="tomas-hero">
-    <div class="tomas-hero-left">
-      <div class="tomas-hero-eyebrow">Ala Digital · Planificación técnica</div>
-      <div class="tomas-hero-name"><strong>Tomás Fernández</strong></div>
-      <div class="tomas-hero-sub">13 de abril al 30 de junio de 2026 · 4 marcas</div>
-      <div class="tomas-prog-label">
-        <span>Progreso general</span><span id="tf-pct-lbl">0%</span>
+<!-- ============= ÍNDICE ============= -->
+<section id="indice">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">00 — Índice</div>
+      <h2>Qué vas a encontrar</h2>
+    </div>
+
+    <div class="toc-grid">
+      <a href="#intro" class="toc-item">
+        <div class="toc-number">01</div>
+        <h3>Introducción</h3>
+        <p>Objetivo, importancia de la identidad visual y alcance del documento.</p>
+      </a>
+      <a href="#institucional" class="toc-item">
+        <div class="toc-number">02</div>
+        <h3>Institucional</h3>
+        <p>Misión, visión y valores que sostienen el trabajo cotidiano.</p>
+      </a>
+      <a href="#identidad" class="toc-item">
+        <div class="toc-number">03</div>
+        <h3>Identidad Visual</h3>
+        <p>Isologotipo, versiones, zona de protección, proporciones y usos incorrectos.</p>
+      </a>
+      <a href="#colores" class="toc-item">
+        <div class="toc-number">04</div>
+        <h3>Paleta de Colores</h3>
+        <p>Colores institucionales primarios y códigos en Pantone / CMYK / RGB / HEX.</p>
+      </a>
+      <a href="#tipografia" class="toc-item">
+        <div class="toc-number">05</div>
+        <h3>Tipografía</h3>
+        <p>Inter como tipografía corporativa. Pesos, estilos y descargas.</p>
+      </a>
+      <a href="#recursos" class="toc-item">
+        <div class="toc-number">06</div>
+        <h3>Recursos Descargables</h3>
+        <p>Archivos editables y plantillas listas para usar.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============= INTRODUCCIÓN ============= -->
+<section id="intro">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">01 — Introducción</div>
+      <h2>Cuidar la imagen es cuidar a quienes confían.</h2>
+    </div>
+
+    <div class="intro-grid">
+      <div class="intro-text">
+        <p>Queremos llevar la identidad de Aterym Alta Gracia tan lejos como lleguen nuestros valores: hacia cada paciente, familia y persona que forma parte del sistema de salud. Imaginamos una institución en la que sus elementos visuales hablen con la misma voz: clara, profesional y coherente con nuestro compromiso con la calidad.</p>
+        <p>Este manual nace de la necesidad de consolidar una identidad visual fuerte, ordenada y estandarizada. Una identidad que acompañe el crecimiento sostenido de Aterym Alta Gracia, y que esté a la altura de los procesos de calidad que venimos construyendo desde hace más de una década.</p>
+        <p>En una organización donde se trabaja con personas, para personas, la comunicación debe ser la norma. Una forma concreta de cuidar. Por eso, esta herramienta busca proponer un marco común que nos permita proyectar, con consistencia, quiénes somos y cómo queremos que nos reconozcan.</p>
+        <p>Este documento es una guía accesible y aplicable para todos los equipos que comunican, diseñan, imprimen o transmiten la imagen institucional.</p>
       </div>
-      <div class="tomas-prog-track">
-        <div class="tomas-prog-fill" id="tf-prog" style="width:0%"></div>
+      <div class="pull-quote">
+        <div class="quote-mark">"</div>
+        <p>Escuchar con humildad, ser de verdad y transmitir con coherencia.</p>
+        <footer>Área de Imagen Institucional · ATERYM Alta Gracia</footer>
       </div>
     </div>
-    <div class="tomas-hero-stats">
-      <div class="t-stat"><div class="t-stat-n" id="tf-total">0</div><div class="t-stat-l">Total</div></div>
-      <div class="t-stat"><div class="t-stat-n" id="tf-done">0</div><div class="t-stat-l">Listas</div></div>
-      <div class="t-stat"><div class="t-stat-n" id="tf-pend">0</div><div class="t-stat-l">Pendientes</div></div>
-      <div class="t-stat"><div class="t-stat-n" id="tf-urg">0</div><div class="t-stat-l">Urgentes</div></div>
+  </div>
+</section>
+
+<!-- ============= INSTITUCIONAL ============= -->
+<section id="institucional" style="background: var(--gray-lighter);">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">02 — Institucional</div>
+      <h2>Quiénes somos antes de cómo nos vemos.</h2>
+    </div>
+
+    <div class="mvv-grid">
+      <div class="mvv-card">
+        <div class="eyebrow">01 / Misión</div>
+        <h3>Nuestra misión</h3>
+        <p>Porque sabemos sobre el cuidado del paciente renal y estamos comprometidos en mejorar su calidad de vida, hacemos nefrología y hemodiálisis jerarquizada.</p>
+      </div>
+
+      <div class="mvv-card">
+        <div class="eyebrow">02 / Visión</div>
+        <h3>Nuestra visión</h3>
+        <p>Ser reconocidos, en el ámbito regional, como una institución de referencia en el cuidado personalizado del paciente renal, que pone énfasis en la prevención y en la educación continua, que dispone de recursos humanos y tecnológicos adecuados y que respeta la dignidad de las personas.</p>
+      </div>
+
+      <div class="mvv-card gray-accent">
+        <div class="eyebrow" style="color: var(--gray);">03 / Valores</div>
+        <h3>Lo que nos guía</h3>
+        <ul>
+          <li>Ética profesional en todas nuestras acciones.</li>
+          <li>Compromiso con la salud y el bienestar del paciente.</li>
+          <li>Transparencia y responsabilidad.</li>
+          <li>Creatividad, trabajando en equipo creamos nuevas oportunidades de mejora.</li>
+        </ul>
+      </div>
     </div>
   </div>
-  <div id="tomas-board"></div>
-</div>
+</section>
 
-</div><!-- /page-wrap -->
+<!-- ============= IDENTIDAD VISUAL ============= -->
+<section id="identidad">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">03 — Identidad Visual</div>
+      <h2>El isologotipo es el elemento clave.</h2>
+    </div>
 
-<div class="footer-topbar"></div>
-<footer>
-  <div class="footer-inner">
-    <p><strong>Aterym Alta Gracia</strong> · Área de Imagen Institucional</p>
-    <p id="footer-date"></p>
+    <p style="max-width: 680px; color: #333; font-size: 1.05rem; margin-bottom: 4rem;">Es una combinación del símbolo y el nombre de nuestra empresa que tienen una relación fija que nunca debe ser cambiada de ninguna manera. Este es el elemento visual primario que nos identifica.</p>
+
+    <!-- VERSIONES DEL LOGO -->
+    <div class="eyebrow" style="margin-bottom: 1rem;">Versión principal y versiones alternativas</div>
+
+    <div class="logo-grid">
+      <!-- Principal color vertical -->
+      <div class="logo-card">
+        <div class="logo-display">
+          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Versión principal vertical">
+        </div>
+        <div class="logo-meta">
+          <div>
+            <h4>Versión principal · Vertical</h4>
+            <p>Color · Uso prioritario</p>
+          </div>
+          <span class="badge">Principal</span>
+        </div>
+      </div>
+
+      <!-- Principal color horizontal -->
+      <div class="logo-card">
+        <div class="logo-display">
+          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorhorizonta%C3%B1" alt="Versión principal horizontal">
+        </div>
+        <div class="logo-meta">
+          <div>
+            <h4>Versión principal · Horizontal</h4>
+            <p>Color · Formatos apaisados</p>
+          </div>
+          <span class="badge">Principal</span>
+        </div>
+      </div>
+
+      <!-- Escala de grises -->
+      <div class="logo-card">
+        <div class="logo-display grayscale">
+          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Versión escala de grises">
+        </div>
+        <div class="logo-meta">
+          <div>
+            <h4>Versión escala de grises</h4>
+            <p>Impresión a una tinta, conservando degradados del isotipo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Positivo sobre claro -->
+      <div class="logo-card">
+        <div class="logo-display">
+          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Versión positivo">
+        </div>
+        <div class="logo-meta">
+          <div>
+            <h4>Versión positivo</h4>
+            <p>Se utiliza sobre fondos de color claro.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Negativo sobre oscuro -->
+      <div class="logo-card">
+        <div class="logo-display dark">
+          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciablancovertical.png" alt="Versión negativo">
+        </div>
+        <div class="logo-meta">
+          <div>
+            <h4>Versión negativo</h4>
+            <p>Se utiliza sobre fondos de color oscuro.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Negativo sobre primario -->
+      <div class="logo-card">
+        <div class="logo-display primary-bg">
+          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciablancovertical.png" alt="Versión sobre color institucional">
+        </div>
+        <div class="logo-meta">
+          <div>
+            <h4>Sobre color institucional</h4>
+            <p>Versión en blanco sobre el color primario.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ZONA DE PROTECCIÓN -->
+    <div class="eyebrow" style="margin: 5rem 0 1rem;">Zona de protección</div>
+    <div class="protection-grid">
+      <div class="protection-demo">
+        <div class="protection-visual">
+          <div class="protection-box"></div>
+          <span class="measure measure-top">X / 2</span>
+          <span class="measure measure-left">X / 2</span>
+          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Zona de protección">
+        </div>
+      </div>
+      <div class="protection-text">
+        <p>Es importante mantener las marcas corporativas libres de cualquier otro elemento gráfico. Para regular esto, se ha establecido una zona de exclusión alrededor de la marca corporativa.</p>
+        <p>Esta zona de exclusión indica la proximidad máxima que cualquier otro elemento gráfico o mensaje tendrá al ser colocado en relación con el isologotipo de nuestra empresa. Tienen una relación fija que nunca debe violarse.</p>
+        <div class="formula-box">
+          <div class="formula">Área de protección = Altura / 2</div>
+          <p>Tomá la altura del logotipo y dividila por la mitad. Ningún elemento gráfico debe invadir esta zona.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROPORCIONES MÍNIMAS -->
+    <div class="eyebrow" style="margin: 5rem 0 1rem;">Proporciones mínimas de uso</div>
+    <p style="max-width: 680px; color: #444; margin-bottom: 1.5rem;">Para imprimir es importante mantener legible y reproducible la marca. Respetá las dimensiones mínimas según la orientación utilizada.</p>
+
+    <div class="proportions-grid">
+      <div class="proportion-card">
+        <div class="min-logo">
+          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Mínimo vertical">
+        </div>
+        <h4>Versión vertical</h4>
+        <div class="size">2 cm</div>
+        <p>Altura mínima para mantener legibilidad en impresión.</p>
+      </div>
+      <div class="proportion-card">
+        <div class="min-logo">
+          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorhorizonta%C3%B1" alt="Mínimo horizontal">
+        </div>
+        <h4>Versión horizontal</h4>
+        <div class="size">1,2 cm</div>
+        <p>Altura mínima recomendada en orientación apaisada.</p>
+      </div>
+    </div>
+
+    <!-- 25 AÑOS -->
+    <div class="anniversary">
+      <div class="container">
+        <div class="anniversary-grid">
+          <div>
+            <div class="eyebrow">Edición especial aniversario</div>
+            <h3>25 años <em style="font-style: italic;">cuidando</em> con excelencia.</h3>
+            <p>Esta versión conmemorativa del isologotipo celebra 25 años de trayectoria de Aterym Alta Gracia. Su uso se reserva para piezas institucionales seleccionadas durante el año aniversario, manteniendo siempre la zona de protección y las proporciones definidas para la versión principal.</p>
+          </div>
+          <div class="anniversary-logos">
+            <div class="anniversary-logo-wrap">
+              <div class="logo-box">
+                <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(3).png" alt="Logo 25 años versión principal">
+              </div>
+              <div class="logo-label" style="color: rgba(255,255,255,0.7);">Versión principal</div>
+            </div>
+            <div class="anniversary-logo-wrap">
+              <div class="logo-box">
+                <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(3).png" alt="Logo 25 años escala de grises" style="filter: grayscale(100%);">
+              </div>
+              <div class="logo-label" style="color: rgba(255,255,255,0.7);">Versión escala de grises</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- USOS INCORRECTOS -->
+    <div class="eyebrow" style="margin: 5rem 0 1rem;">Usos incorrectos</div>
+    <p style="max-width: 680px; color: #444; margin-bottom: 1.5rem;">Para preservar la integridad del isologotipo, evitá estas modificaciones. Ninguna intervención al logo está permitida fuera de las versiones oficiales.</p>
+
+    <div class="donts-grid">
+      <div class="dont-card">
+        <div class="dont-preview tilted">
+          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No inclinar">
+        </div>
+        <h4>No inclinar</h4>
+        <p>No se debe utilizar el isologotipo inclinado ni rotado.</p>
+      </div>
+      <div class="dont-card">
+        <div class="dont-preview wrong-color">
+          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No alterar color">
+        </div>
+        <h4>No alterar los colores</h4>
+        <p>No se deben modificar los colores predeterminados, salvo casos previstos.</p>
+      </div>
+      <div class="dont-card">
+        <div class="dont-preview stretched">
+          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No deformar">
+        </div>
+        <h4>No deformar</h4>
+        <p>No se deben modificar las proporciones en la escala del isologotipo.</p>
+      </div>
+      <div class="dont-card">
+        <div class="dont-preview">
+          <div style="font-family: 'Courier New', monospace; font-size: 1.5rem; color: var(--ink);">aLtA GrAcIa</div>
+        </div>
+        <h4>No cambiar la tipografía</h4>
+        <p>No se debe modificar la tipografía original del isologotipo.</p>
+      </div>
+      <div class="dont-card">
+        <div class="dont-preview bad-bg">
+          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Fondo ilegible">
+        </div>
+        <h4>No aplicar sobre fondos ilegibles</h4>
+        <p>No debe aplicarse sobre fondos donde se pierdan sus elementos.</p>
+      </div>
+      <div class="dont-card">
+        <div class="dont-preview">
+          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No modificar" style="filter: blur(2px);">
+        </div>
+        <h4>No modificar el isologotipo</h4>
+        <p>No se debe modificar el isologotipo por ningún motivo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= COLORES ============= -->
+<section id="colores" style="background: var(--gray-lighter);">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">04 — Paleta de Colores</div>
+      <h2>El color comunica quiénes somos.</h2>
+    </div>
+
+    <p class="color-intro">El color juega un papel importante en el programa de identidad corporativa de la organización. Se ha desarrollado una paleta que refleja el espíritu institucional. Su uso consistente contribuye al aspecto cohesivo y armonioso de la marca en todos los medios relevantes.</p>
+
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch primary" data-label="Primario">
+          <span class="hex-large">#00AEEA</span>
+        </div>
+        <div class="color-data">
+          <h4>Celeste institucional</h4>
+          <p>Color primario · Uso principal en comunicaciones e identidad</p>
+          <div class="color-codes">
+            <div><div class="code-label">Pantone</div><div class="code-value">115-7 C</div></div>
+            <div><div class="code-label">HEX</div><div class="code-value">#00AEEA</div></div>
+            <div><div class="code-label">CMYK</div><div class="code-value">72 · 11 · 0 · 0</div></div>
+            <div><div class="code-label">RGB</div><div class="code-value">0 · 174 · 234</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="color-card">
+        <div class="color-swatch gray" data-label="Primario">
+          <span class="hex-large">#868686</span>
+        </div>
+        <div class="color-data">
+          <h4>Gris institucional</h4>
+          <p>Color primario · Apoyo tipográfico y estructura visual</p>
+          <div class="color-codes">
+            <div><div class="code-label">Pantone</div><div class="code-value">179-9 C</div></div>
+            <div><div class="code-label">HEX</div><div class="code-value">#868686</div></div>
+            <div><div class="code-label">CMYK</div><div class="code-value">47 · 37 · 37 · 18</div></div>
+            <div><div class="code-label">RGB</div><div class="code-value">134 · 134 · 134</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= TIPOGRAFÍA ============= -->
+<section id="tipografia">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">05 — Tipografía Corporativa</div>
+      <h2>Inter es nuestra voz escrita.</h2>
+    </div>
+
+    <p style="max-width: 680px; color: #444; font-size: 1.05rem; margin-bottom: 3rem;">La tipografía es uno de los elementos de la marca que determinan y muestran fielmente su carácter y estilo. Inter es una fuente de uso libre, gratuita, que se emplea en todas nuestras producciones gráficas, editoriales y audiovisuales.</p>
+
+    <div class="type-showcase">
+      <div class="type-sample">Hola, soy <em>Inter</em></div>
+      <div class="type-alphabet">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 0123456789 &amp; ? ! @</div>
+    </div>
+
+    <div class="type-weights">
+      <div class="weight-sample w300">
+        <div class="glyph">Aa</div>
+        <div class="weight-label">Light · 300</div>
+      </div>
+      <div class="weight-sample w400">
+        <div class="glyph">Aa</div>
+        <div class="weight-label">Regular · 400</div>
+      </div>
+      <div class="weight-sample w500">
+        <div class="glyph">Aa</div>
+        <div class="weight-label">Medium · 500</div>
+      </div>
+      <div class="weight-sample w700">
+        <div class="glyph">Aa</div>
+        <div class="weight-label">Bold · 700</div>
+      </div>
+    </div>
+
+    <div class="type-downloads">
+      <a href="https://drive.google.com/uc?export=download&id=1vRtNchDmkJlpuYxRrSLRfPX9rSen0-oN" class="btn" target="_blank" rel="noopener">
+        <span>Inter Regular · descarga directa</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="https://drive.google.com/uc?export=download&id=1GvM816EO2pnK346MwjpdXMj8pxk7cxCk" class="btn" target="_blank" rel="noopener">
+        <span>Inter Italic · descarga directa</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="https://fonts.google.com/selection?query=inter" class="btn btn-primary" target="_blank" rel="noopener">
+        <span>Inter · Google Fonts</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============= RECURSOS ============= -->
+<section id="recursos" style="background: var(--gray-lighter);">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">06 — Recursos Descargables</div>
+      <h2>Plantillas listas para usar.</h2>
+    </div>
+
+    <p class="resources-intro">Los siguientes recursos descargables amplían los contenidos de este Manual de Imagen Institucional. Todos cuentan con un botón de descarga o acceso directo al material correspondiente. Antes de utilizarlos, verificá siempre que sea la última versión disponible.</p>
+
+    <!-- ARCHIVOS EDITABLES -->
+    <div class="resources-cat">
+      <h3>Archivos editables <span class="count">AI · PDF · PNG · SVG</span></h3>
+      <div class="resources-grid">
+        <a href="https://drive.google.com/drive/folders/1GJgzfpVTcVgJcFxnboCdGv39Fa0F-Cc3?usp=sharing" class="resource-card" target="_blank" rel="noopener">
+          <div class="cat-tag">Logos</div>
+          <h4>Kit de logos ATERYM</h4>
+          <p>Versiones originales del isologotipo en todos los formatos de archivo.</p>
+          <div class="specs">AI · PDF · PNG · SVG</div>
+          <div class="footer-row">
+            <span class="open-link">Abrir carpeta →</span>
+            <span class="platform-tag">Google Drive</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- PAPELERÍA INSTITUCIONAL -->
+    <div class="resources-cat">
+      <h3>Papelería institucional <span class="count">6 recursos</span></h3>
+      <div class="resources-grid">
+        <a href="https://docs.google.com/document/d/1rkQvWsSNt6RqxI8I9aGKOLPEGwIK7217/copy" class="resource-card" target="_blank" rel="noopener">
+          <div class="cat-tag">Online editable</div>
+          <h4>Hoja membretada</h4>
+          <p>Plantilla oficial para trabajo colaborativo desde Google Docs o Word.</p>
+          <div class="specs">Formato A4 · Uso digital e impresión</div>
+          <div class="footer-row">
+            <span class="open-link">Crear copia →</span>
+            <span class="platform-tag">Google Docs</span>
+          </div>
+        </a>
+
+        <a href="https://drive.google.com/file/d/1l-qGjepCRhOjxkETMfDzpjrSmbEmR-GZ/view?usp=sharing" class="resource-card" target="_blank" rel="noopener">
+          <div class="cat-tag">Para imprenta</div>
+          <h4>Hoja membretada · Impresión</h4>
+          <p>Archivo listo para enviar a imprenta en caso de reimpresión.</p>
+          <div class="specs">A4 · Alta resolución</div>
+          <div class="footer-row">
+            <span class="open-link">Descargar →</span>
+            <span class="platform-tag">Google Drive</span>
+          </div>
+        </a>
+
+        <a href="https://drive.google.com/file/d/1mJbakCAwODtr00Y5mnuc90Dw0dgU3G-D/view?usp=sharing" class="resource-card" target="_blank" rel="noopener">
+          <div class="cat-tag">Impreso</div>
+          <h4>RP Institucional</h4>
+          <p>Diseño del RP de la institución. Uso exclusivamente impreso.</p>
+          <div class="specs">16 cm × 22 cm</div>
+          <div class="footer-row">
+            <span class="open-link">Descargar →</span>
+            <span class="platform-tag">Google Drive</span>
+          </div>
+        </a>
+
+        <a href="https://drive.google.com/file/d/1zKx4A-TrBPjyxhzqcwWXc4yz_r9wlP4t/view?usp=drive_link" class="resource-card" target="_blank" rel="noopener">
+          <div class="cat-tag">Impreso</div>
+          <h4>Turnero</h4>
+          <p>Documento para entrega de turnos. Uso exclusivamente impreso.</p>
+          <div class="specs">10 cm × 5 cm</div>
+          <div class="footer-row">
+            <span class="open-link">Descargar →</span>
+            <span class="platform-tag">Google Drive</span>
+          </div>
+        </a>
+
+        <a href="https://drive.google.com/file/d/1RRz-6r4Qr4Idj5g2Sl--Y_1k7gCaabmj/view?usp=drive_link" class="resource-card" target="_blank" rel="noopener">
+          <div class="cat-tag">Impreso</div>
+          <h4>Tarjeta Aterym Alta Gracia</h4>
+          <p>Tarjeta con información de contacto institucional.</p>
+          <div class="specs">8,5 cm × 5,5 cm</div>
+          <div class="footer-row">
+            <span class="open-link">Descargar →</span>
+            <span class="platform-tag">Google Drive</span>
+          </div>
+        </a>
+
+        <a href="https://drive.google.com/file/d/1wIb1qaBA97mLqXSSDi6ge1QXLAezym5K/view?usp=drive_link" class="resource-card" target="_blank" rel="noopener">
+          <div class="cat-tag">Impreso</div>
+          <h4>Carpeta institucional</h4>
+          <p>Carpeta color mate, sin OPP, con solapa interna blanca.</p>
+          <div class="specs">Color mate · Solapa interna</div>
+          <div class="footer-row">
+            <span class="open-link">Descargar →</span>
+            <span class="platform-tag">Google Drive</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- EVENTOS Y PRESENTACIONES -->
+    <div class="resources-cat">
+      <h3>Eventos y presentaciones <span class="count">2 recursos</span></h3>
+      <div class="resources-grid">
+        <a href="https://drive.google.com/file/d/1vsGXTk94fOcE_sn72Qz9AHMFf9doEs5S/view?usp=sharing" class="resource-card" target="_blank" rel="noopener">
+          <div class="cat-tag">Eventos</div>
+          <h4>Banners roll-up</h4>
+          <p>Banners para complementar el kit de eventos de Aterym Alta Gracia.</p>
+          <div class="specs">85 cm × 200 cm</div>
+          <div class="footer-row">
+            <span class="open-link">Descargar →</span>
+            <span class="platform-tag">Google Drive</span>
+          </div>
+        </a>
+
+        <a href="https://docs.google.com/presentation/d/1F_BmGW8OylB0c79aVO7dCgvvPpUOQdVd/copy" class="resource-card" target="_blank" rel="noopener">
+          <div class="cat-tag">Editable online</div>
+          <h4>Plantilla PowerPoint</h4>
+          <p>Plantilla oficial. Editable en Google Slides o descargable como PPTX.</p>
+          <div class="specs">PPTX · Google Slides</div>
+          <div class="footer-row">
+            <span class="open-link">Crear copia →</span>
+            <span class="platform-tag">Google Slides</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- CREDENCIALES Y FIRMAS -->
+    <div class="resources-cat">
+      <h3>Credenciales y firmas <span class="count">Diseñadas en Canva</span></h3>
+      <div class="resources-grid">
+        <a href="https://www.canva.com/design/DAG3GJgMTZs/cT3NqQsOwltUODZ6QfeHLw/view?utm_content=DAG3GJgMTZs&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" class="resource-card" target="_blank" rel="noopener">
+          <div class="cat-tag">Canva</div>
+          <h4>Credenciales verticales</h4>
+          <p>Plantilla oficial en Canva. Se pedirá crear una copia al abrir.</p>
+          <div class="specs">8 cm × 11 cm</div>
+          <div class="footer-row">
+            <span class="open-link">Crear copia →</span>
+            <span class="platform-tag">Canva</span>
+          </div>
+        </a>
+
+        <a href="https://www.canva.com/design/DAG4ZQHeLb4/BC6WkNz1hoT3oHvZa-0aDg/view?utm_content=DAG4ZQHeLb4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" class="resource-card" target="_blank" rel="noopener">
+          <div class="cat-tag">Canva</div>
+          <h4>Credenciales horizontales</h4>
+          <p>Plantilla oficial en Canva. Se pedirá crear una copia al abrir.</p>
+          <div class="specs">9 cm × 5,5 cm</div>
+          <div class="footer-row">
+            <span class="open-link">Crear copia →</span>
+            <span class="platform-tag">Canva</span>
+          </div>
+        </a>
+
+        <a href="https://www.canva.com/design/DAG4ZZlKdTw/EMjdLrEq8vuGLxF1DuBplA/view?utm_content=DAG4ZZlKdTw&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" class="resource-card" target="_blank" rel="noopener">
+          <div class="cat-tag">Canva</div>
+          <h4>Firma de mail</h4>
+          <p>Plantilla oficial de firma de correo institucional.</p>
+          <div class="specs">Firma digital · PNG exportable</div>
+          <div class="footer-row">
+            <span class="open-link">Crear copia →</span>
+            <span class="platform-tag">Canva</span>
+          </div>
+        </a>
+
+        <a href="https://www.canva.com/design/DAG4ZXbhdoM/RNTNLXe42hfrBCnzMybnFQ/view?utm_content=DAG4ZXbhdoM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" class="resource-card" target="_blank" rel="noopener">
+          <div class="cat-tag">Canva</div>
+          <h4>Plantilla adicional</h4>
+          <p>Recurso complementario en Canva para piezas institucionales.</p>
+          <div class="specs">Editable · Canva</div>
+          <div class="footer-row">
+            <span class="open-link">Crear copia →</span>
+            <span class="platform-tag">Canva</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FOOTER ============= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand">ATERYM<span>.</span></div>
+        <p class="tagline">Apasionados por la nefrología. Comprometidos con el cuidado humano.</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <div class="contact-item">Brasil 151, Alta Gracia</div>
+        <div class="contact-item">351 5649322</div>
+        <div class="contact-item"><a href="mailto:info@aterym.com">info@aterym.com</a></div>
+        <div class="contact-item"><a href="https://www.aterym.com" target="_blank" rel="noopener">www.aterym.com</a></div>
+      </div>
+      <div>
+        <h4>Acreditación</h4>
+        <p style="font-size: 0.9rem; opacity: 0.7;">Centro de diálisis acreditado en calidad y seguridad del paciente por el ITAES.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>Manual de Imagen Institucional · Edición 2026 · ATERYM Alta Gracia</div>
+      <div>© 25 años de trayectoria</div>
+    </div>
   </div>
 </footer>
 
 <script>
-/* ─── DATOS ────────────────────────────────────────────────────────────── */
-var EQUIPO=[
-  {nombre:'Candela Boni',ini:'CB',color:'#00aeea',bg:'#e6f7fd',rol:'Coordinadora del Área',
-   tareas:['Define la dirección estratégica del área','Coordina y supervisa a todo el equipo','Dirección de arte y proyectos editoriales','Aprueba todos los contenidos antes de publicar','Gestiona sesiones de foto y video']},
-  {nombre:'Tomás Fernández',ini:'TF',color:'#1B3A6B',bg:'#e8edf5',rol:'Desarrollo digital',
-   tareas:['Desarrolla y mantiene los sitios web y landings','Integra sistemas de pago y plataformas digitales','Construye herramientas internas (turnos, portal B2B)','Reportes de performance digital']},
-  {nombre:'Úrsula Hebenstreit',ini:'UH',color:'#1E6B5A',bg:'#e8f4f1',rol:'Estrategia digital',
-   tareas:['Define la estrategia digital y de campaña por marca','Plantea el calendario tentativo de contenidos','Desarrolla campañas de captación y posicionamiento','Analiza competidores y propone diferenciación']},
-  {nombre:'Valentina Severini',ini:'VS',color:'#C9A227',bg:'#fdf6e3',rol:'CM · Redacción · Monitoreo',
-   tareas:['Ejecuta el calendario de contenidos de Úrsula','Redacta copies, stories y reels para todas las marcas','Publica notas web SEO en los cuatro sitios (7/mes)','Gestiona DMs y comentarios · monitorea competidores']},
-  {nombre:'Tebi Rodríguez',ini:'TR',color:'#1A2760',bg:'#e8eaf3',rol:'Diseño gráfico',
-   tareas:['Produce todas las piezas gráficas del área','Material de campaña, impreso y digital','Revistas, folletos y credenciales institucionales','Artes base para que Valentina adapte en redes']},
-];
-
-var EMPRESAS=[
-  {id:'aterym',nombre:'Aterym Alta Gracia',
-   color:'#00aeea',bg:'#0f2232',tc:'rgba(255,255,255,.9)',cb:'rgba(0,174,234,.18)',cbr:'rgba(0,174,234,.35)',cc:'rgba(200,240,255,.9)',
-   tagline:'Centro de nefrología y hemodiálisis. Único centro acreditado por ITAES en Córdoba. Sede en Alta Gracia.',
-   chips:['Nefrología','Hemodiálisis','ITAES 2023–26','Salud renal'],
-   info:[
-     {l:'Rubro',v:'Salud · Centro de diálisis'},
-     {l:'Dirección médica',v:'Dra. Carolina Nadaya'},
-     {l:'Web',v:'aterym.com'},{l:'Dirección',v:'Brasil 151, Alta Gracia'},
-     {l:'Instagram',v:'@aterymnefrologia · 2.509 seguidores'},
-     {l:'Color institucional',v:'#00aeea'},
-     {l:'Prioridad digital',v:'Web actualizada · Landing Jornada · Notas SEO'},
-   ],
-   campanas:[
-     {titulo:'Día Mundial del Riñón',estado:'done',fecha:'8–14 de marzo de 2026',
-      objetivo:'Concientización y alcance orgánico',canales:'Instagram, Facebook',
-      descripcion:'Campaña conjunta con @laboratoriobyb. Pico más alto del trimestre: 43.060 visualizaciones y 7.879 cuentas alcanzadas.',
-      marcas:['Aterym','ByB']}
-   ]},
-  {id:'nc',nombre:'Natural Chef',
-   color:'#1E6B5A',bg:'#0d3329',tc:'rgba(255,255,255,.9)',cb:'rgba(30,107,90,.3)',cbr:'rgba(30,107,90,.5)',cc:'rgba(200,240,225,.9)',
-   tagline:'Soluciones gastronómicas Cook & Chill para empresas, hoteles, clínicas y geriátricos en Alta Gracia y la región.',
-   chips:['Cook & Chill','B2B','Ultracongelados','BPM'],
-   info:[
-     {l:'Rubro',v:'Servicios gastronómicos · 5ta gama'},
-     {l:'Público',v:'Empresas, hoteles, clínicas, geriátricos, comedores'},
-     {l:'Web',v:'naturalchef.com.ar'},{l:'Instagram',v:'@naturalchefok · 2.325 seguidores'},
-     {l:'Prioridad digital',v:'App de pedidos · Landing B2B · Portal revendedores'},
-     {l:'Sub-marca',v:'Boni Pasta – Il Pastificio'},
-   ],
-   campanas:[
-     {titulo:'Visibilización Cook & Chill',estado:'planned',fecha:'Mayo – Junio 2026',
-      objetivo:'Captación B2B: hotel, comedor, clínica y geriátrico',
-      canales:'Instagram, LinkedIn, Meta Ads',
-      descripcion:'Posicionamiento del método Cook & Chill como solución operativa B2B. Incluye serie educativa, piezas por público y difusión paga.',
-      marcas:['Natural Chef']}
-   ]},
-  {id:'byb',nombre:'ByB Laboratorio',
-   color:'#F5A623',bg:'#1B3A6B',tc:'rgba(255,255,255,.9)',cb:'rgba(245,166,35,.2)',cbr:'rgba(245,166,35,.4)',cc:'rgba(255,235,180,.92)',
-   tagline:'Laboratorio de análisis clínicos en Alta Gracia. Infraestructura moderna, tecnología de punta y recursos humanos idóneos.',
-   chips:['Análisis clínicos','Bioquímica','Obras sociales','Alta Gracia'],
-   info:[
-     {l:'Rubro',v:'Salud · Laboratorio clínico'},
-     {l:'Responsable técnica',v:'Bioq. Lucila Martini'},
-     {l:'Dirección',v:'Lucas V. Córdoba 264, frente al Tajamar'},
-     {l:'Instagram',v:'@laboratorio.byb · 864 seguidores'},
-     {l:'Prioridad digital',v:'Sistema de turnos interno · Web pública · Awareness local'},
-   ],
-   campanas:[]},
-  {id:'boni',nombre:'Boni Pasta',
-   color:'#C9A227',bg:'#1A2760',tc:'rgba(255,255,255,.9)',cb:'rgba(201,162,39,.2)',cbr:'rgba(201,162,39,.4)',cc:'rgba(255,240,180,.92)',
-   tagline:'Il Pastificio. Pastas artesanales frescas: sorrentinos, panzottis, ravioles y pastas ahumadas con leña. Sub-marca de Natural Chef.',
-   chips:['Pastas artesanales','Ahumadas','Frescas','Sin conservantes'],
-   info:[
-     {l:'Rubro',v:'Gastronomía · Pastas artesanales frescas'},
-     {l:'Relación',v:'Sub-marca de Natural Chef'},
-     {l:'Productos',v:'Sorrentinos, panzottis, ravioles, pastas ahumadas'},
-     {l:'Prioridad digital',v:'Landing con catálogo · Pedidos online · RRSS'},
-   ],
-   campanas:[]},
-];
-
-var PLANNING=[
-  {persona:'Candela Boni',ini:'CB',color:'#00aeea',bg:'#e6f7fd',
-   fases:[
-     {label:'Dirección estratégica',items:[
-       {id:'c1',t:'Definir objetivos de contenido por marca mayo–junio',dl:'13 abril',m:'Todas',mc:'#868686',mb:'#f0f4f8'},
-       {id:'c2',t:'Brief de calendario de contenidos para Valentina y Úrsula',dl:'13 abril',m:'Todas',mc:'#868686',mb:'#f0f4f8'},
-       {id:'c3',t:'Aprobar estrategia Cook & Chill de Úrsula',dl:'1 mayo',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'c4',t:'Sign-off app de pedidos + landing B2B',dl:'1 mayo',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'c5',t:'Sign-off web y landing Jornada de Calidad',dl:'1 mayo',m:'Aterym',mc:'#00aeea',mb:'#e6f7fd'},
-     ]},
-     {label:'Producción propia',items:[
-       {id:'c6',t:'Revista institucional Natural Chef — cierre editorial',dl:'1 mayo',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'c7',t:'Sesión de foto/video Boni Pasta',dl:'15 mayo',m:'Boni Pasta',mc:'#C9A227',mb:'#fdf6e3'},
-       {id:'c8',t:'Sign-off ByB — sistema de turnos',dl:'30 mayo',m:'ByB',mc:'#1B3A6B',mb:'#e8edf5'},
-       {id:'c9',t:'Sign-off Boni Pasta — landing y lanzamiento',dl:'30 mayo',m:'Boni Pasta',mc:'#C9A227',mb:'#fdf6e3'},
-       {id:'c10',t:'Sign-off portal B2B revendedores',dl:'15 junio',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-     ]},
-   ]},
-  {persona:'Tomás Fernández',ini:'TF',color:'#1B3A6B',bg:'#e8edf5',
-   fases:[
-     {label:'Fase 1 · hasta el 1 de mayo',items:[
-       {id:'t1',t:'App de pedidos con Mercado Pago operativa',dl:'1 mayo',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'t2',t:'Nueva landing B2B en producción',dl:'1 mayo',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'t3',t:'Pendientes de aterym.com resueltos',dl:'1 mayo',m:'Aterym',mc:'#00aeea',mb:'#e6f7fd'},
-       {id:'t4',t:'Landing Jornada de Calidad publicada con logos',dl:'1 mayo',m:'Aterym',mc:'#00aeea',mb:'#e6f7fd'},
-     ]},
-     {label:'Fase 2 · hasta el 30 de mayo',items:[
-       {id:'t5',t:'Sistema de turnos interno ByB operativo',dl:'30 mayo',m:'ByB',mc:'#1B3A6B',mb:'#e8edf5'},
-       {id:'t6',t:'Landing Boni Pasta con catálogo y pedidos',dl:'30 mayo',m:'Boni Pasta',mc:'#C9A227',mb:'#fdf6e3'},
-     ]},
-     {label:'Fase 3 · hasta el 15 de junio',items:[
-       {id:'t7',t:'Portal revendedores — login y autenticación',dl:'15 junio',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'t8',t:'Catálogo con precios diferenciados mayorista',dl:'15 junio',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'t9',t:'Pedidos nuevos e historial de compras',dl:'15 junio',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'t10',t:'Descarga de facturas y remitos',dl:'15 junio',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-     ]},
-   ]},
-  {persona:'Úrsula Hebenstreit',ini:'UH',color:'#1E6B5A',bg:'#e8f4f1',
-   fases:[
-     {label:'Estrategia · hasta el 18 de abril',items:[
-       {id:'u1',t:'Análisis de competidores y posicionamiento',dl:'18 abril',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'u2',t:'Propuesta de valor y mensajes clave por público',dl:'18 abril',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'u3',t:'Definición de canales y tono de comunicación',dl:'18 abril',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'u4',t:'Brief creativo para Tebi y Valentina',dl:'18 abril',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-     ]},
-     {label:'Campaña mes 1 · hasta el 1 de mayo',items:[
-       {id:'u5',t:'Calendario editorial mes 1 — Instagram + LinkedIn',dl:'1 mayo',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'u6',t:'Serie educativa sobre Cook & Chill para redes',dl:'1 mayo',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'u7',t:'Pieza de captación por público objetivo',dl:'1 mayo',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'u8',t:'Propuesta de difusión paga (Meta Ads / LinkedIn)',dl:'1 mayo',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'u9',t:'Guión de contacto comercial para seguimiento de leads',dl:'1 mayo',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-     ]},
-   ]},
-  {persona:'Valentina Severini',ini:'VS',color:'#C9A227',bg:'#fdf6e3',
-   fases:[
-     {label:'Hitos con fecha',items:[
-       {id:'v1',t:'Primera nota publicada en aterym.com',dl:'20 abril',m:'Aterym',mc:'#00aeea',mb:'#e6f7fd'},
-       {id:'v2',t:'Primer mes de contenidos Natural Chef ejecutado',dl:'1 mayo',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'v3',t:'Primer reporte de métricas + benchmark',dl:'1 mayo',m:'Todas',mc:'#868686',mb:'#f0f4f8'},
-       {id:'v4',t:'7 notas web publicadas en los 4 sitios',dl:'30 mayo',m:'Todas',mc:'#868686',mb:'#f0f4f8'},
-       {id:'v5',t:'Lanzamiento digital Boni Pasta en redes',dl:'30 mayo',m:'Boni Pasta',mc:'#C9A227',mb:'#fdf6e3'},
-     ]},
-     {label:'Responsabilidades continuas',items:[
-       {id:'v6',t:'Publicación diaria según calendario de Úrsula',dl:'continuo',m:'Todas',mc:'#868686',mb:'#f0f4f8'},
-       {id:'v7',t:'Gestión de DMs y comentarios en 24hs',dl:'continuo',m:'Todas',mc:'#868686',mb:'#f0f4f8'},
-       {id:'v8',t:'Reporte semanal de métricas a Candela',dl:'continuo',m:'Todas',mc:'#868686',mb:'#f0f4f8'},
-       {id:'v9',t:'Monitoreo de competidores y tendencias',dl:'continuo',m:'Todas',mc:'#868686',mb:'#f0f4f8'},
-     ]},
-   ]},
-  {persona:'Tebi Rodríguez',ini:'TR',color:'#1A2760',bg:'#e8eaf3',
-   fases:[
-     {label:'Hitos con fecha',items:[
-       {id:'tb1',t:'Artes de campaña Cook & Chill listos',dl:'1 mayo',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'tb2',t:'Revista Natural Chef — artes finales para imprenta',dl:'1 mayo',m:'Natural Chef',mc:'#1E6B5A',mb:'#e8f4f1'},
-       {id:'tb3',t:'Identidad visual y piezas de lanzamiento Boni Pasta',dl:'15 mayo',m:'Boni Pasta',mc:'#C9A227',mb:'#fdf6e3'},
-       {id:'tb4',t:'Material gráfico base ByB activo en redes',dl:'30 mayo',m:'ByB',mc:'#1B3A6B',mb:'#e8edf5'},
-     ]},
-     {label:'Soporte continuo',items:[
-       {id:'tb5',t:'Piezas para redes según calendario de Úrsula',dl:'continuo',m:'Todas',mc:'#868686',mb:'#f0f4f8'},
-       {id:'tb6',t:'Material impreso, folletos y credenciales',dl:'continuo',m:'Todas',mc:'#868686',mb:'#f0f4f8'},
-     ]},
-   ]},
-];
-
-/* ─── DATOS TOMÁS: brands + fases ─────────────────────────────────────── */
-var TOMAS_BRANDS=[
-  {id:'nc',nombre:'Natural Chef',color:'#1E6B5A',borderColor:'#1E6B5A',
-   fases:[
-     {label:'App de pedidos (1ª etapa B2C)',first:true,items:[
-       {id:'tf1',t:'App de pedidos funcional (1° etapa B2C)',dl:'Viernes 17/4',urgente:true,pend:'Usuarios / Accesos'},
-     ]},
-     {label:'Nuevo sitio naturalchef.com.ar',items:[
-       {id:'tf2',t:'Landing naturalchef.com.ar operativa',dl:'Viernes 24/4',urgente:true,pend:'Usuarios / Accesos'},
-     ]},
-     {label:'App de pedidos (2ª etapa B2B)',items:[
-       {id:'tf3',t:'App de pedidos funcional (2° etapa B2B)',dl:'Viernes 29/5',urgente:true},
-     ]},
-     {label:'Transversal',items:[
-       {id:'tf4',t:'Sistematización de accesos Natural Chef',dl:'continuo',urgente:false},
-     ]},
-   ]},
-  {id:'aterym',nombre:'Aterym',color:'#00aeea',borderColor:'#00aeea',
-   fases:[
-     {label:'Urgentes',first:true,items:[
-       {id:'tf5',t:'Fin web Aterym',dl:'Martes 21/4',urgente:true,pend:'Usuarios / Accesos · Capacitación Drive integral personal'},
-       {id:'tf6',t:'Modificaciones landing Jornada',dl:'Viernes 17/4',urgente:true},
-     ]},
-     {label:'Junio',items:[
-       {id:'tf7',t:'Migración mails a Thunderbird / Ferozo (todos Aterym)',dl:'26/6',urgente:true},
-       {id:'tf8',t:'Gestor interno Área II',dl:'26/6',urgente:false},
-       {id:'tf9',t:'Portal interno Enfermería',dl:'30/6',urgente:false},
-     ]},
-     {label:'Transversal',items:[
-       {id:'tf10',t:'Sistematización de accesos Aterym',dl:'continuo',urgente:false},
-     ]},
-   ]},
-  {id:'byb',nombre:'ByB Laboratorio',color:'#F5A623',borderColor:'#F5A623',
-   fases:[
-     {label:'Sistema de turnos',first:true,items:[
-       {id:'tf11',t:'Sistema turnos interno funcional',dl:'Viernes 12/6',urgente:true},
-     ]},
-     {label:'Web y accesos',items:[
-       {id:'tf12',t:'Mejora integral web ByB',dl:'26/6',urgente:false},
-       {id:'tf13',t:'Sistematización de accesos ByB',dl:'continuo',urgente:false},
-     ]},
-   ]},
-  {id:'boni',nombre:'Boni Pasta',color:'#C9A227',borderColor:'#C9A227',
-   fases:[
-     {label:'Sitio web',first:true,items:[
-       {id:'tf14',t:'Sitio web funcional',dl:'26/6',urgente:false},
-       {id:'tf15',t:'Sistematización de accesos Boni Pasta',dl:'continuo',urgente:false},
-     ]},
-   ]},
-];
-
-/* ─── ESTADO ───────────────────────────────────────────────────────────── */
-var PS={};
-PLANNING.forEach(function(p){p.fases.forEach(function(f){f.items.forEach(function(t){PS[t.id]=false;});});});
-var TFS={};
-TOMAS_BRANDS.forEach(function(b){b.fases.forEach(function(f){f.items.forEach(function(t){TFS[t.id]=false;});});});
-
-/* ─── NAV ──────────────────────────────────────────────────────────────── */
-function setSection(id,btn){
-  document.querySelectorAll('.nav-btn').forEach(function(b){b.classList.remove('active');});
-  btn.classList.add('active');
-  document.querySelectorAll('.section-panel').forEach(function(p){p.classList.remove('active');});
-  document.getElementById('sec-'+id).classList.add('active');
-}
-
-/* ─── RENDER EQUIPO ────────────────────────────────────────────────────── */
-function renderEquipo(){
-  document.getElementById('equipo-grid').innerHTML=EQUIPO.map(function(p){
-    return'<div class="persona-card"><div class="pc-top"><div class="pc-avatar" style="background:'+p.bg+';color:'+p.color+'">'+p.ini+'</div><div><div class="pc-name">'+p.nombre+'</div><div class="pc-rol">'+p.rol+'</div></div></div><div class="pc-divider"></div><div class="pc-body"><div class="pc-section-lbl">Funciones</div><ul class="pc-tasks">'+p.tareas.map(function(t){return'<li>'+t+'</li>';}).join('')+'</ul><span class="todas-tag">Todas las empresas</span></div></div>';
-  }).join('');
-}
-
-/* ─── RENDER EMPRESAS ──────────────────────────────────────────────────── */
-var BL={done:'Finalizada',progress:'En curso',planned:'Pendiente'};
-var BC={done:'badge-done',progress:'badge-progress',planned:'badge-planned'};
-function renderEmpresas(){
-  document.getElementById('empresa-tabs').innerHTML=EMPRESAS.map(function(e,i){
-    return'<button class="emp-tab'+(i===0?' active':'')+'" style="'+(i===0?'background:'+e.color+';color:#fff;':'')+'" onclick="setEmpresa('+i+',this)">'+e.nombre+'</button>';
-  }).join('');
-  document.getElementById('empresa-panels').innerHTML=EMPRESAS.map(function(e,i){
-    var infoH=e.info.map(function(inf){return'<div class="emp-info-card"><div class="emp-info-label">'+inf.l+'</div><div class="emp-info-val">'+inf.v+'</div></div>';}).join('');
-    var campH=e.campanas.length?e.campanas.map(function(c){
-      return'<div class="feed-card" style="border-left-color:'+e.color+'"><div class="feed-card-top"><div><div class="feed-card-titulo">'+c.titulo+'</div><div class="feed-card-fecha">'+c.fecha+'</div></div><span class="cc-badge '+BC[c.estado]+'">'+BL[c.estado]+'</span></div>'+(c.descripcion?'<p class="feed-card-desc">'+c.descripcion+'</p>':'')+'<div class="feed-card-meta"><div class="feed-meta-row"><span class="feed-meta-key">Objetivo</span><span class="feed-meta-val">'+c.objetivo+'</span></div><div class="feed-meta-row"><span class="feed-meta-key">Canales</span><span class="feed-meta-val">'+c.canales+'</span></div></div><div class="cc-brands">'+c.marcas.map(function(b){return'<span class="brand-pill">'+b+'</span>';}).join('')+'</div></div>';
-    }).join(''):'<div class="camp-empty">No hay campañas cargadas todavía.</div>';
-    return'<div id="emp-'+e.id+'" class="empresa-panel'+(i===0?' active':'')+'"><div class="emp-hero" style="background:'+e.bg+';border-color:'+e.color+'30"><div class="emp-brand-name" style="color:'+e.color+'">'+e.nombre+'</div><p class="emp-tagline" style="color:'+e.tc+'">'+e.tagline+'</p><div class="emp-chips">'+e.chips.map(function(c){return'<span class="emp-chip" style="background:'+e.cb+';border:1px solid '+e.cbr+';color:'+e.cc+'">'+c+'</span>';}).join('')+'</div></div><div class="emp-info-grid">'+infoH+'</div><div class="emp-campanas-hdr"><h3>Campañas</h3><span>'+(e.campanas.length?e.campanas.length+' campaña'+(e.campanas.length>1?'s':''):'Sin campañas cargadas')+'</span></div><div class="feed-cards">'+campH+'</div></div>';
-  }).join('');
-}
-function setEmpresa(idx,btn){
-  document.querySelectorAll('.emp-tab').forEach(function(b){b.classList.remove('active');b.style.background='';b.style.color='';});
-  var e=EMPRESAS[idx];
-  btn.classList.add('active');btn.style.background=e.color;btn.style.color='#fff';
-  document.querySelectorAll('.empresa-panel').forEach(function(p){p.classList.remove('active');});
-  document.getElementById('emp-'+e.id).classList.add('active');
-}
-
-/* ─── RENDER PLANNING GENERAL ──────────────────────────────────────────── */
-function countP(p){var all=p.fases.reduce(function(a,f){return a.concat(f.items);},[]);return{done:all.filter(function(t){return PS[t.id];}).length,total:all.length};}
-function renderPlanning(){
-  document.getElementById('planning-grid').innerHTML=PLANNING.map(function(p){
-    var c=countP(p);var pct=c.total?Math.round(c.done/c.total*100):0;
-    var body=p.fases.map(function(f,fi){
-      return'<div class="plan-fase-label'+(fi===0?' first':'')+'">'+f.label+'</div>'+f.items.map(function(t){
-        return'<div class="plan-task" onclick="togglePlan(\''+t.id+'\',\''+p.ini+'\')"><div class="plan-check" id="chk-'+t.id+'"></div><div class="plan-task-body"><div class="plan-task-title" id="ttl-'+t.id+'">'+t.t+'</div><div class="plan-task-meta"><span class="plan-deadline">'+t.dl+'</span><span class="plan-marca-tag" style="background:'+t.mb+';color:'+t.mc+'">'+t.m+'</span></div></div></div>';
-      }).join('');
-    }).join('');
-    return'<div class="plan-card"><div class="plan-card-top"><div class="plan-avatar" style="background:'+p.bg+';color:'+p.color+'">'+p.ini+'</div><div style="flex:1;min-width:0"><div class="plan-name">'+p.persona+'</div><div class="plan-rol" id="prol-'+p.ini+'">'+c.total+' tareas · '+c.done+' completadas</div></div><div class="plan-pct" style="color:'+p.color+'" id="ppct-'+p.ini+'">'+pct+'%</div></div><div class="plan-progress-bar"><div class="plan-progress-fill" id="pprog-'+p.ini+'" style="width:'+pct+'%;background:'+p.color+'"></div></div><div class="plan-body">'+body+'</div><div class="plan-stats" id="pstats-'+p.ini+'"><span><strong>'+c.done+'</strong> de <strong>'+c.total+'</strong> completadas</span><span style="color:'+p.color+';font-weight:600">'+pct+'%</span></div></div>';
-  }).join('');
-}
-function togglePlan(id,ini){
-  PS[id]=!PS[id];
-  var chk=document.getElementById('chk-'+id);var ttl=document.getElementById('ttl-'+id);
-  chk.classList.toggle('done',PS[id]);chk.textContent=PS[id]?'✓':'';ttl.classList.toggle('struck',PS[id]);
-  var p=PLANNING.filter(function(x){return x.ini===ini;})[0];
-  var c=countP(p);var pct=c.total?Math.round(c.done/c.total*100):0;
-  document.getElementById('pprog-'+ini).style.width=pct+'%';
-  document.getElementById('ppct-'+ini).textContent=pct+'%';
-  document.getElementById('prol-'+ini).innerHTML=c.total+' tareas · '+c.done+' completadas';
-  document.getElementById('pstats-'+ini).innerHTML='<span><strong>'+c.done+'</strong> de <strong>'+c.total+'</strong> completadas</span><span style="color:'+p.color+';font-weight:600">'+pct+'%</span>';
-}
-
-/* ─── RENDER TOMÁS ─────────────────────────────────────────────────────── */
-function allTomasTasks(){
-  return TOMAS_BRANDS.reduce(function(acc,b){return acc.concat(b.fases.reduce(function(a,f){return a.concat(f.items);},[]));}, []);
-}
-function updateTomasStats(){
-  var all=allTomasTasks();
-  var total=all.length;
-  var done=all.filter(function(t){return TFS[t.id];}).length;
-  var pend=total-done;
-  var urg=all.filter(function(t){return t.urgente&&!TFS[t.id];}).length;
-  var pct=total?Math.round(done/total*100):0;
-  document.getElementById('tf-total').textContent=total;
-  document.getElementById('tf-done').textContent=done;
-  document.getElementById('tf-pend').textContent=pend;
-  document.getElementById('tf-urg').textContent=urg;
-  document.getElementById('tf-prog').style.width=pct+'%';
-  document.getElementById('tf-pct-lbl').textContent=pct+'%';
-}
-function renderTomas(){
-  var html='';
-  TOMAS_BRANDS.forEach(function(b){
-    var allItems=b.fases.reduce(function(a,f){return a.concat(f.items);},[]);
-    var doneCount=allItems.filter(function(t){return TFS[t.id];}).length;
-    html+='<div class="tomas-brand-block">';
-    html+='<div class="tomas-brand-hdr" style="border-color:'+b.color+'20">';
-    html+='<span class="tomas-brand-label" style="color:'+b.color+'">'+b.nombre+'</span>';
-    html+='<span class="tomas-brand-count" id="bc-'+b.id+'">'+doneCount+' / '+allItems.length+'</span>';
-    html+='</div>';
-    b.fases.forEach(function(f,fi){
-      if(f.label&&f.items.length>0){
-        html+='<div class="tomas-phase-label'+(f.first?' first':'')+'">'+f.label+'</div>';
-      }
-      f.items.forEach(function(t){
-        var isDone=TFS[t.id];
-        var dlClass=t.dl==='continuo'?'ongoing':(t.urgente?'urgent':'normal');
-        html+='<div class="tomas-task'+(isDone?' t-done':'')+'" id="ttask-'+t.id+'" onclick="toggleTomas(\''+t.id+'\',\''+b.id+'\')">';
-        html+='<div class="t-check'+(isDone?' done':'')+'" id="tck-'+t.id+'">'+(isDone?'✓':'')+'</div>';
-        html+='<div class="t-body">';
-        html+='<div class="t-title'+(isDone?' struck':'')+'" id="tttl-'+t.id+'">'+t.t+'</div>';
-        html+='<div class="t-meta">';
-        html+='<span class="t-dl '+dlClass+'">'+t.dl+'</span>';
-        if(t.urgente&&!isDone) html+='<span class="t-pend">⚠ urgente</span>';
-        if(t.pend&&!isDone) html+='<span class="t-pend">Pendiente: '+t.pend+'</span>';
-        html+='</div></div></div>';
-      });
+  // Scroll animations
+  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-    html+='</div>';
+  }, observerOptions);
+  document.querySelectorAll('section, .resource-card, .mvv-card, .logo-card, .color-card').forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
   });
-  document.getElementById('tomas-board').innerHTML=html;
-  updateTomasStats();
-}
-function toggleTomas(id,brandId){
-  TFS[id]=!TFS[id];
-  var chk=document.getElementById('tck-'+id);
-  var ttl=document.getElementById('tttl-'+id);
-  var row=document.getElementById('ttask-'+id);
-  chk.classList.toggle('done',TFS[id]);
-  chk.textContent=TFS[id]?'✓':'';
-  ttl.classList.toggle('struck',TFS[id]);
-  row.classList.toggle('t-done',TFS[id]);
-  // actualizar urgente y pend inline
-  var brand=TOMAS_BRANDS.filter(function(b){return b.id===brandId;})[0];
-  var task=brand.fases.reduce(function(a,f){return a.concat(f.items);},[]).filter(function(t){return t.id===id;})[0];
-  var meta=row.querySelector('.t-meta');
-  // reconstruir meta sin recrear el nodo completo
-  var dlEl=meta.querySelector('.t-dl');
-  var badges=meta.querySelectorAll('.t-pend');
-  badges.forEach(function(el){el.remove();});
-  if(task.urgente&&!TFS[id]){
-    var sp=document.createElement('span');sp.className='t-pend';sp.textContent='⚠ urgente';meta.appendChild(sp);
-  }
-  if(task.pend&&!TFS[id]){
-    var sp2=document.createElement('span');sp2.className='t-pend';sp2.textContent='Pendiente: '+task.pend;meta.appendChild(sp2);
-  }
-  // actualizar contador por brand
-  var allItems=brand.fases.reduce(function(a,f){return a.concat(f.items);},[]);
-  var doneCount=allItems.filter(function(t){return TFS[t.id];}).length;
-  document.getElementById('bc-'+brandId).textContent=doneCount+' / '+allItems.length;
-  updateTomasStats();
-}
 
-/* ─── INIT ─────────────────────────────────────────────────────────────── */
-renderEquipo();
-renderEmpresas();
-renderPlanning();
-renderTomas();
-document.getElementById('footer-date').textContent='Actualizado el '+new Date().toLocaleDateString('es-AR',{day:'numeric',month:'long',year:'numeric'});
+  // Smooth nav shadow on scroll
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) nav.style.boxShadow = '0 1px 0 rgba(0,0,0,0.04)';
+    else nav.style.boxShadow = 'none';
+  });
 </script>
+
 </body>
 </html>
-HTMLEOF
-echo "done"
