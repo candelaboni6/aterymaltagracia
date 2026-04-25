@@ -2,1466 +2,348 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Manual de Imagen Institucional · ATERYM Alta Gracia 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --primary: #00aeea;
-    --primary-dark: #0095c9;
-    --primary-soft: #e6f7fd;
-    --gray: #868686;
-    --gray-light: #d4d4d4;
-    --gray-lighter: #f4f4f4;
-    --ink: #1a1a1a;
-    --paper: #fafafa;
-    --white: #ffffff;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    color: var(--ink);
-    background: var(--paper);
-    line-height: 1.6;
-    font-feature-settings: "ss01", "cv11";
-  }
-
-  /* ============= TIPOGRAFÍA ============= */
-  .display {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
-  }
-
-  h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.02em; }
-
-  .eyebrow {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--primary);
-  }
-
-  /* ============= LAYOUT ============= */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  section {
-    padding: 6rem 0;
-    position: relative;
-  }
-
-  section + section { border-top: 1px solid var(--gray-light); }
-
-  /* ============= NAV ============= */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    background: rgba(250, 250, 250, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(134, 134, 134, 0.15);
-  }
-
-  nav .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-  }
-
-  .nav-logo {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    text-decoration: none;
-  }
-
-  .nav-logo span { color: var(--primary); }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--gray);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--primary); }
-
-  /* ============= HERO ============= */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    padding: 8rem 0 4rem;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -10%;
-    right: -10%;
-    width: 60%;
-    height: 60%;
-    background: radial-gradient(circle, rgba(0, 174, 234, 0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero .container {
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 4rem;
-    align-items: end;
-  }
-
-  .hero h1 {
-    font-size: clamp(3rem, 8vw, 7rem);
-    line-height: 0.95;
-    margin-bottom: 2rem;
-  }
-
-  .hero h1 em {
-    font-style: italic;
-    color: var(--primary);
-    font-weight: 300;
-  }
-
-  .hero-meta {
-    padding-bottom: 0.5rem;
-  }
-
-  .hero-meta-item {
-    padding: 1rem 0;
-    border-top: 1px solid var(--gray-light);
-  }
-  .hero-meta-item:last-child { border-bottom: 1px solid var(--gray-light); }
-
-  .hero-meta-item .label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gray);
-    margin-bottom: 0.3rem;
-  }
-
-  .hero-meta-item .value {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 1.05rem;
-    color: var(--ink);
-  }
-
-  .hero-logo-preview {
-    margin-top: 4rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .hero-logo-preview img {
-    max-width: 100%;
-    height: auto;
-    max-height: 120px;
-    object-fit: contain;
-  }
-
-  /* ============= ÍNDICE ============= */
-  .toc-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--gray-light);
-    border: 1px solid var(--gray-light);
-    margin-top: 3rem;
-  }
-
-  .toc-item {
-    background: var(--paper);
-    padding: 2.5rem 2rem;
-    text-decoration: none;
-    color: var(--ink);
-    transition: all 0.3s;
-    display: flex;
-    flex-direction: column;
-    min-height: 200px;
-  }
-
-  .toc-item:hover {
-    background: var(--white);
-    transform: translateY(-2px);
-  }
-
-  .toc-number {
-    font-family: 'Inter', sans-serif;
-    font-size: 2.75rem;
-    font-weight: 300;
-    color: var(--primary);
-    line-height: 1;
-    margin-bottom: 1rem;
-    letter-spacing: -0.03em;
-  }
-
-  .toc-item h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-
-  .toc-item p {
-    font-size: 0.85rem;
-    color: var(--gray);
-    margin-top: auto;
-  }
-
-  /* ============= SECTION HEADER ============= */
-  .section-head {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 3rem;
-    align-items: baseline;
-    margin-bottom: 4rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--gray-light);
-  }
-
-  .section-num {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--gray);
-    font-variant-numeric: tabular-nums;
-    letter-spacing: 0.05em;
-  }
-
-  .section-head h2 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
-    letter-spacing: -0.035em;
-    line-height: 1.05;
-  }
-
-  /* ============= INTRO ============= */
-  .intro-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-  }
-
-  .intro-text p {
-    margin-bottom: 1.5rem;
-    color: #333;
-  }
-
-  .pull-quote {
-    padding: 3rem;
-    background: var(--white);
-    border-left: 3px solid var(--primary);
-    position: relative;
-  }
-
-  .pull-quote .quote-mark {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 5rem;
-    line-height: 0.5;
-    color: var(--primary);
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-  }
-
-  .pull-quote p {
-    font-family: 'Inter', sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 1.45;
-    padding-top: 2rem;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-  }
-
-  .pull-quote footer {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--gray-light);
-    font-size: 0.85rem;
-    color: var(--gray);
-    letter-spacing: 0.05em;
-  }
-
-  /* ============= MISIÓN / VISIÓN / VALORES ============= */
-  .mvv-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-  }
-
-  .mvv-card {
-    background: var(--white);
-    padding: 3rem 2.5rem;
-    border-top: 4px solid var(--primary);
-    transition: transform 0.3s;
-  }
-
-  .mvv-card:hover { transform: translateY(-4px); }
-
-  .mvv-card.gray-accent { border-top-color: var(--gray); }
-
-  .mvv-card h3 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.03em;
-  }
-
-  .mvv-card p { color: #333; font-size: 0.95rem; }
-
-  .mvv-card ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .mvv-card li {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--gray-lighter);
-    font-size: 0.95rem;
-    display: flex;
-    gap: 0.75rem;
-  }
-
-  .mvv-card li:last-child { border-bottom: none; }
-
-  .mvv-card li::before {
-    content: '';
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background: var(--primary);
-    border-radius: 50%;
-    margin-top: 0.6rem;
-    flex-shrink: 0;
-  }
-
-  /* ============= LOGO VERSIONS ============= */
-  .logo-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .logo-card {
-    background: var(--white);
-    border: 1px solid var(--gray-light);
-    overflow: hidden;
-  }
-
-  .logo-card .logo-display {
-    padding: 4rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 260px;
-    background: var(--white);
-  }
-
-  .logo-card .logo-display.dark {
-    background: var(--ink);
-  }
-
-  .logo-card .logo-display.primary-bg {
-    background: var(--primary);
-  }
-
-  .logo-card .logo-display.gray-bg {
-    background: var(--gray);
-  }
-
-  .logo-card .logo-display img {
-    max-width: 70%;
-    max-height: 180px;
-    object-fit: contain;
-  }
-
-  .logo-card .logo-display.grayscale img {
-    filter: grayscale(100%);
-  }
-
-  .logo-card .logo-meta {
-    padding: 1.5rem 2rem;
-    border-top: 1px solid var(--gray-light);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logo-card .logo-meta h4 {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--ink);
-  }
-
-  .logo-card .logo-meta p {
-    font-size: 0.8rem;
-    color: var(--gray);
-    margin-top: 0.25rem;
-  }
-
-  .badge {
-    font-size: 0.7rem;
-    font-weight: 600;
-    padding: 0.25rem 0.75rem;
-    border-radius: 100px;
-    background: var(--primary-soft);
-    color: var(--primary-dark);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-
-  /* ============= 25 AÑOS ============= */
-  .anniversary {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: var(--white);
-    padding: 5rem 0;
-    margin-top: 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .anniversary::before {
-    content: '25';
-    position: absolute;
-    font-family: 'Inter', sans-serif;
-    font-weight: 200;
-    font-size: 40rem;
-    line-height: 0.8;
-    right: -3rem;
-    bottom: -8rem;
-    color: rgba(255, 255, 255, 0.08);
-    pointer-events: none;
-    letter-spacing: -0.05em;
-  }
-
-  .anniversary .container { position: relative; z-index: 1; }
-
-  .anniversary-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .anniversary .eyebrow { color: rgba(255,255,255,0.8); }
-
-  .anniversary h3 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
-    line-height: 1.05;
-    margin: 1rem 0 1.5rem;
-    letter-spacing: -0.035em;
-  }
-
-  .anniversary p {
-    opacity: 0.9;
-    font-size: 1.05rem;
-    margin-bottom: 2rem;
-  }
-
-  .anniversary-logos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-
-  .anniversary-logos .logo-box {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 2rem;
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .anniversary-logos .logo-box.solid { background: var(--white); }
-
-  .anniversary-logos img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-
-  /* ============= DON'TS ============= */
-  .donts-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .dont-card {
-    background: var(--white);
-    border: 1px solid var(--gray-light);
-    padding: 2rem;
-    position: relative;
-  }
-
-  .dont-card::before {
-    content: '✕';
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 28px;
-    height: 28px;
-    background: #ff4444;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: 700;
-  }
-
-  .dont-preview {
-    background: var(--gray-lighter);
-    height: 120px;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .dont-preview img { max-width: 60%; max-height: 80%; object-fit: contain; }
-  .dont-preview.tilted img { transform: rotate(12deg); }
-  .dont-preview.stretched img { transform: scaleX(1.5); }
-  .dont-preview.bad-bg { background: repeating-linear-gradient(45deg, #d4d4d4, #d4d4d4 10px, #a0a0a0 10px, #a0a0a0 20px); }
-  .dont-preview.wrong-color img { filter: hue-rotate(180deg) saturate(2); }
-
-  .dont-card h4 {
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .dont-card p {
-    font-size: 0.85rem;
-    color: var(--gray);
-  }
-
-  /* ============= PALETA DE COLORES ============= */
-  .color-intro {
-    max-width: 620px;
-    font-size: 1.05rem;
-    color: #444;
-    margin-bottom: 4rem;
-  }
-
-  .color-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-
-  .color-card {
-    border: 1px solid var(--gray-light);
-    overflow: hidden;
-    background: var(--white);
-  }
-
-  .color-swatch {
-    height: 300px;
-    display: flex;
-    align-items: flex-end;
-    padding: 2rem;
-    position: relative;
-  }
-
-  .color-swatch.primary { background: var(--primary); }
-  .color-swatch.gray { background: var(--gray); }
-
-  .color-swatch .hex-large {
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    font-size: 2.75rem;
-    color: var(--white);
-    letter-spacing: -0.03em;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .color-swatch::before {
-    content: '';
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-    width: 60px;
-    height: 60px;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 50%;
-  }
-
-  .color-swatch.primary::after,
-  .color-swatch.gray::after {
-    content: attr(data-label);
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    color: white;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-
-  .color-data {
-    padding: 2rem;
-  }
-
-  .color-data h4 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 1.35rem;
-    margin-bottom: 0.3rem;
-    letter-spacing: -0.02em;
-  }
-
-  .color-data > p {
-    font-size: 0.85rem;
-    color: var(--gray);
-    margin-bottom: 1.5rem;
-  }
-
-  .color-codes {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--gray-light);
-    border: 1px solid var(--gray-light);
-  }
-
-  .color-codes > div {
-    background: var(--white);
-    padding: 1rem;
-  }
-
-  .color-codes .code-label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gray);
-    margin-bottom: 0.25rem;
-  }
-
-  .color-codes .code-value {
-    font-family: 'Inter', monospace;
-    font-variant-numeric: tabular-nums;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--ink);
-  }
-
-  /* ============= TIPOGRAFÍA ============= */
-  .type-showcase {
-    background: var(--white);
-    padding: 4rem 3rem;
-    border: 1px solid var(--gray-light);
-  }
-
-  .type-sample {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(4rem, 12vw, 9rem);
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.04em;
-    margin-bottom: 2rem;
-  }
-
-  .type-sample em {
-    font-style: italic;
-    font-weight: 300;
-    color: var(--primary);
-  }
-
-  .type-alphabet {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.05em;
-    color: var(--gray);
-    padding-top: 2rem;
-    border-top: 1px solid var(--gray-light);
-    word-break: break-all;
-  }
-
-  .type-weights {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .weight-sample {
-    padding: 2rem 1.5rem;
-    background: var(--paper);
-  }
-
-  .weight-sample .glyph {
-    font-size: 3.5rem;
-    line-height: 1;
-    margin-bottom: 1rem;
-    color: var(--ink);
-  }
-
-  .weight-sample .weight-label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gray);
-  }
-
-  .weight-sample.w300 .glyph { font-weight: 300; }
-  .weight-sample.w400 .glyph { font-weight: 400; }
-  .weight-sample.w500 .glyph { font-weight: 500; }
-  .weight-sample.w700 .glyph { font-weight: 700; }
-
-  .type-downloads {
-    margin-top: 3rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  /* ============= BUTTONS / LINKS ============= */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1rem 1.5rem;
-    background: var(--white);
-    border: 1px solid var(--gray-light);
-    text-decoration: none;
-    color: var(--ink);
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.2s;
-  }
-
-  .btn:hover {
-    background: var(--ink);
-    color: var(--white);
-    border-color: var(--ink);
-  }
-
-  .btn.btn-primary {
-    background: var(--primary);
-    color: var(--white);
-    border-color: var(--primary);
-  }
-
-  .btn.btn-primary:hover {
-    background: var(--primary-dark);
-    border-color: var(--primary-dark);
-  }
-
-  .btn .arrow {
-    transition: transform 0.2s;
-  }
-
-  .btn:hover .arrow { transform: translateX(4px); }
-
-  /* ============= RECURSOS ============= */
-  .resources-intro {
-    max-width: 680px;
-    color: #444;
-    margin-bottom: 3rem;
-    font-size: 1.05rem;
-  }
-
-  .resources-cat {
-    margin-bottom: 3rem;
-  }
-
-  .resources-cat h3 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--gray-light);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    letter-spacing: -0.02em;
-  }
-
-  .resources-cat h3 .count {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    color: var(--gray);
-  }
-
-  .resources-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  .resource-card {
-    background: var(--white);
-    border: 1px solid var(--gray-light);
-    padding: 2rem;
-    text-decoration: none;
-    color: var(--ink);
-    display: flex;
-    flex-direction: column;
-    transition: all 0.25s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .resource-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--primary);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s;
-  }
-
-  .resource-card:hover::after { transform: scaleX(1); }
-  .resource-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-
-  .resource-card .cat-tag {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--primary);
-    margin-bottom: 1rem;
-  }
-
-  .resource-card h4 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 1.3rem;
-    line-height: 1.2;
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.02em;
-  }
-
-  .resource-card p {
-    font-size: 0.85rem;
-    color: var(--gray);
-    margin-bottom: 2rem;
-    flex-grow: 1;
-  }
-
-  .resource-card .specs {
-    font-size: 0.75rem;
-    color: var(--gray);
-    padding-top: 1rem;
-    border-top: 1px dashed var(--gray-light);
-    margin-bottom: 1.5rem;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .resource-card .footer-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-  }
-
-  .resource-card .open-link {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--ink);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .resource-card .platform-tag {
-    font-size: 0.7rem;
-    color: var(--gray);
-    padding: 0.25rem 0.6rem;
-    border: 1px solid var(--gray-light);
-    border-radius: 2px;
-  }
-
-  /* ============= ZONA DE PROTECCIÓN ============= */
-  .protection-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .protection-demo {
-    background: var(--white);
-    padding: 3rem;
-    border: 1px solid var(--gray-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
-    position: relative;
-  }
-
-  .protection-visual {
-    position: relative;
-    display: inline-block;
-  }
-
-  .protection-visual img {
-    max-width: 220px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .protection-visual .protection-box {
-    position: absolute;
-    top: -30px;
-    left: -30px;
-    right: -30px;
-    bottom: -30px;
-    border: 1px dashed var(--primary);
-    z-index: 1;
-  }
-
-  .protection-visual .measure {
-    position: absolute;
-    font-size: 0.7rem;
-    color: var(--primary);
-    font-weight: 600;
-    background: var(--white);
-    padding: 0 0.4rem;
-  }
-
-  .measure-top { top: -40px; left: 50%; transform: translateX(-50%); }
-  .measure-left { left: -50px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
-
-  .protection-text p {
-    margin-bottom: 1.25rem;
-    color: #333;
-  }
-
-  .formula-box {
-    background: var(--primary-soft);
-    padding: 1.5rem 2rem;
-    margin-top: 2rem;
-    border-left: 3px solid var(--primary);
-  }
-
-  .formula-box .formula {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-style: italic;
-    font-size: 1.25rem;
-    color: var(--primary-dark);
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.01em;
-  }
-
-  .formula-box p {
-    font-size: 0.85rem;
-    color: var(--gray);
-    margin: 0;
-  }
-
-  /* ============= PROPORCIONES ============= */
-  .proportions-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .proportion-card {
-    background: var(--white);
-    border: 1px solid var(--gray-light);
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .proportion-card .min-logo {
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 180px;
-    margin-bottom: 2rem;
-  }
-
-  .proportion-card .min-logo img {
-    max-height: 110px;
-  }
-
-  .proportion-card h4 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.02em;
-  }
-
-  .proportion-card .size {
-    font-family: 'Inter', sans-serif;
-    font-size: 2.5rem;
-    color: var(--primary);
-    font-weight: 300;
-    margin: 0.5rem 0;
-    letter-spacing: -0.03em;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .proportion-card p { font-size: 0.85rem; color: var(--gray); }
-
-  /* ============= FOOTER ============= */
-  footer.site-footer {
-    background: var(--ink);
-    color: var(--white);
-    padding: 5rem 0 2rem;
-  }
-
-  footer .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 4rem;
-    margin-bottom: 4rem;
-  }
-
-  footer h4 {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 1.5rem;
-  }
-
-  footer .brand {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
-    line-height: 1;
-    margin-bottom: 1rem;
-    letter-spacing: -0.035em;
-  }
-
-  footer .brand span { color: var(--primary); }
-
-  footer .tagline {
-    font-family: 'Inter', sans-serif;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 1.1rem;
-    max-width: 320px;
-    opacity: 0.7;
-    letter-spacing: -0.01em;
-  }
-
-  footer ul { list-style: none; }
-
-  footer ul li { padding: 0.3rem 0; }
-
-  footer a {
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.2s;
-  }
-
-  footer a:hover { color: var(--primary); }
-
-  footer .contact-item {
-    font-size: 0.9rem;
-    opacity: 0.7;
-    padding: 0.3rem 0;
-  }
-
-  footer .footer-bottom {
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    font-size: 0.8rem;
-    opacity: 0.5;
-  }
-
-  /* ============= NAV TOGGLE (botón hamburguesa) ============= */
-  .nav-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    width: 40px;
-    height: 40px;
-    position: relative;
-    z-index: 101;
-  }
-
-  .nav-toggle span {
-    display: block;
-    width: 22px;
-    height: 1.5px;
-    background: var(--ink);
-    margin: 5px auto;
-    transition: transform 0.3s ease, opacity 0.2s ease;
-  }
-
-  .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-  .nav-toggle.open span:nth-child(2) { opacity: 0; }
-  .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-  /* ============= RESPONSIVE: TABLET (≤900px) ============= */
-  @media (max-width: 900px) {
-    .container { padding: 0 1.5rem; }
-
-    /* Grids 2 columnas que en desktop son 3 */
-    .toc-grid,
-    .donts-grid,
-    .resources-grid { grid-template-columns: repeat(2, 1fr); }
-
-    /* Grids que pasan a 1 columna */
-    .hero-grid,
-    .intro-grid,
-    .mvv-grid,
-    .protection-grid,
-    .anniversary-grid,
-    .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-
-    .section-head { grid-template-columns: 1fr; gap: 0.75rem; }
-    section { padding: 4.5rem 0; }
-    .anniversary::before { font-size: 24rem; right: -2rem; bottom: -5rem; }
-  }
-
-  /* ============= RESPONSIVE: MOBILE (≤640px) ============= */
-  @media (max-width: 640px) {
-    .container { padding: 0 1.25rem; }
-
-    /* --- NAV con menú hamburguesa --- */
-    nav .container { padding: 0.85rem 1.25rem; }
-    .nav-logo { font-size: 1rem; }
-    .nav-toggle { display: block; }
-
-    .nav-links {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 78%;
-      max-width: 320px;
-      background: var(--paper);
-      flex-direction: column;
-      justify-content: flex-start;
-      padding: 5rem 2rem 2rem;
-      gap: 0;
-      transform: translateX(100%);
-      transition: transform 0.35s ease;
-      box-shadow: -8px 0 30px rgba(0,0,0,0.08);
-      overflow-y: auto;
-      z-index: 100;
-    }
-    .nav-links.open { transform: translateX(0); }
-    .nav-links li { border-bottom: 1px solid var(--gray-light); }
-    .nav-links a {
-      display: block;
-      padding: 1.1rem 0;
-      font-size: 0.95rem;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-    }
-
-    /* Backdrop para cuando está abierto */
-    body.nav-open::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.35);
-      z-index: 99;
-      backdrop-filter: blur(2px);
-    }
-
-    /* Cuando el menú está abierto, el nav no debe difuminar el panel */
-    body.nav-open nav {
-      background: transparent;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
-      border-bottom-color: transparent;
-    }
-
-    /* --- SECCIONES --- */
-    section { padding: 3.5rem 0; }
-
-    /* --- HERO --- */
-    .hero {
-      min-height: auto;
-      padding: 6rem 0 3rem;
-    }
-    .hero h1 {
-      font-size: clamp(2.4rem, 11vw, 3.75rem);
-      margin-bottom: 1.5rem;
-    }
-    .hero-grid { gap: 2rem; }
-    .hero-meta-item { padding: 0.85rem 0; }
-    .hero-meta-item .value { font-size: 0.95rem; }
-    .hero-logo-preview {
-      grid-template-columns: 1fr;
-      margin-top: 2.5rem;
-      gap: 2rem;
-    }
-    .hero-logo-preview img { max-height: 95px; }
-
-    /* --- SECTION HEAD --- */
-    .section-head {
-      margin-bottom: 2.5rem;
-      padding-bottom: 1.25rem;
-    }
-    .section-head h2 {
-      font-size: clamp(1.7rem, 7.5vw, 2.25rem);
-    }
-
-    /* --- ÍNDICE --- */
-    .toc-grid { grid-template-columns: 1fr; margin-top: 2rem; }
-    .toc-item {
-      padding: 1.75rem 1.5rem;
-      min-height: auto;
-    }
-    .toc-number { font-size: 2.25rem; margin-bottom: 0.5rem; }
-
-    /* --- INTRO / PULL QUOTE --- */
-    .intro-grid { gap: 2rem; }
-    .pull-quote { padding: 2.5rem 1.5rem 2rem; }
-    .pull-quote .quote-mark {
-      font-size: 3.5rem;
-      top: 1.25rem;
-      left: 1.25rem;
-    }
-    .pull-quote p {
-      font-size: 1.1rem;
-      padding-top: 1.5rem;
-    }
-
-    /* --- MISIÓN/VISIÓN/VALORES --- */
-    .mvv-grid { gap: 1.25rem; }
-    .mvv-card { padding: 2rem 1.75rem; }
-    .mvv-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-
-    /* --- LOGOS --- */
-    .logo-grid { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.5rem; }
-    .logo-card .logo-display {
-      padding: 2.5rem 1.5rem;
-      min-height: 200px;
-    }
-    .logo-card .logo-display img { max-height: 130px; max-width: 80%; }
-    .logo-card .logo-meta { padding: 1.25rem 1.5rem; }
-
-    /* --- ZONA DE PROTECCIÓN --- */
-    .protection-grid { gap: 2rem; }
-    .protection-demo {
-      padding: 3.5rem 2rem 2.5rem;
-      min-height: auto;
-    }
-    .protection-visual img { max-width: 150px; }
-    .protection-visual .protection-box {
-      top: -20px; left: -20px; right: -20px; bottom: -20px;
-    }
-    .measure-top { top: -28px; }
-    .measure-left { left: -36px; }
-    .formula-box { padding: 1.25rem 1.5rem; }
-    .formula-box .formula { font-size: 1.05rem; }
-
-    /* --- PROPORCIONES --- */
-    .proportions-grid { grid-template-columns: 1fr; gap: 1rem; }
-    .proportion-card { padding: 2rem 1.5rem; }
-    .proportion-card .min-logo {
-      padding: 1rem;
-      min-height: 140px;
-      margin-bottom: 1.25rem;
-    }
-    .proportion-card .size { font-size: 2rem; }
-
-    /* --- 25 AÑOS --- */
-    .anniversary {
-      padding: 3.5rem 0;
-      margin-top: 3rem;
-    }
-    .anniversary::before {
-      font-size: 14rem;
-      right: -1.5rem;
-      bottom: -3rem;
-    }
-    .anniversary-grid { gap: 2.5rem; }
-    .anniversary-logos { gap: 1rem; }
-    .anniversary-logos .logo-box { padding: 1.25rem; }
-
-    /* --- USOS INCORRECTOS --- */
-    .donts-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.5rem; }
-    .dont-card { padding: 1.25rem; }
-    .dont-preview { height: 90px; margin-bottom: 1rem; }
-    .dont-card h4 { font-size: 0.85rem; }
-    .dont-card p { font-size: 0.78rem; line-height: 1.45; }
-
-    /* --- COLORES --- */
-    .color-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-    .color-swatch { height: 200px; padding: 1.5rem; }
-    .color-swatch .hex-large { font-size: 2rem; }
-    .color-swatch::before {
-      width: 44px; height: 44px;
-      top: 1.5rem; left: 1.5rem;
-    }
-    .color-swatch.primary::after,
-    .color-swatch.gray::after {
-      top: 1.5rem; right: 1.5rem;
-      font-size: 0.65rem;
-    }
-    .color-data { padding: 1.5rem; }
-    .color-data h4 { font-size: 1.2rem; }
-    .color-codes > div { padding: 0.85rem; }
-    .color-codes .code-value { font-size: 0.85rem; }
-
-    /* --- TIPOGRAFÍA --- */
-    .type-showcase { padding: 2rem 1.5rem; }
-    .type-sample {
-      font-size: clamp(2.5rem, 14vw, 4.5rem);
-      margin-bottom: 1.5rem;
-    }
-    .type-alphabet {
-      font-size: 0.85rem;
-      padding-top: 1.5rem;
-      letter-spacing: 0.03em;
-    }
-    .type-weights {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.85rem;
-      margin-top: 2rem;
-    }
-    .weight-sample { padding: 1.5rem 1rem; }
-    .weight-sample .glyph { font-size: 2.5rem; }
-    .type-downloads {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-      margin-top: 2rem;
-    }
-    .btn { padding: 0.9rem 1.25rem; font-size: 0.85rem; }
-
-    /* --- RECURSOS --- */
-    .resources-cat { margin-bottom: 2.25rem; }
-    .resources-cat h3 {
-      font-size: 1.2rem;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      padding-bottom: 0.85rem;
-      margin-bottom: 1.25rem;
-    }
-    .resources-cat h3 .count { font-size: 0.65rem; }
-    .resources-grid { grid-template-columns: 1fr; gap: 1rem; }
-    .resource-card { padding: 1.5rem; }
-    .resource-card h4 { font-size: 1.15rem; }
-    .resource-card p { margin-bottom: 1.25rem; }
-    .resource-card .specs { margin-bottom: 1.25rem; }
-
-    /* --- FOOTER --- */
-    footer.site-footer { padding: 3.5rem 0 1.5rem; }
-    footer .footer-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-      margin-bottom: 2.5rem;
-    }
-    footer .brand { font-size: 2rem; }
-    footer .tagline { font-size: 1rem; }
-    footer .footer-bottom {
-      flex-direction: column;
-      align-items: flex-start;
-      font-size: 0.75rem;
-    }
-  }
-
-  /* ============= RESPONSIVE: EXTRA SMALL (≤380px) ============= */
-  @media (max-width: 380px) {
-    .container { padding: 0 1rem; }
-    .donts-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2.15rem; }
-    .section-head h2 { font-size: 1.55rem; }
-  }
-
-  /* Animations on scroll */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
+:root{
+  --primary:#00aeea; --primary-dark:#0095c9; --primary-soft:#e6f7fd;
+  --gray:#868686; --gray-light:#d4d4d4; --gray-lighter:#f4f4f4;
+  --ink:#1a1a1a; --paper:#fafafa; --white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font:400 16px/1.6 'Inter',sans-serif;color:var(--ink);background:var(--paper);font-feature-settings:"ss01","cv11"}
+img{max-width:100%;height:auto}
+a{color:inherit}
+ul{list-style:none}
+
+/* === Tipografía base === */
+.display{font-weight:700;letter-spacing:-.03em;line-height:1.05}
+h1,h2,h3,h4{font-weight:600;letter-spacing:-.02em}
+.eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--primary)}
+
+/* === Layout === */
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+section{padding:6rem 0;position:relative}
+section+section{border-top:1px solid var(--gray-light)}
+
+/* === Nav === */
+nav{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(250,250,250,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(134,134,134,.15)}
+nav .container{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+.nav-logo span{color:var(--primary)}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:.8rem;font-weight:500;color:var(--gray);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--primary)}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.5rem;width:40px;height:40px;position:relative;z-index:101}
+.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--ink);margin:5px auto;transition:transform .3s,opacity .2s}
+.nav-toggle.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* === Hero === */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 0 4rem;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-10%;right:-10%;width:60%;height:60%;background:radial-gradient(circle,rgba(0,174,234,.08) 0%,transparent 70%);pointer-events:none}
+.hero .container{position:relative;z-index:1}
+.hero h1{font-size:clamp(3rem,8vw,7rem);line-height:.95;margin-bottom:2rem}
+.hero h1 em{font-style:italic;color:var(--primary);font-weight:300}
+
+/* === Section header === */
+.section-head{display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:baseline;margin-bottom:4rem;padding-bottom:2rem;border-bottom:1px solid var(--gray-light)}
+.section-num{font-size:.8rem;font-weight:500;color:var(--gray);font-variant-numeric:tabular-nums;letter-spacing:.05em}
+.section-head h2{font-weight:600;font-size:clamp(2.25rem,4.5vw,3.5rem);letter-spacing:-.035em;line-height:1.05}
+
+/* === Índice === */
+.toc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-light);border:1px solid var(--gray-light);margin-top:3rem}
+.toc-item{background:var(--paper);padding:2.5rem 2rem;text-decoration:none;color:var(--ink);transition:all .3s;display:flex;flex-direction:column;min-height:200px}
+.toc-item:hover{background:var(--white);transform:translateY(-2px)}
+.toc-number{font-size:2.75rem;font-weight:300;color:var(--primary);line-height:1;margin-bottom:1rem;letter-spacing:-.03em}
+.toc-item h3{font-size:1.1rem;margin-bottom:.5rem}
+.toc-item p{font-size:.85rem;color:var(--gray);margin-top:auto}
+
+/* === Intro / Pull quote === */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.intro-text p{margin-bottom:1.5rem;color:#333}
+.pull-quote{padding:3rem;background:var(--white);border-left:3px solid var(--primary);position:relative}
+.pull-quote .quote-mark{font-weight:800;font-size:5rem;line-height:.5;color:var(--primary);position:absolute;top:2rem;left:2rem}
+.pull-quote p{font-style:italic;font-size:1.4rem;line-height:1.45;padding-top:2rem;letter-spacing:-.01em}
+.pull-quote footer{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--gray-light);font-size:.85rem;color:var(--gray);letter-spacing:.05em}
+
+/* === Misión / Visión / Valores === */
+.mvv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.mvv-card{background:var(--white);padding:3rem 2.5rem;border-top:4px solid var(--primary);transition:transform .3s}
+.mvv-card:hover{transform:translateY(-4px)}
+.mvv-card.gray-accent{border-top-color:var(--gray)}
+.mvv-card h3{font-size:1.75rem;margin-bottom:1.5rem;letter-spacing:-.03em}
+.mvv-card p,.mvv-card li{color:#333;font-size:.95rem}
+.mvv-card li{padding:.75rem 0;border-bottom:1px solid var(--gray-lighter);display:flex;gap:.75rem}
+.mvv-card li:last-child{border-bottom:0}
+.mvv-card li::before{content:'';width:6px;height:6px;background:var(--primary);border-radius:50%;margin-top:.6rem;flex-shrink:0}
+
+/* === Logos === */
+.logo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2rem}
+.logo-card{background:var(--white);border:1px solid var(--gray-light);overflow:hidden}
+.logo-display{padding:4rem 2rem;display:flex;align-items:center;justify-content:center;min-height:260px;background:var(--white)}
+.logo-display.dark{background:var(--ink)}
+.logo-display.primary-bg{background:var(--primary)}
+.logo-display.gray-bg{background:var(--gray)}
+.logo-display img{max-width:70%;max-height:180px;object-fit:contain}
+.logo-display.grayscale img{filter:grayscale(100%)}
+.logo-meta{padding:1.5rem 2rem;border-top:1px solid var(--gray-light);display:flex;justify-content:space-between;align-items:center}
+.logo-meta h4{font-size:.9rem}
+.logo-meta p{font-size:.8rem;color:var(--gray);margin-top:.25rem}
+.badge{font-size:.7rem;font-weight:600;padding:.25rem .75rem;border-radius:100px;background:var(--primary-soft);color:var(--primary-dark);letter-spacing:.05em;text-transform:uppercase}
+
+/* === 25 años === */
+.anniversary{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);padding:5rem 0;margin-top:4rem;position:relative;overflow:hidden}
+.anniversary::before{content:'25';position:absolute;font-weight:200;font-size:40rem;line-height:.8;right:-3rem;bottom:-8rem;color:rgba(255,255,255,.08);pointer-events:none;letter-spacing:-.05em}
+.anniversary .container{position:relative;z-index:1}
+.anniversary-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.anniversary .eyebrow{color:rgba(255,255,255,.8)}
+.anniversary h3{font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.05;margin:1rem 0 1.5rem;letter-spacing:-.035em}
+.anniversary p{opacity:.9;font-size:1.05rem;margin-bottom:2rem}
+.anniversary-logos{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.logo-box{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);padding:2rem;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.logo-box.solid{background:var(--white)}
+.logo-box img{max-width:100%;max-height:100%;object-fit:contain}
+
+/* === Don'ts === */
+.donts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.dont-card{background:var(--white);border:1px solid var(--gray-light);padding:2rem;position:relative}
+.dont-card::before{content:'✕';position:absolute;top:1rem;right:1rem;width:28px;height:28px;background:#f44;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700}
+.dont-preview{background:var(--gray-lighter);height:120px;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.dont-preview img{max-width:60%;max-height:80%;object-fit:contain}
+.dont-preview.tilted img{transform:rotate(12deg)}
+.dont-preview.stretched img{transform:scaleX(1.5)}
+.dont-preview.bad-bg{background:repeating-linear-gradient(45deg,#d4d4d4,#d4d4d4 10px,#a0a0a0 10px,#a0a0a0 20px)}
+.dont-preview.wrong-color img{filter:hue-rotate(180deg) saturate(2)}
+.dont-card h4{font-size:.95rem;margin-bottom:.5rem}
+.dont-card p{font-size:.85rem;color:var(--gray)}
+
+/* === Colores === */
+.color-intro{max-width:620px;font-size:1.05rem;color:#444;margin-bottom:4rem}
+.color-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.color-card{border:1px solid var(--gray-light);overflow:hidden;background:var(--white)}
+.color-swatch{height:300px;display:flex;align-items:flex-end;padding:2rem;position:relative}
+.color-swatch.primary{background:var(--primary)}
+.color-swatch.gray{background:var(--gray)}
+.color-swatch .hex-large{font-weight:300;font-size:2.75rem;color:var(--white);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.color-swatch::before{content:'';position:absolute;top:2rem;left:2rem;width:60px;height:60px;border:1px solid rgba(255,255,255,.3);border-radius:50%}
+.color-swatch::after{content:attr(data-label);position:absolute;top:2rem;right:2rem;color:#fff;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.color-data{padding:2rem}
+.color-data h4{font-size:1.35rem;margin-bottom:.3rem;letter-spacing:-.02em}
+.color-data>p{font-size:.85rem;color:var(--gray);margin-bottom:1.5rem}
+.color-codes{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-light);border:1px solid var(--gray-light)}
+.color-codes>div{background:var(--white);padding:1rem}
+.code-label{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);margin-bottom:.25rem}
+.code-value{font-variant-numeric:tabular-nums;font-size:.95rem;font-weight:500}
+
+/* === Tipografía showcase === */
+.type-showcase{background:var(--white);padding:4rem 3rem;border:1px solid var(--gray-light)}
+.type-sample{font-size:clamp(4rem,12vw,9rem);font-weight:700;line-height:1;letter-spacing:-.04em;margin-bottom:2rem}
+.type-sample em{font-style:italic;font-weight:300;color:var(--primary)}
+.type-alphabet{font-size:1.1rem;letter-spacing:.05em;color:var(--gray);padding-top:2rem;border-top:1px solid var(--gray-light);word-break:break-all}
+.type-weights{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3rem}
+.weight-sample{padding:2rem 1.5rem;background:var(--paper)}
+.weight-sample .glyph{font-size:3.5rem;line-height:1;margin-bottom:1rem}
+.weight-sample .weight-label{font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gray)}
+.weight-sample.w300 .glyph{font-weight:300}
+.weight-sample.w400 .glyph{font-weight:400}
+.weight-sample.w500 .glyph{font-weight:500}
+.weight-sample.w700 .glyph{font-weight:700}
+.type-downloads{margin-top:3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+
+/* === Buttons === */
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.5rem;background:var(--white);border:1px solid var(--gray-light);text-decoration:none;color:var(--ink);font-size:.9rem;font-weight:500;transition:all .2s}
+.btn:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.btn.btn-primary{background:var(--primary);color:var(--white);border-color:var(--primary)}
+.btn.btn-primary:hover{background:var(--primary-dark);border-color:var(--primary-dark)}
+.btn .arrow{transition:transform .2s}
+.btn:hover .arrow{transform:translateX(4px)}
+
+/* === Recursos === */
+.resources-intro{max-width:680px;color:#444;margin-bottom:3rem;font-size:1.05rem}
+.resources-cat{margin-bottom:3rem}
+.resources-cat h3{font-size:1.5rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--gray-light);display:flex;justify-content:space-between;align-items:baseline;letter-spacing:-.02em}
+.resources-cat h3 .count{font-size:.75rem;font-weight:600;letter-spacing:.2em;color:var(--gray)}
+.resources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.resource-card{background:var(--white);border:1px solid var(--gray-light);padding:2rem;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;transition:all .25s;position:relative;overflow:hidden}
+.resource-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--primary);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.resource-card:hover::after{transform:scaleX(1)}
+.resource-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.resource-card .cat-tag{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem}
+.resource-card h4{font-size:1.3rem;line-height:1.2;margin-bottom:.75rem;letter-spacing:-.02em}
+.resource-card p{font-size:.85rem;color:var(--gray);margin-bottom:2rem;flex-grow:1}
+.resource-card .specs{font-size:.75rem;color:var(--gray);padding-top:1rem;border-top:1px dashed var(--gray-light);margin-bottom:1.5rem;font-variant-numeric:tabular-nums}
+.resource-card .footer-row{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+.resource-card .open-link{font-size:.85rem;font-weight:600;display:inline-flex;align-items:center;gap:.5rem}
+.resource-card .platform-tag{font-size:.7rem;color:var(--gray);padding:.25rem .6rem;border:1px solid var(--gray-light);border-radius:2px}
+
+/* === Zona de protección === */
+.protection-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.protection-demo{background:var(--white);padding:3rem;border:1px solid var(--gray-light);display:flex;align-items:center;justify-content:center;min-height:400px}
+.protection-visual{position:relative;display:inline-block}
+.protection-visual img{max-width:220px;position:relative;z-index:2}
+.protection-box{position:absolute;inset:-30px;border:1px dashed var(--primary);z-index:1}
+.measure{position:absolute;font-size:.7rem;color:var(--primary);font-weight:600;background:var(--white);padding:0 .4rem}
+.measure-top{top:-40px;left:50%;transform:translateX(-50%)}
+.measure-left{left:-50px;top:50%;transform:translateY(-50%) rotate(-90deg)}
+.protection-text p{margin-bottom:1.25rem;color:#333}
+.formula-box{background:var(--primary-soft);padding:1.5rem 2rem;margin-top:2rem;border-left:3px solid var(--primary)}
+.formula-box .formula{font-weight:500;font-style:italic;font-size:1.25rem;color:var(--primary-dark);margin-bottom:.5rem;letter-spacing:-.01em}
+.formula-box p{font-size:.85rem;color:var(--gray);margin:0}
+
+/* === Proporciones === */
+.proportions-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
+.proportion-card{background:var(--white);border:1px solid var(--gray-light);padding:2.5rem;display:flex;flex-direction:column;align-items:center;text-align:center}
+.proportion-card .min-logo{padding:2rem;display:flex;align-items:center;justify-content:center;min-height:180px;margin-bottom:2rem}
+.proportion-card .min-logo img{max-height:110px}
+.proportion-card h4{font-size:1.25rem;margin-bottom:.5rem;letter-spacing:-.02em}
+.proportion-card .size{font-size:2.5rem;color:var(--primary);font-weight:300;margin:.5rem 0;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.proportion-card p{font-size:.85rem;color:var(--gray)}
+
+/* === Footer === */
+footer.site-footer{background:var(--ink);color:var(--white);padding:5rem 0 2rem}
+footer .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;margin-bottom:4rem}
+footer h4{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:1.5rem}
+footer .brand{font-weight:700;font-size:2.5rem;line-height:1;margin-bottom:1rem;letter-spacing:-.035em}
+footer .brand span{color:var(--primary)}
+footer .tagline{font-style:italic;font-weight:300;font-size:1.1rem;max-width:320px;opacity:.7;letter-spacing:-.01em}
+footer a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;transition:color .2s}
+footer a:hover{color:var(--primary)}
+footer .contact-item{font-size:.9rem;opacity:.7;padding:.3rem 0}
+footer .footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.8rem;opacity:.5}
+
+/* === Animations === */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+/* === Responsive: tablet === */
+@media (max-width:900px){
+  .container{padding:0 1.5rem}
+  .toc-grid,.donts-grid,.resources-grid{grid-template-columns:repeat(2,1fr)}
+  .intro-grid,.mvv-grid,.protection-grid,.anniversary-grid,.footer-grid{grid-template-columns:1fr;gap:2.5rem}
+  .section-head{grid-template-columns:1fr;gap:.75rem}
+  section{padding:4.5rem 0}
+  .anniversary::before{font-size:24rem;right:-2rem;bottom:-5rem}
+}
+
+/* === Responsive: mobile === */
+@media (max-width:640px){
+  .container{padding:0 1.25rem}
+  /* Nav */
+  nav .container{padding:.85rem 1.25rem}
+  .nav-logo{font-size:1rem}
+  .nav-toggle{display:block}
+  .nav-links{position:fixed;top:0;right:0;bottom:0;width:78%;max-width:320px;background:var(--paper);flex-direction:column;justify-content:flex-start;padding:5rem 2rem 2rem;gap:0;transform:translateX(100%);transition:transform .35s ease;box-shadow:-8px 0 30px rgba(0,0,0,.08);overflow-y:auto;z-index:100}
+  .nav-links.open{transform:none}
+  .nav-links li{border-bottom:1px solid var(--gray-light)}
+  .nav-links a{display:block;padding:1.1rem 0;font-size:.95rem;color:var(--ink);letter-spacing:-.01em}
+  body.nav-open::after{content:'';position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:99;backdrop-filter:blur(2px)}
+  body.nav-open nav{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;border-bottom-color:transparent}
+
+  section{padding:3.5rem 0}
+  .hero{min-height:auto;padding:6rem 0 3rem}
+  .hero h1{font-size:clamp(2.4rem,11vw,3.75rem);margin-bottom:1.5rem}
+
+  .section-head{margin-bottom:2.5rem;padding-bottom:1.25rem}
+  .section-head h2{font-size:clamp(1.7rem,7.5vw,2.25rem)}
+
+  .toc-grid{grid-template-columns:1fr;margin-top:2rem}
+  .toc-item{padding:1.75rem 1.5rem;min-height:auto}
+  .toc-number{font-size:2.25rem;margin-bottom:.5rem}
+
+  .intro-grid{gap:2rem}
+  .pull-quote{padding:2.5rem 1.5rem 2rem}
+  .pull-quote .quote-mark{font-size:3.5rem;top:1.25rem;left:1.25rem}
+  .pull-quote p{font-size:1.1rem;padding-top:1.5rem}
+
+  .mvv-grid{gap:1.25rem}
+  .mvv-card{padding:2rem 1.75rem}
+  .mvv-card h3{font-size:1.5rem;margin-bottom:1rem}
+
+  .logo-grid{grid-template-columns:1fr;gap:1rem;margin-top:1.5rem}
+  .logo-display{padding:2.5rem 1.5rem;min-height:200px}
+  .logo-display img{max-height:130px;max-width:80%}
+  .logo-meta{padding:1.25rem 1.5rem}
+
+  .protection-grid{gap:2rem}
+  .protection-demo{padding:3.5rem 2rem 2.5rem;min-height:auto}
+  .protection-visual img{max-width:150px}
+  .protection-box{inset:-20px}
+  .measure-top{top:-28px}
+  .measure-left{left:-36px}
+  .formula-box{padding:1.25rem 1.5rem}
+  .formula-box .formula{font-size:1.05rem}
+
+  .proportions-grid{grid-template-columns:1fr;gap:1rem}
+  .proportion-card{padding:2rem 1.5rem}
+  .proportion-card .min-logo{padding:1rem;min-height:140px;margin-bottom:1.25rem}
+  .proportion-card .size{font-size:2rem}
+
+  .anniversary{padding:3.5rem 0;margin-top:3rem}
+  .anniversary::before{font-size:14rem;right:-1.5rem;bottom:-3rem}
+  .anniversary-grid{gap:2.5rem}
+  .anniversary-logos{gap:1rem}
+  .logo-box{padding:1.25rem}
+
+  .donts-grid{grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem}
+  .dont-card{padding:1.25rem}
+  .dont-preview{height:90px;margin-bottom:1rem}
+  .dont-card h4{font-size:.85rem}
+  .dont-card p{font-size:.78rem;line-height:1.45}
+
+  .color-grid{grid-template-columns:1fr;gap:1.25rem}
+  .color-swatch{height:200px;padding:1.5rem}
+  .color-swatch .hex-large{font-size:2rem}
+  .color-swatch::before{width:44px;height:44px;top:1.5rem;left:1.5rem}
+  .color-swatch::after{top:1.5rem;right:1.5rem;font-size:.65rem}
+  .color-data{padding:1.5rem}
+  .color-data h4{font-size:1.2rem}
+  .color-codes>div{padding:.85rem}
+  .code-value{font-size:.85rem}
+
+  .type-showcase{padding:2rem 1.5rem}
+  .type-sample{font-size:clamp(2.5rem,14vw,4.5rem);margin-bottom:1.5rem}
+  .type-alphabet{font-size:.85rem;padding-top:1.5rem;letter-spacing:.03em}
+  .type-weights{grid-template-columns:repeat(2,1fr);gap:.85rem;margin-top:2rem}
+  .weight-sample{padding:1.5rem 1rem}
+  .weight-sample .glyph{font-size:2.5rem}
+  .type-downloads{grid-template-columns:1fr;gap:.75rem;margin-top:2rem}
+  .btn{padding:.9rem 1.25rem;font-size:.85rem}
+
+  .resources-cat{margin-bottom:2.25rem}
+  .resources-cat h3{font-size:1.2rem;flex-wrap:wrap;gap:.5rem;padding-bottom:.85rem;margin-bottom:1.25rem}
+  .resources-cat h3 .count{font-size:.65rem}
+  .resources-grid{grid-template-columns:1fr;gap:1rem}
+  .resource-card{padding:1.5rem}
+  .resource-card h4{font-size:1.15rem}
+  .resource-card p,.resource-card .specs{margin-bottom:1.25rem}
+
+  footer.site-footer{padding:3.5rem 0 1.5rem}
+  footer .footer-grid{grid-template-columns:1fr;gap:2.5rem;margin-bottom:2.5rem}
+  footer .brand{font-size:2rem}
+  footer .tagline{font-size:1rem}
+  footer .footer-bottom{flex-direction:column;align-items:flex-start;font-size:.75rem}
+}
+
+@media (max-width:380px){
+  .container{padding:0 1rem}
+  .donts-grid{grid-template-columns:1fr}
+  .hero h1{font-size:2.15rem}
+  .section-head h2{font-size:1.55rem}
+}
 </style>
 </head>
 <body>
 
-<!-- ============= NAV ============= -->
 <nav>
   <div class="container">
     <a href="#top" class="nav-logo">ATERYM<span>.</span></a>
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
     <ul class="nav-links">
       <li><a href="#intro">01 Intro</a></li>
       <li><a href="#institucional">02 Institucional</a></li>
@@ -1473,88 +355,33 @@
   </div>
 </nav>
 
-<!-- ============= HERO ============= -->
+<!-- HERO -->
 <section class="hero" id="top">
   <div class="container">
-    <div class="hero-grid">
-      <div>
-        <div class="eyebrow" style="margin-bottom: 2rem;">Manual de Imagen Institucional · Edición 2026</div>
-        <h1 class="display">Una identidad <em>que cuida</em>, como lo hacemos nosotros.</h1>
-      </div>
-      <div class="hero-meta">
-        <div class="hero-meta-item">
-          <div class="label">Institución</div>
-          <div class="value">ATERYM Alta Gracia</div>
-        </div>
-        <div class="hero-meta-item">
-          <div class="label">Edición</div>
-          <div class="value">2026 · v1.0</div>
-        </div>
-        <div class="hero-meta-item">
-          <div class="label">Responsable</div>
-          <div class="value">Área de Imagen Institucional</div>
-        </div>
-        <div class="hero-meta-item">
-          <div class="label">Aniversario</div>
-          <div class="value">25 años de trayectoria</div>
-        </div>
-      </div>
-    </div>
-
+    <div class="eyebrow" style="margin-bottom:2rem">Manual de Imagen Institucional · Edición 2026</div>
+    <h1 class="display">Una identidad <em>que cuida</em>, como lo hacemos nosotros.</h1>
   </div>
 </section>
 
-<!-- ============= ÍNDICE ============= -->
+<!-- ÍNDICE -->
 <section id="indice">
   <div class="container">
-    <div class="section-head">
-      <div class="section-num">00 — Índice</div>
-      <h2>Qué vas a encontrar</h2>
-    </div>
-
+    <div class="section-head"><div class="section-num">00 — Índice</div><h2>Qué vas a encontrar</h2></div>
     <div class="toc-grid">
-      <a href="#intro" class="toc-item">
-        <div class="toc-number">01</div>
-        <h3>Introducción</h3>
-        <p>Objetivo, importancia de la identidad visual y alcance del documento.</p>
-      </a>
-      <a href="#institucional" class="toc-item">
-        <div class="toc-number">02</div>
-        <h3>Institucional</h3>
-        <p>Misión, visión y valores que sostienen el trabajo cotidiano.</p>
-      </a>
-      <a href="#identidad" class="toc-item">
-        <div class="toc-number">03</div>
-        <h3>Identidad Visual</h3>
-        <p>Isologotipo, versiones, zona de protección, proporciones y usos incorrectos.</p>
-      </a>
-      <a href="#colores" class="toc-item">
-        <div class="toc-number">04</div>
-        <h3>Paleta de Colores</h3>
-        <p>Colores institucionales primarios y códigos en Pantone / CMYK / RGB / HEX.</p>
-      </a>
-      <a href="#tipografia" class="toc-item">
-        <div class="toc-number">05</div>
-        <h3>Tipografía</h3>
-        <p>Inter como tipografía corporativa. Pesos, estilos y descargas.</p>
-      </a>
-      <a href="#recursos" class="toc-item">
-        <div class="toc-number">06</div>
-        <h3>Recursos Descargables</h3>
-        <p>Archivos editables y plantillas listas para usar.</p>
-      </a>
+      <a href="#intro" class="toc-item"><div class="toc-number">01</div><h3>Introducción</h3><p>Objetivo, importancia de la identidad visual y alcance del documento.</p></a>
+      <a href="#institucional" class="toc-item"><div class="toc-number">02</div><h3>Institucional</h3><p>Misión, visión y valores que sostienen el trabajo cotidiano.</p></a>
+      <a href="#identidad" class="toc-item"><div class="toc-number">03</div><h3>Identidad Visual</h3><p>Isologotipo, versiones, zona de protección, proporciones y usos incorrectos.</p></a>
+      <a href="#colores" class="toc-item"><div class="toc-number">04</div><h3>Paleta de Colores</h3><p>Colores institucionales primarios y códigos en Pantone / CMYK / RGB / HEX.</p></a>
+      <a href="#tipografia" class="toc-item"><div class="toc-number">05</div><h3>Tipografía</h3><p>Inter como tipografía corporativa. Pesos, estilos y descargas.</p></a>
+      <a href="#recursos" class="toc-item"><div class="toc-number">06</div><h3>Recursos Descargables</h3><p>Archivos editables y plantillas listas para usar.</p></a>
     </div>
   </div>
 </section>
 
-<!-- ============= INTRODUCCIÓN ============= -->
+<!-- INTRODUCCIÓN -->
 <section id="intro">
   <div class="container">
-    <div class="section-head">
-      <div class="section-num">01 — Introducción</div>
-      <h2>Cuidar la imagen es cuidar a quienes confían.</h2>
-    </div>
-
+    <div class="section-head"><div class="section-num">01 — Introducción</div><h2>Cuidar la imagen es cuidar a quienes confían.</h2></div>
     <div class="intro-grid">
       <div class="intro-text">
         <p>Queremos llevar la identidad de Aterym Alta Gracia tan lejos como lleguen nuestros valores: hacia cada paciente, familia y persona que forma parte del sistema de salud. Imaginamos una institución en la que sus elementos visuales hablen con la misma voz: clara, profesional y coherente con nuestro compromiso con la calidad.</p>
@@ -1571,29 +398,23 @@
   </div>
 </section>
 
-<!-- ============= INSTITUCIONAL ============= -->
-<section id="institucional" style="background: var(--gray-lighter);">
+<!-- INSTITUCIONAL -->
+<section id="institucional" style="background:var(--gray-lighter)">
   <div class="container">
-    <div class="section-head">
-      <div class="section-num">02 — Institucional</div>
-      <h2>Quiénes somos antes de cómo nos vemos.</h2>
-    </div>
-
+    <div class="section-head"><div class="section-num">02 — Institucional</div><h2>Quiénes somos antes de cómo nos vemos.</h2></div>
     <div class="mvv-grid">
       <div class="mvv-card">
         <div class="eyebrow">01 / Misión</div>
         <h3>Nuestra misión</h3>
         <p>Porque sabemos sobre el cuidado del paciente renal y estamos comprometidos en mejorar su calidad de vida, hacemos nefrología y hemodiálisis jerarquizada.</p>
       </div>
-
       <div class="mvv-card">
         <div class="eyebrow">02 / Visión</div>
         <h3>Nuestra visión</h3>
         <p>Ser reconocidos, en el ámbito regional, como una institución de referencia en el cuidado personalizado del paciente renal, que pone énfasis en la prevención y en la educación continua, que dispone de recursos humanos y tecnológicos adecuados y que respeta la dignidad de las personas.</p>
       </div>
-
       <div class="mvv-card gray-accent">
-        <div class="eyebrow" style="color: var(--gray);">03 / Valores</div>
+        <div class="eyebrow" style="color:var(--gray)">03 / Valores</div>
         <h3>Lo que nos guía</h3>
         <ul>
           <li>Ética profesional en todas nuestras acciones.</li>
@@ -1606,103 +427,41 @@
   </div>
 </section>
 
-<!-- ============= IDENTIDAD VISUAL ============= -->
+<!-- IDENTIDAD VISUAL -->
 <section id="identidad">
   <div class="container">
-    <div class="section-head">
-      <div class="section-num">03 — Identidad Visual</div>
-      <h2>El isologotipo es el elemento clave.</h2>
-    </div>
+    <div class="section-head"><div class="section-num">03 — Identidad Visual</div><h2>El isologotipo es el elemento clave.</h2></div>
+    <p style="max-width:680px;color:#333;font-size:1.05rem;margin-bottom:4rem">Es una combinación del símbolo y el nombre de nuestra empresa que tienen una relación fija que nunca debe ser cambiada de ninguna manera. Este es el elemento visual primario que nos identifica.</p>
 
-    <p style="max-width: 680px; color: #333; font-size: 1.05rem; margin-bottom: 4rem;">Es una combinación del símbolo y el nombre de nuestra empresa que tienen una relación fija que nunca debe ser cambiada de ninguna manera. Este es el elemento visual primario que nos identifica.</p>
-
-    <!-- VERSIONES DEL LOGO -->
-    <div class="eyebrow" style="margin-bottom: 1rem;">Versión principal y versiones alternativas</div>
-
+    <div class="eyebrow" style="margin-bottom:1rem">Versión principal y versiones alternativas</div>
     <div class="logo-grid">
-      <!-- Principal color vertical -->
       <div class="logo-card">
-        <div class="logo-display">
-          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Versión principal vertical">
-        </div>
-        <div class="logo-meta">
-          <div>
-            <h4>Versión principal · Vertical</h4>
-            <p>Color · Uso prioritario</p>
-          </div>
-          <span class="badge">Principal</span>
-        </div>
+        <div class="logo-display"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Versión principal vertical"></div>
+        <div class="logo-meta"><div><h4>Versión principal · Vertical</h4><p>Color · Uso prioritario</p></div><span class="badge">Principal</span></div>
       </div>
-
-      <!-- Principal color horizontal -->
       <div class="logo-card">
-        <div class="logo-display">
-          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorhorizonta%C3%B1" alt="Versión principal horizontal">
-        </div>
-        <div class="logo-meta">
-          <div>
-            <h4>Versión principal · Horizontal</h4>
-            <p>Color · Formatos apaisados</p>
-          </div>
-          <span class="badge">Principal</span>
-        </div>
+        <div class="logo-display"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorhorizonta%C3%B1" alt="Versión principal horizontal"></div>
+        <div class="logo-meta"><div><h4>Versión principal · Horizontal</h4><p>Color · Formatos apaisados</p></div><span class="badge">Principal</span></div>
       </div>
-
-      <!-- Escala de grises -->
       <div class="logo-card">
-        <div class="logo-display grayscale">
-          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Versión escala de grises">
-        </div>
-        <div class="logo-meta">
-          <div>
-            <h4>Versión escala de grises</h4>
-            <p>Impresión a una tinta, conservando degradados del isotipo.</p>
-          </div>
-        </div>
+        <div class="logo-display grayscale"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Versión escala de grises"></div>
+        <div class="logo-meta"><div><h4>Versión escala de grises</h4><p>Impresión a una tinta, conservando degradados del isotipo.</p></div></div>
       </div>
-
-      <!-- Positivo sobre claro -->
       <div class="logo-card">
-        <div class="logo-display">
-          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Versión positivo">
-        </div>
-        <div class="logo-meta">
-          <div>
-            <h4>Versión positivo</h4>
-            <p>Se utiliza sobre fondos de color claro.</p>
-          </div>
-        </div>
+        <div class="logo-display"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Versión positivo"></div>
+        <div class="logo-meta"><div><h4>Versión positivo</h4><p>Se utiliza sobre fondos de color claro.</p></div></div>
       </div>
-
-      <!-- Negativo sobre oscuro -->
       <div class="logo-card">
-        <div class="logo-display dark">
-          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciablancovertical.png" alt="Versión negativo">
-        </div>
-        <div class="logo-meta">
-          <div>
-            <h4>Versión negativo</h4>
-            <p>Se utiliza sobre fondos de color oscuro.</p>
-          </div>
-        </div>
+        <div class="logo-display dark"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciablancovertical.png" alt="Versión negativo"></div>
+        <div class="logo-meta"><div><h4>Versión negativo</h4><p>Se utiliza sobre fondos de color oscuro.</p></div></div>
       </div>
-
-      <!-- Negativo sobre primario -->
       <div class="logo-card">
-        <div class="logo-display primary-bg">
-          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciablancovertical.png" alt="Versión sobre color institucional">
-        </div>
-        <div class="logo-meta">
-          <div>
-            <h4>Sobre color institucional</h4>
-            <p>Versión en blanco sobre el color primario.</p>
-          </div>
-        </div>
+        <div class="logo-display primary-bg"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciablancovertical.png" alt="Versión sobre color institucional"></div>
+        <div class="logo-meta"><div><h4>Sobre color institucional</h4><p>Versión en blanco sobre el color primario.</p></div></div>
       </div>
     </div>
 
-    <!-- ZONA DE PROTECCIÓN -->
-    <div class="eyebrow" style="margin: 5rem 0 1rem;">Zona de protección</div>
+    <div class="eyebrow" style="margin:5rem 0 1rem">Zona de protección</div>
     <div class="protection-grid">
       <div class="protection-demo">
         <div class="protection-visual">
@@ -1722,122 +481,60 @@
       </div>
     </div>
 
-    <!-- PROPORCIONES MÍNIMAS -->
-    <div class="eyebrow" style="margin: 5rem 0 1rem;">Proporciones mínimas de uso</div>
-    <p style="max-width: 680px; color: #444; margin-bottom: 1.5rem;">Para imprimir es importante mantener legible y reproducible la marca. Respetá las dimensiones mínimas según la orientación utilizada.</p>
-
+    <div class="eyebrow" style="margin:5rem 0 1rem">Proporciones mínimas de uso</div>
+    <p style="max-width:680px;color:#444;margin-bottom:1.5rem">Para imprimir es importante mantener legible y reproducible la marca. Respetá las dimensiones mínimas según la orientación utilizada.</p>
     <div class="proportions-grid">
       <div class="proportion-card">
-        <div class="min-logo">
-          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Mínimo vertical">
-        </div>
-        <h4>Versión vertical</h4>
-        <div class="size">2 cm</div>
+        <div class="min-logo"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Mínimo vertical"></div>
+        <h4>Versión vertical</h4><div class="size">2 cm</div>
         <p>Altura mínima para mantener legibilidad en impresión.</p>
       </div>
       <div class="proportion-card">
-        <div class="min-logo">
-          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorhorizonta%C3%B1" alt="Mínimo horizontal">
-        </div>
-        <h4>Versión horizontal</h4>
-        <div class="size">1,2 cm</div>
+        <div class="min-logo"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorhorizonta%C3%B1" alt="Mínimo horizontal"></div>
+        <h4>Versión horizontal</h4><div class="size">1,2 cm</div>
         <p>Altura mínima recomendada en orientación apaisada.</p>
       </div>
     </div>
 
-    <!-- 25 AÑOS -->
     <div class="anniversary">
       <div class="container">
         <div class="anniversary-grid">
           <div>
             <div class="eyebrow">Edición especial aniversario</div>
-            <h3>25 años <em style="font-style: italic;">cuidando</em> con excelencia.</h3>
+            <h3>25 años <em style="font-style:italic">cuidando</em> con excelencia.</h3>
             <p>Esta versión conmemorativa del isologotipo celebra 25 años de trayectoria de Aterym Alta Gracia. Su uso se reserva para piezas institucionales seleccionadas durante el año aniversario, manteniendo siempre la zona de protección y las proporciones definidas para la versión principal.</p>
           </div>
           <div class="anniversary-logos">
-            <div class="logo-box solid">
-              <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(3).png" alt="Logo 25 años v1">
-            </div>
-            <div class="logo-box solid">
-              <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(4).png" alt="Logo 25 años v2">
-            </div>
-            <div class="logo-box">
-              <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(5).png" alt="Logo 25 años v3">
-            </div>
-            <div class="logo-box">
-              <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(6).png" alt="Logo 25 años v4">
-            </div>
+            <div class="logo-box solid"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(3).png" alt="Logo 25 años v1"></div>
+            <div class="logo-box solid"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(4).png" alt="Logo 25 años v2"></div>
+            <div class="logo-box"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(5).png" alt="Logo 25 años v3"></div>
+            <div class="logo-box"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(6).png" alt="Logo 25 años v4"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- USOS INCORRECTOS -->
-    <div class="eyebrow" style="margin: 5rem 0 1rem;">Usos incorrectos</div>
-    <p style="max-width: 680px; color: #444; margin-bottom: 1.5rem;">Para preservar la integridad del isologotipo, evitá estas modificaciones. Ninguna intervención al logo está permitida fuera de las versiones oficiales.</p>
-
+    <div class="eyebrow" style="margin:5rem 0 1rem">Usos incorrectos</div>
+    <p style="max-width:680px;color:#444;margin-bottom:1.5rem">Para preservar la integridad del isologotipo, evitá estas modificaciones. Ninguna intervención al logo está permitida fuera de las versiones oficiales.</p>
     <div class="donts-grid">
-      <div class="dont-card">
-        <div class="dont-preview tilted">
-          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No inclinar">
-        </div>
-        <h4>No inclinar</h4>
-        <p>No se debe utilizar el isologotipo inclinado ni rotado.</p>
-      </div>
-      <div class="dont-card">
-        <div class="dont-preview wrong-color">
-          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No alterar color">
-        </div>
-        <h4>No alterar los colores</h4>
-        <p>No se deben modificar los colores predeterminados, salvo casos previstos.</p>
-      </div>
-      <div class="dont-card">
-        <div class="dont-preview stretched">
-          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No deformar">
-        </div>
-        <h4>No deformar</h4>
-        <p>No se deben modificar las proporciones en la escala del isologotipo.</p>
-      </div>
-      <div class="dont-card">
-        <div class="dont-preview">
-          <div style="font-family: 'Courier New', monospace; font-size: 1.5rem; color: var(--ink);">aLtA GrAcIa</div>
-        </div>
-        <h4>No cambiar la tipografía</h4>
-        <p>No se debe modificar la tipografía original del isologotipo.</p>
-      </div>
-      <div class="dont-card">
-        <div class="dont-preview bad-bg">
-          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Fondo ilegible">
-        </div>
-        <h4>No aplicar sobre fondos ilegibles</h4>
-        <p>No debe aplicarse sobre fondos donde se pierdan sus elementos.</p>
-      </div>
-      <div class="dont-card">
-        <div class="dont-preview">
-          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No modificar" style="filter: blur(2px);">
-        </div>
-        <h4>No modificar el isologotipo</h4>
-        <p>No se debe modificar el isologotipo por ningún motivo.</p>
-      </div>
+      <div class="dont-card"><div class="dont-preview tilted"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No inclinar"></div><h4>No inclinar</h4><p>No se debe utilizar el isologotipo inclinado ni rotado.</p></div>
+      <div class="dont-card"><div class="dont-preview wrong-color"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No alterar color"></div><h4>No alterar los colores</h4><p>No se deben modificar los colores predeterminados, salvo casos previstos.</p></div>
+      <div class="dont-card"><div class="dont-preview stretched"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No deformar"></div><h4>No deformar</h4><p>No se deben modificar las proporciones en la escala del isologotipo.</p></div>
+      <div class="dont-card"><div class="dont-preview"><div style="font-family:'Courier New',monospace;font-size:1.5rem">aLtA GrAcIa</div></div><h4>No cambiar la tipografía</h4><p>No se debe modificar la tipografía original del isologotipo.</p></div>
+      <div class="dont-card"><div class="dont-preview bad-bg"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Fondo ilegible"></div><h4>No aplicar sobre fondos ilegibles</h4><p>No debe aplicarse sobre fondos donde se pierdan sus elementos.</p></div>
+      <div class="dont-card"><div class="dont-preview"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No modificar" style="filter:blur(2px)"></div><h4>No modificar el isologotipo</h4><p>No se debe modificar el isologotipo por ningún motivo.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============= COLORES ============= -->
-<section id="colores" style="background: var(--gray-lighter);">
+<!-- COLORES -->
+<section id="colores" style="background:var(--gray-lighter)">
   <div class="container">
-    <div class="section-head">
-      <div class="section-num">04 — Paleta de Colores</div>
-      <h2>El color comunica quiénes somos.</h2>
-    </div>
-
+    <div class="section-head"><div class="section-num">04 — Paleta de Colores</div><h2>El color comunica quiénes somos.</h2></div>
     <p class="color-intro">El color juega un papel importante en el programa de identidad corporativa de la organización. Se ha desarrollado una paleta que refleja el espíritu institucional. Su uso consistente contribuye al aspecto cohesivo y armonioso de la marca en todos los medios relevantes.</p>
-
     <div class="color-grid">
       <div class="color-card">
-        <div class="color-swatch primary" data-label="Primario">
-          <span class="hex-large">#00AEEA</span>
-        </div>
+        <div class="color-swatch primary" data-label="Primario"><span class="hex-large">#00AEEA</span></div>
         <div class="color-data">
           <h4>Celeste institucional</h4>
           <p>Color primario · Uso principal en comunicaciones e identidad</p>
@@ -1849,11 +546,8 @@
           </div>
         </div>
       </div>
-
       <div class="color-card">
-        <div class="color-swatch gray" data-label="Primario">
-          <span class="hex-large">#868686</span>
-        </div>
+        <div class="color-swatch gray" data-label="Primario"><span class="hex-large">#868686</span></div>
         <div class="color-data">
           <h4>Gris institucional</h4>
           <p>Color primario · Apoyo tipográfico y estructura visual</p>
@@ -1869,68 +563,35 @@
   </div>
 </section>
 
-<!-- ============= TIPOGRAFÍA ============= -->
+<!-- TIPOGRAFÍA -->
 <section id="tipografia">
   <div class="container">
-    <div class="section-head">
-      <div class="section-num">05 — Tipografía Corporativa</div>
-      <h2>Inter es nuestra voz escrita.</h2>
-    </div>
-
-    <p style="max-width: 680px; color: #444; font-size: 1.05rem; margin-bottom: 3rem;">La tipografía es uno de los elementos de la marca que determinan y muestran fielmente su carácter y estilo. Inter es una fuente de uso libre, gratuita, que se emplea en todas nuestras producciones gráficas, editoriales y audiovisuales.</p>
-
+    <div class="section-head"><div class="section-num">05 — Tipografía Corporativa</div><h2>Inter es nuestra voz escrita.</h2></div>
+    <p style="max-width:680px;color:#444;font-size:1.05rem;margin-bottom:3rem">La tipografía es uno de los elementos de la marca que determinan y muestran fielmente su carácter y estilo. Inter es una fuente de uso libre, gratuita, que se emplea en todas nuestras producciones gráficas, editoriales y audiovisuales.</p>
     <div class="type-showcase">
       <div class="type-sample">Hola, soy <em>Inter</em></div>
       <div class="type-alphabet">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 0123456789 &amp; ? ! @</div>
     </div>
-
     <div class="type-weights">
-      <div class="weight-sample w300">
-        <div class="glyph">Aa</div>
-        <div class="weight-label">Light · 300</div>
-      </div>
-      <div class="weight-sample w400">
-        <div class="glyph">Aa</div>
-        <div class="weight-label">Regular · 400</div>
-      </div>
-      <div class="weight-sample w500">
-        <div class="glyph">Aa</div>
-        <div class="weight-label">Medium · 500</div>
-      </div>
-      <div class="weight-sample w700">
-        <div class="glyph">Aa</div>
-        <div class="weight-label">Bold · 700</div>
-      </div>
+      <div class="weight-sample w300"><div class="glyph">Aa</div><div class="weight-label">Light · 300</div></div>
+      <div class="weight-sample w400"><div class="glyph">Aa</div><div class="weight-label">Regular · 400</div></div>
+      <div class="weight-sample w500"><div class="glyph">Aa</div><div class="weight-label">Medium · 500</div></div>
+      <div class="weight-sample w700"><div class="glyph">Aa</div><div class="weight-label">Bold · 700</div></div>
     </div>
-
     <div class="type-downloads">
-      <a href="https://drive.google.com/uc?export=download&id=1vRtNchDmkJlpuYxRrSLRfPX9rSen0-oN" class="btn" target="_blank" rel="noopener">
-        <span>Inter Regular · descarga directa</span>
-        <span class="arrow">→</span>
-      </a>
-      <a href="https://drive.google.com/uc?export=download&id=1GvM816EO2pnK346MwjpdXMj8pxk7cxCk" class="btn" target="_blank" rel="noopener">
-        <span>Inter Italic · descarga directa</span>
-        <span class="arrow">→</span>
-      </a>
-      <a href="https://fonts.google.com/selection?query=inter" class="btn btn-primary" target="_blank" rel="noopener">
-        <span>Inter · Google Fonts</span>
-        <span class="arrow">→</span>
-      </a>
+      <a href="https://drive.google.com/uc?export=download&id=1vRtNchDmkJlpuYxRrSLRfPX9rSen0-oN" class="btn" target="_blank" rel="noopener"><span>Inter Regular · descarga directa</span><span class="arrow">→</span></a>
+      <a href="https://drive.google.com/uc?export=download&id=1GvM816EO2pnK346MwjpdXMj8pxk7cxCk" class="btn" target="_blank" rel="noopener"><span>Inter Italic · descarga directa</span><span class="arrow">→</span></a>
+      <a href="https://fonts.google.com/selection?query=inter" class="btn btn-primary" target="_blank" rel="noopener"><span>Inter · Google Fonts</span><span class="arrow">→</span></a>
     </div>
   </div>
 </section>
 
-<!-- ============= RECURSOS ============= -->
-<section id="recursos" style="background: var(--gray-lighter);">
+<!-- RECURSOS -->
+<section id="recursos" style="background:var(--gray-lighter)">
   <div class="container">
-    <div class="section-head">
-      <div class="section-num">06 — Recursos Descargables</div>
-      <h2>Plantillas listas para usar.</h2>
-    </div>
-
+    <div class="section-head"><div class="section-num">06 — Recursos Descargables</div><h2>Plantillas listas para usar.</h2></div>
     <p class="resources-intro">Los siguientes recursos descargables amplían los contenidos de este Manual de Imagen Institucional. Todos cuentan con un botón de descarga o acceso directo al material correspondiente. Antes de utilizarlos, verificá siempre que sea la última versión disponible.</p>
 
-    <!-- ARCHIVOS EDITABLES -->
     <div class="resources-cat">
       <h3>Archivos editables <span class="count">AI · PDF · PNG · SVG</span></h3>
       <div class="resources-grid">
@@ -1939,15 +600,11 @@
           <h4>Kit de logos ATERYM</h4>
           <p>Versiones originales del isologotipo en todos los formatos de archivo.</p>
           <div class="specs">AI · PDF · PNG · SVG</div>
-          <div class="footer-row">
-            <span class="open-link">Abrir carpeta →</span>
-            <span class="platform-tag">Google Drive</span>
-          </div>
+          <div class="footer-row"><span class="open-link">Abrir carpeta →</span><span class="platform-tag">Google Drive</span></div>
         </a>
       </div>
     </div>
 
-    <!-- PAPELERÍA INSTITUCIONAL -->
     <div class="resources-cat">
       <h3>Papelería institucional <span class="count">6 recursos</span></h3>
       <div class="resources-grid">
@@ -1956,70 +613,46 @@
           <h4>Hoja membretada</h4>
           <p>Plantilla oficial para trabajo colaborativo desde Google Docs o Word.</p>
           <div class="specs">Formato A4 · Uso digital e impresión</div>
-          <div class="footer-row">
-            <span class="open-link">Crear copia →</span>
-            <span class="platform-tag">Google Docs</span>
-          </div>
+          <div class="footer-row"><span class="open-link">Crear copia →</span><span class="platform-tag">Google Docs</span></div>
         </a>
-
         <a href="https://drive.google.com/file/d/1l-qGjepCRhOjxkETMfDzpjrSmbEmR-GZ/view?usp=sharing" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Para imprenta</div>
           <h4>Hoja membretada · Impresión</h4>
           <p>Archivo listo para enviar a imprenta en caso de reimpresión.</p>
           <div class="specs">A4 · Alta resolución</div>
-          <div class="footer-row">
-            <span class="open-link">Descargar →</span>
-            <span class="platform-tag">Google Drive</span>
-          </div>
+          <div class="footer-row"><span class="open-link">Descargar →</span><span class="platform-tag">Google Drive</span></div>
         </a>
-
         <a href="https://drive.google.com/file/d/1mJbakCAwODtr00Y5mnuc90Dw0dgU3G-D/view?usp=sharing" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Impreso</div>
           <h4>RP Institucional</h4>
           <p>Diseño del RP de la institución. Uso exclusivamente impreso.</p>
           <div class="specs">16 cm × 22 cm</div>
-          <div class="footer-row">
-            <span class="open-link">Descargar →</span>
-            <span class="platform-tag">Google Drive</span>
-          </div>
+          <div class="footer-row"><span class="open-link">Descargar →</span><span class="platform-tag">Google Drive</span></div>
         </a>
-
         <a href="https://drive.google.com/file/d/1zKx4A-TrBPjyxhzqcwWXc4yz_r9wlP4t/view?usp=drive_link" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Impreso</div>
           <h4>Turnero</h4>
           <p>Documento para entrega de turnos. Uso exclusivamente impreso.</p>
           <div class="specs">10 cm × 5 cm</div>
-          <div class="footer-row">
-            <span class="open-link">Descargar →</span>
-            <span class="platform-tag">Google Drive</span>
-          </div>
+          <div class="footer-row"><span class="open-link">Descargar →</span><span class="platform-tag">Google Drive</span></div>
         </a>
-
         <a href="https://drive.google.com/file/d/1RRz-6r4Qr4Idj5g2Sl--Y_1k7gCaabmj/view?usp=drive_link" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Impreso</div>
           <h4>Tarjeta Aterym Alta Gracia</h4>
           <p>Tarjeta con información de contacto institucional.</p>
           <div class="specs">8,5 cm × 5,5 cm</div>
-          <div class="footer-row">
-            <span class="open-link">Descargar →</span>
-            <span class="platform-tag">Google Drive</span>
-          </div>
+          <div class="footer-row"><span class="open-link">Descargar →</span><span class="platform-tag">Google Drive</span></div>
         </a>
-
         <a href="https://drive.google.com/file/d/1wIb1qaBA97mLqXSSDi6ge1QXLAezym5K/view?usp=drive_link" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Impreso</div>
           <h4>Carpeta institucional</h4>
           <p>Carpeta color mate, sin OPP, con solapa interna blanca.</p>
           <div class="specs">Color mate · Solapa interna</div>
-          <div class="footer-row">
-            <span class="open-link">Descargar →</span>
-            <span class="platform-tag">Google Drive</span>
-          </div>
+          <div class="footer-row"><span class="open-link">Descargar →</span><span class="platform-tag">Google Drive</span></div>
         </a>
       </div>
     </div>
 
-    <!-- EVENTOS Y PRESENTACIONES -->
     <div class="resources-cat">
       <h3>Eventos y presentaciones <span class="count">2 recursos</span></h3>
       <div class="resources-grid">
@@ -2028,26 +661,18 @@
           <h4>Banners roll-up</h4>
           <p>Banners para complementar el kit de eventos de Aterym Alta Gracia.</p>
           <div class="specs">85 cm × 200 cm</div>
-          <div class="footer-row">
-            <span class="open-link">Descargar →</span>
-            <span class="platform-tag">Google Drive</span>
-          </div>
+          <div class="footer-row"><span class="open-link">Descargar →</span><span class="platform-tag">Google Drive</span></div>
         </a>
-
         <a href="https://docs.google.com/presentation/d/1F_BmGW8OylB0c79aVO7dCgvvPpUOQdVd/copy" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Editable online</div>
           <h4>Plantilla PowerPoint</h4>
           <p>Plantilla oficial. Editable en Google Slides o descargable como PPTX.</p>
           <div class="specs">PPTX · Google Slides</div>
-          <div class="footer-row">
-            <span class="open-link">Crear copia →</span>
-            <span class="platform-tag">Google Slides</span>
-          </div>
+          <div class="footer-row"><span class="open-link">Crear copia →</span><span class="platform-tag">Google Slides</span></div>
         </a>
       </div>
     </div>
 
-    <!-- CREDENCIALES Y FIRMAS -->
     <div class="resources-cat">
       <h3>Credenciales y firmas <span class="count">Diseñadas en Canva</span></h3>
       <div class="resources-grid">
@@ -2056,50 +681,34 @@
           <h4>Credenciales verticales</h4>
           <p>Plantilla oficial en Canva. Se pedirá crear una copia al abrir.</p>
           <div class="specs">8 cm × 11 cm</div>
-          <div class="footer-row">
-            <span class="open-link">Crear copia →</span>
-            <span class="platform-tag">Canva</span>
-          </div>
+          <div class="footer-row"><span class="open-link">Crear copia →</span><span class="platform-tag">Canva</span></div>
         </a>
-
         <a href="https://www.canva.com/design/DAG4ZQHeLb4/BC6WkNz1hoT3oHvZa-0aDg/view?utm_content=DAG4ZQHeLb4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Canva</div>
           <h4>Credenciales horizontales</h4>
           <p>Plantilla oficial en Canva. Se pedirá crear una copia al abrir.</p>
           <div class="specs">9 cm × 5,5 cm</div>
-          <div class="footer-row">
-            <span class="open-link">Crear copia →</span>
-            <span class="platform-tag">Canva</span>
-          </div>
+          <div class="footer-row"><span class="open-link">Crear copia →</span><span class="platform-tag">Canva</span></div>
         </a>
-
         <a href="https://www.canva.com/design/DAG4ZZlKdTw/EMjdLrEq8vuGLxF1DuBplA/view?utm_content=DAG4ZZlKdTw&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Canva</div>
           <h4>Firma de mail</h4>
           <p>Plantilla oficial de firma de correo institucional.</p>
           <div class="specs">Firma digital · PNG exportable</div>
-          <div class="footer-row">
-            <span class="open-link">Crear copia →</span>
-            <span class="platform-tag">Canva</span>
-          </div>
+          <div class="footer-row"><span class="open-link">Crear copia →</span><span class="platform-tag">Canva</span></div>
         </a>
-
         <a href="https://www.canva.com/design/DAG4ZXbhdoM/RNTNLXe42hfrBCnzMybnFQ/view?utm_content=DAG4ZXbhdoM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Canva</div>
           <h4>Plantilla adicional</h4>
           <p>Recurso complementario en Canva para piezas institucionales.</p>
           <div class="specs">Editable · Canva</div>
-          <div class="footer-row">
-            <span class="open-link">Crear copia →</span>
-            <span class="platform-tag">Canva</span>
-          </div>
+          <div class="footer-row"><span class="open-link">Crear copia →</span><span class="platform-tag">Canva</span></div>
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============= FOOTER ============= -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -2116,7 +725,7 @@
       </div>
       <div>
         <h4>Acreditación</h4>
-        <p style="font-size: 0.9rem; opacity: 0.7;">Centro de diálisis acreditado en calidad y seguridad del paciente por el ITAES.</p>
+        <p style="font-size:.9rem;opacity:.7">Centro de diálisis acreditado en calidad y seguridad del paciente por el ITAES.</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -2127,61 +736,17 @@
 </footer>
 
 <script>
-  // Scroll animations
-  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, observerOptions);
-  document.querySelectorAll('section, .resource-card, .mvv-card, .logo-card, .color-card').forEach(el => {
-    el.classList.add('fade-in');
-    observer.observe(el);
-  });
+// Fade-in on scroll
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')), {threshold:.1, rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('section,.resource-card,.mvv-card,.logo-card,.color-card').forEach(el => { el.classList.add('fade-in'); io.observe(el); });
 
-  // Smooth nav shadow on scroll
-  const nav = document.querySelector('nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) nav.style.boxShadow = '0 1px 0 rgba(0,0,0,0.04)';
-    else nav.style.boxShadow = 'none';
-  });
-
-  // Mobile nav toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  const body = document.body;
-
-  function closeNav() {
-    navToggle.classList.remove('open');
-    navLinks.classList.remove('open');
-    body.classList.remove('nav-open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  }
-
-  navToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const isOpen = navLinks.classList.toggle('open');
-    navToggle.classList.toggle('open', isOpen);
-    body.classList.toggle('nav-open', isOpen);
-    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-
-  // Cerrar al hacer click en un link
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeNav);
-  });
-
-  // Cerrar al hacer click fuera (backdrop)
-  document.addEventListener('click', (e) => {
-    if (
-      navLinks.classList.contains('open') &&
-      !navLinks.contains(e.target) &&
-      !navToggle.contains(e.target)
-    ) {
-      closeNav();
-    }
-  });
+// Nav shadow + mobile toggle
+const nav = document.querySelector('nav'), tog = document.querySelector('.nav-toggle'), links = document.querySelector('.nav-links');
+addEventListener('scroll', () => nav.style.boxShadow = scrollY > 50 ? '0 1px 0 rgba(0,0,0,.04)' : 'none');
+const closeNav = () => { tog.classList.remove('open'); links.classList.remove('open'); document.body.classList.remove('nav-open'); tog.setAttribute('aria-expanded','false'); };
+tog.addEventListener('click', e => { e.stopPropagation(); const o = links.classList.toggle('open'); tog.classList.toggle('open', o); document.body.classList.toggle('nav-open', o); tog.setAttribute('aria-expanded', o); });
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+document.addEventListener('click', e => { if (links.classList.contains('open') && !links.contains(e.target) && !tog.contains(e.target)) closeNav(); });
 </script>
-
 </body>
 </html>
