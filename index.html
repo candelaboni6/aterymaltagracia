@@ -195,9 +195,8 @@
 
   .hero-logo-preview img {
     max-width: 100%;
-    width: auto;
     height: auto;
-    max-height: 180px;
+    max-height: 120px;
     object-fit: contain;
   }
 
@@ -396,11 +395,11 @@
   }
 
   .logo-card .logo-display {
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 320px;
+    min-height: 260px;
     background: var(--white);
   }
 
@@ -417,10 +416,8 @@
   }
 
   .logo-card .logo-display img {
-    max-width: 90%;
-    max-height: 240px;
-    width: auto;
-    height: auto;
+    max-width: 70%;
+    max-height: 180px;
     object-fit: contain;
   }
 
@@ -516,39 +513,22 @@
   }
 
   .anniversary-logos .logo-box {
-    background: var(--white);
-    padding: 2.5rem 2rem;
-    min-height: 220px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 2rem;
+    aspect-ratio: 1;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .anniversary-logos .logo-box.dark {
-    background: var(--ink);
-  }
+  .anniversary-logos .logo-box.solid { background: var(--white); }
 
   .anniversary-logos img {
-    max-width: 95%;
-    max-height: 180px;
-    width: auto;
-    height: auto;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
-  }
-
-  .anniversary-logos .logo-label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gray);
-    margin-top: 0.75rem;
-    text-align: center;
-  }
-
-  .anniversary-logo-wrap {
-    display: flex;
-    flex-direction: column;
   }
 
   /* ============= DON'TS ============= */
@@ -982,9 +962,7 @@
   }
 
   .protection-visual img {
-    max-width: 280px;
-    width: 100%;
-    height: auto;
+    max-width: 220px;
     position: relative;
     z-index: 2;
   }
@@ -1062,15 +1040,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 220px;
+    min-height: 180px;
     margin-bottom: 2rem;
   }
 
   .proportion-card .min-logo img {
-    max-height: 160px;
-    max-width: 85%;
-    width: auto;
-    object-fit: contain;
+    max-height: 110px;
   }
 
   .proportion-card h4 {
@@ -1167,32 +1142,302 @@
     opacity: 0.5;
   }
 
-  /* ============= RESPONSIVE ============= */
+  /* ============= NAV TOGGLE (botón hamburguesa) ============= */
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 101;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+    margin: 5px auto;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+  }
+
+  .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* ============= RESPONSIVE: TABLET (≤900px) ============= */
   @media (max-width: 900px) {
-    .container { padding: 0 1.25rem; }
-    .nav-links { gap: 1rem; }
-    .nav-links a { font-size: 0.7rem; }
+    .container { padding: 0 1.5rem; }
+
+    /* Grids 2 columnas que en desktop son 3 */
+    .toc-grid,
+    .donts-grid,
+    .resources-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Grids que pasan a 1 columna */
     .hero-grid,
     .intro-grid,
     .mvv-grid,
-    .logo-grid,
-    .color-grid,
     .protection-grid,
     .anniversary-grid,
-    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .toc-grid,
-    .donts-grid,
-    .resources-grid,
-    .proportions-grid,
-    .type-weights,
-    .type-downloads { grid-template-columns: 1fr; }
-    .hero-logo-preview { grid-template-columns: 1fr; }
-    .section-head { grid-template-columns: 1fr; gap: 0.5rem; }
-    section { padding: 4rem 0; }
-    .pull-quote { padding: 2rem; }
-    .pull-quote p { font-size: 1.2rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+    .section-head { grid-template-columns: 1fr; gap: 0.75rem; }
+    section { padding: 4.5rem 0; }
+    .anniversary::before { font-size: 24rem; right: -2rem; bottom: -5rem; }
+  }
+
+  /* ============= RESPONSIVE: MOBILE (≤640px) ============= */
+  @media (max-width: 640px) {
+    .container { padding: 0 1.25rem; }
+
+    /* --- NAV con menú hamburguesa --- */
+    nav .container { padding: 0.85rem 1.25rem; }
+    .nav-logo { font-size: 1rem; }
+    .nav-toggle { display: block; }
+
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 78%;
+      max-width: 320px;
+      background: var(--paper);
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 5rem 2rem 2rem;
+      gap: 0;
+      transform: translateX(100%);
+      transition: transform 0.35s ease;
+      box-shadow: -8px 0 30px rgba(0,0,0,0.08);
+      overflow-y: auto;
+      z-index: 100;
+    }
+    .nav-links.open { transform: translateX(0); }
+    .nav-links li { border-bottom: 1px solid var(--gray-light); }
+    .nav-links a {
+      display: block;
+      padding: 1.1rem 0;
+      font-size: 0.95rem;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    /* Backdrop para cuando está abierto */
+    body.nav-open::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 99;
+      backdrop-filter: blur(2px);
+    }
+
+    /* Cuando el menú está abierto, el nav no debe difuminar el panel */
+    body.nav-open nav {
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-bottom-color: transparent;
+    }
+
+    /* --- SECCIONES --- */
+    section { padding: 3.5rem 0; }
+
+    /* --- HERO --- */
+    .hero {
+      min-height: auto;
+      padding: 6rem 0 3rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 11vw, 3.75rem);
+      margin-bottom: 1.5rem;
+    }
+    .hero-grid { gap: 2rem; }
+    .hero-meta-item { padding: 0.85rem 0; }
+    .hero-meta-item .value { font-size: 0.95rem; }
+    .hero-logo-preview {
+      grid-template-columns: 1fr;
+      margin-top: 2.5rem;
+      gap: 2rem;
+    }
+    .hero-logo-preview img { max-height: 95px; }
+
+    /* --- SECTION HEAD --- */
+    .section-head {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.25rem;
+    }
+    .section-head h2 {
+      font-size: clamp(1.7rem, 7.5vw, 2.25rem);
+    }
+
+    /* --- ÍNDICE --- */
+    .toc-grid { grid-template-columns: 1fr; margin-top: 2rem; }
+    .toc-item {
+      padding: 1.75rem 1.5rem;
+      min-height: auto;
+    }
+    .toc-number { font-size: 2.25rem; margin-bottom: 0.5rem; }
+
+    /* --- INTRO / PULL QUOTE --- */
+    .intro-grid { gap: 2rem; }
+    .pull-quote { padding: 2.5rem 1.5rem 2rem; }
+    .pull-quote .quote-mark {
+      font-size: 3.5rem;
+      top: 1.25rem;
+      left: 1.25rem;
+    }
+    .pull-quote p {
+      font-size: 1.1rem;
+      padding-top: 1.5rem;
+    }
+
+    /* --- MISIÓN/VISIÓN/VALORES --- */
+    .mvv-grid { gap: 1.25rem; }
+    .mvv-card { padding: 2rem 1.75rem; }
+    .mvv-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+
+    /* --- LOGOS --- */
+    .logo-grid { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.5rem; }
+    .logo-card .logo-display {
+      padding: 2.5rem 1.5rem;
+      min-height: 200px;
+    }
+    .logo-card .logo-display img { max-height: 130px; max-width: 80%; }
+    .logo-card .logo-meta { padding: 1.25rem 1.5rem; }
+
+    /* --- ZONA DE PROTECCIÓN --- */
+    .protection-grid { gap: 2rem; }
+    .protection-demo {
+      padding: 3.5rem 2rem 2.5rem;
+      min-height: auto;
+    }
+    .protection-visual img { max-width: 150px; }
+    .protection-visual .protection-box {
+      top: -20px; left: -20px; right: -20px; bottom: -20px;
+    }
+    .measure-top { top: -28px; }
+    .measure-left { left: -36px; }
+    .formula-box { padding: 1.25rem 1.5rem; }
+    .formula-box .formula { font-size: 1.05rem; }
+
+    /* --- PROPORCIONES --- */
+    .proportions-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .proportion-card { padding: 2rem 1.5rem; }
+    .proportion-card .min-logo {
+      padding: 1rem;
+      min-height: 140px;
+      margin-bottom: 1.25rem;
+    }
+    .proportion-card .size { font-size: 2rem; }
+
+    /* --- 25 AÑOS --- */
+    .anniversary {
+      padding: 3.5rem 0;
+      margin-top: 3rem;
+    }
+    .anniversary::before {
+      font-size: 14rem;
+      right: -1.5rem;
+      bottom: -3rem;
+    }
+    .anniversary-grid { gap: 2.5rem; }
+    .anniversary-logos { gap: 1rem; }
+    .anniversary-logos .logo-box { padding: 1.25rem; }
+
+    /* --- USOS INCORRECTOS --- */
+    .donts-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.5rem; }
+    .dont-card { padding: 1.25rem; }
+    .dont-preview { height: 90px; margin-bottom: 1rem; }
+    .dont-card h4 { font-size: 0.85rem; }
+    .dont-card p { font-size: 0.78rem; line-height: 1.45; }
+
+    /* --- COLORES --- */
+    .color-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+    .color-swatch { height: 200px; padding: 1.5rem; }
+    .color-swatch .hex-large { font-size: 2rem; }
+    .color-swatch::before {
+      width: 44px; height: 44px;
+      top: 1.5rem; left: 1.5rem;
+    }
+    .color-swatch.primary::after,
+    .color-swatch.gray::after {
+      top: 1.5rem; right: 1.5rem;
+      font-size: 0.65rem;
+    }
+    .color-data { padding: 1.5rem; }
+    .color-data h4 { font-size: 1.2rem; }
+    .color-codes > div { padding: 0.85rem; }
+    .color-codes .code-value { font-size: 0.85rem; }
+
+    /* --- TIPOGRAFÍA --- */
     .type-showcase { padding: 2rem 1.5rem; }
-    .anniversary::before { font-size: 20rem; }
+    .type-sample {
+      font-size: clamp(2.5rem, 14vw, 4.5rem);
+      margin-bottom: 1.5rem;
+    }
+    .type-alphabet {
+      font-size: 0.85rem;
+      padding-top: 1.5rem;
+      letter-spacing: 0.03em;
+    }
+    .type-weights {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+    .weight-sample { padding: 1.5rem 1rem; }
+    .weight-sample .glyph { font-size: 2.5rem; }
+    .type-downloads {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    .btn { padding: 0.9rem 1.25rem; font-size: 0.85rem; }
+
+    /* --- RECURSOS --- */
+    .resources-cat { margin-bottom: 2.25rem; }
+    .resources-cat h3 {
+      font-size: 1.2rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-bottom: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+    .resources-cat h3 .count { font-size: 0.65rem; }
+    .resources-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .resource-card { padding: 1.5rem; }
+    .resource-card h4 { font-size: 1.15rem; }
+    .resource-card p { margin-bottom: 1.25rem; }
+    .resource-card .specs { margin-bottom: 1.25rem; }
+
+    /* --- FOOTER --- */
+    footer.site-footer { padding: 3.5rem 0 1.5rem; }
+    footer .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    footer .brand { font-size: 2rem; }
+    footer .tagline { font-size: 1rem; }
+    footer .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 0.75rem;
+    }
+  }
+
+  /* ============= RESPONSIVE: EXTRA SMALL (≤380px) ============= */
+  @media (max-width: 380px) {
+    .container { padding: 0 1rem; }
+    .donts-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.15rem; }
+    .section-head h2 { font-size: 1.55rem; }
   }
 
   /* Animations on scroll */
@@ -1214,6 +1459,9 @@
 <nav>
   <div class="container">
     <a href="#top" class="nav-logo">ATERYM<span>.</span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <ul class="nav-links">
       <li><a href="#intro">01 Intro</a></li>
       <li><a href="#institucional">02 Institucional</a></li>
@@ -1253,10 +1501,6 @@
       </div>
     </div>
 
-    <div class="hero-logo-preview">
-      <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Logo ATERYM Alta Gracia" onerror="this.style.display='none'">
-      <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(3).png" alt="Logo 25 años ATERYM" onerror="this.style.display='none'">
-    </div>
   </div>
 </section>
 
@@ -1511,17 +1755,17 @@
             <p>Esta versión conmemorativa del isologotipo celebra 25 años de trayectoria de Aterym Alta Gracia. Su uso se reserva para piezas institucionales seleccionadas durante el año aniversario, manteniendo siempre la zona de protección y las proporciones definidas para la versión principal.</p>
           </div>
           <div class="anniversary-logos">
-            <div class="anniversary-logo-wrap">
-              <div class="logo-box">
-                <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(3).png" alt="Logo 25 años versión principal">
-              </div>
-              <div class="logo-label" style="color: rgba(255,255,255,0.7);">Versión principal</div>
+            <div class="logo-box solid">
+              <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(3).png" alt="Logo 25 años v1">
             </div>
-            <div class="anniversary-logo-wrap">
-              <div class="logo-box">
-                <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(3).png" alt="Logo 25 años escala de grises" style="filter: grayscale(100%);">
-              </div>
-              <div class="logo-label" style="color: rgba(255,255,255,0.7);">Versión escala de grises</div>
+            <div class="logo-box solid">
+              <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(4).png" alt="Logo 25 años v2">
+            </div>
+            <div class="logo-box">
+              <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(5).png" alt="Logo 25 años v3">
+            </div>
+            <div class="logo-box">
+              <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(6).png" alt="Logo 25 años v4">
             </div>
           </div>
         </div>
@@ -1900,6 +2144,42 @@
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) nav.style.boxShadow = '0 1px 0 rgba(0,0,0,0.04)';
     else nav.style.boxShadow = 'none';
+  });
+
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const body = document.body;
+
+  function closeNav() {
+    navToggle.classList.remove('open');
+    navLinks.classList.remove('open');
+    body.classList.remove('nav-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    body.classList.toggle('nav-open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Cerrar al hacer click en un link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeNav);
+  });
+
+  // Cerrar al hacer click fuera (backdrop)
+  document.addEventListener('click', (e) => {
+    if (
+      navLinks.classList.contains('open') &&
+      !navLinks.contains(e.target) &&
+      !navToggle.contains(e.target)
+    ) {
+      closeNav();
+    }
   });
 </script>
 
