@@ -258,6 +258,107 @@ body::after{
 .resource-card .open{font-size:.78rem;font-weight:500;letter-spacing:.04em;color:var(--ink)}
 .resource-card .platform{font-size:.65rem;font-weight:500;color:var(--ink-soft);padding:.25rem .55rem;border:1px solid var(--line-soft);border-radius:2px;letter-spacing:.06em;text-transform:uppercase}
 
+  /* === RRSS === */
+.rrss-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem}
+.rrss-post{position:relative;border:1px solid var(--line-soft);border-radius:2px;overflow:hidden;aspect-ratio:1/1;display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
+.rrss-post:hover{transform:translateY(-3px);border-color:var(--accent)}
+.post-cat{position:absolute;top:.85rem;left:.85rem;z-index:5;font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:.25rem .55rem;background:rgba(244,241,236,.95);color:var(--ink);border-radius:2px;backdrop-filter:blur(8px)}
+.post-content{padding:1.5rem;display:flex;flex-direction:column;height:100%;justify-content:space-between;gap:1rem}
+.rrss-eyebrow{font-size:.58rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;opacity:.85}
+.post-headline{font-weight:200;font-size:1.35rem;letter-spacing:-.02em;line-height:1.15}
+.post-headline strong{font-weight:500;color:var(--accent)}
+.post-headline em{font-style:italic;color:var(--accent);font-weight:300}
+.post-bottom{font-size:.78rem;font-weight:300;opacity:.7;line-height:1.4;margin-top:auto}
+.post-tag{font-size:.7rem;font-weight:500;color:var(--accent);letter-spacing:.06em;margin-top:auto}
+
+/* 01 · Tipográfico bg beige */
+.post-typo-bg{background:var(--bg-deep);color:var(--ink)}
+.post-typo-bg .rrss-eyebrow{color:var(--accent)}
+
+/* 02 · Stat */
+.post-stat{background:var(--bg);color:var(--ink)}
+.post-stat .rrss-eyebrow{color:var(--accent)}
+.post-stat .big-stat{font-weight:200;font-size:7rem;line-height:.9;color:var(--accent);letter-spacing:-.05em;margin:auto 0}
+
+/* 03 · Educativo */
+.post-edu{background:var(--accent-tint);color:var(--ink)}
+.post-edu .rrss-eyebrow{color:var(--accent-deep)}
+.post-edu .post-headline strong{color:var(--accent-deep);font-weight:600}
+
+/* 04 · Foto + cita */
+.post-photo{background:linear-gradient(180deg,rgba(26,35,50,.2) 0%,rgba(26,35,50,.92) 70%),url('https://aterym.com/wp-content/uploads/2026/03/aterym-alta-gracia-1024x682.webp') center/cover;color:var(--bg)}
+.post-photo .post-cat{background:rgba(26,35,50,.85);color:var(--bg)}
+.post-overlay{padding:1.5rem;display:flex;flex-direction:column;height:100%;justify-content:flex-end;gap:.85rem}
+.post-overlay .rrss-eyebrow{color:var(--accent-tint);opacity:.9}
+.post-quote{font-weight:200;font-size:1.15rem;line-height:1.35;font-style:italic;letter-spacing:-.01em}
+.post-attr{font-size:.7rem;font-weight:500;letter-spacing:.06em;opacity:.7}
+
+/* 05 · Reel (vertical) */
+.post-reel{aspect-ratio:9/16;grid-row:span 2;background:linear-gradient(170deg,var(--ink) 0%,var(--accent-deep) 100%);color:var(--bg);position:relative;overflow:hidden}
+.post-reel::before{content:"";position:absolute;top:-30%;right:-30%;width:80%;height:80%;background:radial-gradient(circle,rgba(58,90,124,.4) 0%,transparent 60%);pointer-events:none}
+.reel-cat{background:rgba(244,241,236,.95)}
+.reel-content{padding:1.5rem;justify-content:flex-end}
+.reel-eyebrow{font-size:.65rem;font-weight:600;color:var(--accent-tint);letter-spacing:.22em;text-transform:uppercase;margin-bottom:1rem;display:block}
+.reel-headline{font-weight:200;font-size:1.85rem;letter-spacing:-.025em;line-height:1.05;margin-bottom:1.5rem}
+.reel-headline em{font-style:italic;color:var(--accent-tint);font-weight:300}
+.reel-meta{display:flex;flex-direction:column;gap:.85rem;border-top:1px solid rgba(244,241,236,.15);padding-top:1.25rem}
+.reel-date{font-weight:500;font-size:.75rem;letter-spacing:.18em;color:var(--accent-tint);font-variant-numeric:tabular-nums}
+.reel-cta{font-size:.78rem;font-weight:500;letter-spacing:.06em;color:var(--bg);opacity:.9}
+
+/* 06 · Jornada (azul pizarra) */
+.post-jornada{background:#3A5A7C;color:var(--bg)}
+.post-jornada .post-cat{background:rgba(244,241,236,.92);color:var(--ink)}
+.post-jornada .rrss-eyebrow{color:var(--accent-tint);opacity:.85}
+.post-jornada .post-headline strong{color:var(--accent-tint);font-weight:500}
+.jornada-info{display:flex;gap:1.25rem;margin-top:auto;padding-top:1rem;border-top:1px solid rgba(244,241,236,.18)}
+.jornada-info > div{display:flex;flex-direction:column;gap:.2rem}
+.jornada-info .info-num{font-weight:200;font-size:1.5rem;letter-spacing:-.03em;color:var(--accent-tint);font-variant-numeric:tabular-nums;line-height:1}
+.jornada-info .info-label{font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;opacity:.75}
+
+/* 07 · Equipo (foto + texto) */
+.post-team{background:var(--ink);color:var(--bg);display:grid;grid-template-rows:1.6fr 1fr}
+.post-team-img{background-size:cover;background-position:center;filter:saturate(.85)}
+.post-team-info{padding:1.25rem;display:flex;flex-direction:column;gap:.5rem;justify-content:center}
+.post-team-info .rrss-eyebrow{color:var(--accent-tint);opacity:.85}
+.post-team-info h4{font-weight:300;font-size:1rem;line-height:1.3;letter-spacing:-.01em}
+
+/* 08 · Frase manifiesto */
+.post-quote-bg{background:var(--bg-card);color:var(--ink);border:1px solid var(--line-soft)}
+.post-quote-bg .rrss-eyebrow{color:var(--accent)}
+.post-quote-bg .post-content.centered{justify-content:center;text-align:left}
+.post-quote-big{font-weight:200;font-size:1.4rem;line-height:1.25;letter-spacing:-.02em}
+.post-quote-big em{font-style:italic;color:var(--accent);font-weight:300}
+
+/* 09 · Efeméride */
+.post-day{background:var(--bg);color:var(--ink);border:1px solid var(--line-soft)}
+.post-day .rrss-eyebrow{color:var(--accent);font-weight:700}
+.post-day .post-headline strong{color:var(--accent);font-weight:500}
+
+/* Notas inferiores */
+.rrss-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;padding-top:3rem;border-top:1px solid var(--line-soft)}
+.rrss-note{display:flex;flex-direction:column;gap:.5rem}
+.rrss-note .note-num{font-weight:200;font-size:2rem;color:var(--accent);letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.rrss-note h4{font-size:1rem;font-weight:500;color:var(--ink);letter-spacing:-.01em}
+.rrss-note p{font-size:.85rem;color:var(--ink-soft);font-weight:300;line-height:1.6}
+
+/* Responsive */
+@media (max-width:900px){
+  .rrss-grid{grid-template-columns:repeat(2,1fr)}
+  .post-reel{grid-row:span 2}
+  .rrss-notes{grid-template-columns:1fr;gap:1.25rem}
+}
+@media (max-width:480px){
+  .rrss-grid{grid-template-columns:repeat(2,1fr);gap:.75rem}
+  .post-headline{font-size:1.05rem}
+  .post-stat .big-stat{font-size:5rem}
+  .reel-headline{font-size:1.4rem}
+  .post-quote-big{font-size:1.1rem}
+  .post-content{padding:1rem}
+  .post-overlay{padding:1rem}
+  .reel-content{padding:1rem}
+  .post-cat{font-size:.55rem;padding:.2rem .45rem}
+}
+
 /* === CTA descarga === */
 .cta-download{text-align:center;padding:clamp(3rem,5vw,4rem) 0;margin-top:clamp(3rem,5vw,4rem);border-top:1px solid var(--line-soft)}
 .cta-download p{color:var(--ink-soft);margin-bottom:1.5rem;font-size:.95rem;font-weight:300}
@@ -336,6 +437,7 @@ footer{background:var(--ink);color:var(--bg);padding:clamp(3rem,6vw,5rem) clamp(
       <li><a href="#identidad">Identidad</a></li>
       <li><a href="#colores">Color</a></li>
       <li><a href="#tipografia">Tipografía</a></li>
+      <li><a href="#rrss">RRSS</a></li>
       <li><a class="nav-cta" href="#recursos">Recursos</a></li>
     </ul>
     <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('mobile-show')" aria-label="Abrir menú">
@@ -759,6 +861,133 @@ footer{background:var(--ink);color:var(--bg);padding:clamp(3rem,6vw,5rem) clamp(
         <span>Contactar al área</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
+    </div>
+  </div>
+</section>
+
+  <!-- ============== RRSS ============== -->
+<section class="section" id="rrss">
+  <div class="section-inner wide">
+    <div class="section-header">
+      <span class="section-eyebrow">07 · Redes Sociales</span>
+      <h2 class="section-title">Cómo se ven nuestras <strong>publicaciones</strong>.</h2>
+      <p class="section-sub">Lineamientos visuales para piezas de redes sociales: tipografía, color y composición que mantienen la identidad coherente en cada formato.</p>
+    </div>
+
+    <div class="rrss-grid">
+      <!-- 01 · Tipográfico institucional -->
+      <article class="rrss-post post-feed post-typo-bg">
+        <div class="post-cat">Tipográfico</div>
+        <div class="post-content">
+          <span class="rrss-eyebrow">Aterym · Cuidado renal</span>
+          <h3 class="post-headline">Una identidad <em>que cuida</em>, como lo hacemos nosotros.</h3>
+          <span class="post-tag">@aterymnefrologia</span>
+        </div>
+      </article>
+
+      <!-- 02 · Stat institucional -->
+      <article class="rrss-post post-feed post-stat">
+        <div class="post-cat">Institucional</div>
+        <div class="post-content">
+          <span class="rrss-eyebrow">Acreditación ITAES</span>
+          <div class="big-stat">25</div>
+          <p class="post-bottom">Años cuidando con excelencia en Alta Gracia, Córdoba.</p>
+        </div>
+      </article>
+
+      <!-- 03 · Educativo / pregunta -->
+      <article class="rrss-post post-feed post-edu">
+        <div class="post-cat">Educativo</div>
+        <div class="post-content">
+          <span class="rrss-eyebrow">¿Sabías que...</span>
+          <h3 class="post-headline">El riñón filtra <strong>180 litros</strong> de sangre por día.</h3>
+          <p class="post-bottom">Cuidar tu salud renal es cuidar tu vida entera.</p>
+        </div>
+      </article>
+
+      <!-- 04 · Historia de paciente (foto + cita) -->
+      <article class="rrss-post post-feed post-photo">
+        <div class="post-cat">Historias</div>
+        <div class="post-overlay">
+          <span class="rrss-eyebrow">Historia · Paciente</span>
+          <p class="post-quote">"Acá me siento acompañada en cada sesión. Es como una segunda casa."</p>
+          <span class="post-attr">— María L., paciente desde 2019</span>
+        </div>
+      </article>
+
+      <!-- 05 · Reel · Jornada (vertical 9:16) -->
+      <article class="rrss-post post-reel">
+        <div class="post-cat reel-cat">▶ Reel</div>
+        <div class="post-content reel-content">
+          <span class="reel-eyebrow">Mayo · 2026</span>
+          <h3 class="reel-headline">2da Jornada de Calidad <em>en Diálisis</em></h3>
+          <div class="reel-meta">
+            <div class="reel-date">15·16 MAY</div>
+            <span class="reel-cta">Inscribite ahora →</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 06 · Anuncio jornada (azul pizarra) -->
+      <article class="rrss-post post-feed post-jornada">
+        <div class="post-cat">Evento</div>
+        <div class="post-content">
+          <span class="rrss-eyebrow">Save the date</span>
+          <h3 class="post-headline">Jornada Nacional de <strong>Calidad en Diálisis</strong></h3>
+          <div class="jornada-info">
+            <div><span class="info-num">02</span><span class="info-label">2da edición</span></div>
+            <div><span class="info-num">15·16</span><span class="info-label">Mayo 2026</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 07 · Equipo profesional -->
+      <article class="rrss-post post-feed post-team">
+        <div class="post-cat">Equipo</div>
+        <div class="post-team-img" style="background-image:url('https://aterym.com/wp-content/uploads/2026/03/Aterym-Alta-Gracia-14-1024x682.webp')"></div>
+        <div class="post-team-info">
+          <span class="rrss-eyebrow">#EquipoAterym</span>
+          <h4>+30 profesionales especializados en salud renal</h4>
+        </div>
+      </article>
+
+      <!-- 08 · Frase / manifiesto -->
+      <article class="rrss-post post-feed post-quote-bg">
+        <div class="post-cat">Manifiesto</div>
+        <div class="post-content centered">
+          <span class="rrss-eyebrow">Nuestra forma de trabajar</span>
+          <h3 class="post-quote-big">Escuchar con <em>humildad</em>, ser de verdad y <em>transmitir</em> con coherencia.</h3>
+        </div>
+      </article>
+
+      <!-- 09 · Efeméride -->
+      <article class="rrss-post post-feed post-day">
+        <div class="post-cat">Efeméride</div>
+        <div class="post-content">
+          <span class="rrss-eyebrow">14 de Marzo</span>
+          <h3 class="post-headline">Día Mundial del <strong>Riñón</strong></h3>
+          <p class="post-bottom">+500 vecinos participaron del Circuito Renal en Alta Gracia.</p>
+          <span class="post-tag">#DiaMundialDelRiñon</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="rrss-notes">
+      <div class="rrss-note">
+        <span class="note-num">01</span>
+        <h4>Formato feed</h4>
+        <p>Cuadrado 1080×1080 px. Logo presente o tipografía Inter como elemento dominante. Paleta institucional o azul pizarra.</p>
+      </div>
+      <div class="rrss-note">
+        <span class="note-num">02</span>
+        <h4>Reels y portadas</h4>
+        <p>Vertical 1080×1920 px. CTA claro al final. Tipografía en peso 200 con palabras clave en cursiva o peso 500.</p>
+      </div>
+      <div class="rrss-note">
+        <span class="note-num">03</span>
+        <h4>Jerarquía visual</h4>
+        <p>Eyebrow corto + título grande + dato/cita + CTA o handle. Respeta la zona de protección del logo.</p>
+      </div>
     </div>
   </div>
 </section>
