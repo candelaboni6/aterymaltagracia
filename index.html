@@ -4,476 +4,495 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Manual de Imagen Institucional · ATERYM Alta Gracia 2026</title>
+<meta name="description" content="Manual de Imagen Institucional de Aterym Alta Gracia · Edición 2026. Sistema de identidad visual: logos, paleta, tipografía y recursos descargables.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --primary:#00aeea; --primary-dark:#0095c9; --primary-soft:#e6f7fd;
-  --gray:#868686; --gray-light:#d4d4d4; --gray-lighter:#f4f4f4;
-  --ink:#1a1a1a; --paper:#fafafa; --white:#fff;
+  --bg:#f4f1ec; --bg-deep:#ebe6de; --bg-card:#efeae2;
+  --ink:#1a2332; --ink-soft:#4a5668; --muted:#8a8578;
+  --accent:#3a5a7c; --accent-deep:#2a4560; --accent-tint:#e4ecf3;
+  --line:rgba(26,35,50,0.12); --line-soft:rgba(26,35,50,0.07);
+  --aterym:#00aeea;
+  --gh:https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main;
 }
-*{margin:0;padding:0;box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font:400 16px/1.6 'Inter',sans-serif;color:var(--ink);background:var(--paper);font-feature-settings:"ss01","cv11"}
-img{max-width:100%;height:auto}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg); color:var(--ink); font-weight:300; line-height:1.6;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  position:relative; overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 ul{list-style:none}
 
-/* === Tipografía base === */
-.display{font-weight:700;letter-spacing:-.03em;line-height:1.05}
-h1,h2,h3,h4{font-weight:600;letter-spacing:-.02em}
-.eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--primary)}
+/* Atmósfera */
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(58,90,124,0.04) 0%, transparent 50%),
+    radial-gradient(circle at 85% 80%, rgba(58,90,124,0.03) 0%, transparent 50%);
+}
+body::after{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:1;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+  opacity:.06; mix-blend-mode:multiply;
+}
 
-/* === Layout === */
-.container{max-width:1200px;margin:0 auto;padding:0 2rem}
-section{padding:6rem 0;position:relative}
-section+section{border-top:1px solid var(--gray-light)}
+/* === NAV === */
+.nav{position:sticky;top:0;z-index:100;background:rgba(26,35,50,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:1.1rem clamp(1.25rem,4vw,2.5rem);display:flex;justify-content:space-between;align-items:center;gap:2rem}
+.nav-logo{height:38px;width:auto}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{color:rgba(244,241,236,.75);text-decoration:none;font-size:.82rem;font-weight:400;letter-spacing:.04em;transition:color .25s}
+.nav-links a:hover{color:var(--bg)}
+.nav-cta{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.1rem;background:var(--accent);color:var(--bg)!important;border-radius:2px;font-weight:500!important;font-size:.78rem!important;letter-spacing:.06em!important;text-transform:uppercase;transition:background .25s}
+.nav-cta:hover{background:var(--accent-deep)}
+.nav-toggle{display:none;background:transparent;border:none;color:var(--bg);cursor:pointer;padding:.5rem}
+.nav-toggle svg{width:22px;height:22px}
+@media (max-width:780px){
+  .nav-links{display:none}
+  .nav-links.mobile-show{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--ink);padding:1.25rem;gap:1rem;border-bottom:1px solid rgba(255,255,255,.08);align-items:flex-start}
+  .nav-toggle{display:block}
+}
 
-/* === Nav === */
-nav{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(250,250,250,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(134,134,134,.15)}
-nav .container{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem}
-.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
-.nav-logo span{color:var(--primary)}
-.nav-links{display:flex;gap:2rem}
-.nav-links a{font-size:.8rem;font-weight:500;color:var(--gray);text-decoration:none;transition:color .2s}
-.nav-links a:hover{color:var(--primary)}
-.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.5rem;width:40px;height:40px;position:relative;z-index:101}
-.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--ink);margin:5px auto;transition:transform .3s,opacity .2s}
-.nav-toggle.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-.nav-toggle.open span:nth-child(2){opacity:0}
-.nav-toggle.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+/* === HERO === */
+.hero{position:relative;z-index:2;min-height:88vh;min-height:88dvh;display:grid;align-items:center;padding:clamp(3rem,8vw,6rem) clamp(1.25rem,4vw,2.5rem);overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-1;background:url('https://aterym.com/wp-content/uploads/2026/03/Jornada-de-Calidad-Aterym-Alta-Gracia-58.webp') center/cover}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,35,50,.55) 0%,rgba(26,35,50,.82) 60%,rgba(26,35,50,.94) 100%)}
+.hero-inner{max-width:1280px;margin:0 auto;width:100%;position:relative;z-index:1;color:var(--bg)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.65rem;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;margin-bottom:1.75rem;opacity:.9;animation:fadeDown .9s ease-out both}
+.hero-eyebrow .pulse{width:8px;height:8px;border-radius:50%;background:var(--bg);position:relative}
+.hero-eyebrow .pulse::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--bg);animation:pulse 2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(3.5);opacity:0}}
+.hero h1{font-weight:200;font-size:clamp(2.6rem,7vw,5.5rem);letter-spacing:-.035em;line-height:1;margin-bottom:1.5rem;max-width:22ch;animation:fadeUp 1s ease-out .2s both}
+.hero h1 strong{font-weight:500;display:block;position:relative}
+.hero h1 strong::after{content:"";display:block;width:60px;height:2px;background:var(--bg);opacity:.5;margin-top:.5rem}
+.hero-sub{font-size:clamp(.95rem,1.5vw,1.1rem);font-weight:300;letter-spacing:.03em;margin-bottom:2.5rem;opacity:.85;max-width:48ch;animation:fadeUp 1s ease-out .35s both}
+.hero-meta{display:flex;flex-wrap:wrap;gap:2rem;animation:fadeUp 1s ease-out .5s both;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+.hero-meta span strong{color:var(--bg);font-weight:500}
 
-/* === Hero === */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 0 4rem;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-10%;right:-10%;width:60%;height:60%;background:radial-gradient(circle,rgba(0,174,234,.08) 0%,transparent 70%);pointer-events:none}
-.hero .container{position:relative;z-index:1}
-.hero h1{font-size:clamp(3rem,8vw,7rem);line-height:.95;margin-bottom:2rem}
-.hero h1 em{font-style:italic;color:var(--primary);font-weight:300}
+/* === SECTION === */
+.section{position:relative;z-index:2;padding:clamp(4rem,10vw,7rem) clamp(1.25rem,4vw,2.5rem)}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-inner.wide{max-width:1280px}
+.section-header{text-align:center;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.section-eyebrow{display:inline-block;font-size:.72rem;font-weight:600;color:var(--accent);letter-spacing:.22em;text-transform:uppercase;margin-bottom:1rem}
+.section-title{font-weight:200;font-size:clamp(1.9rem,4.2vw,3rem);color:var(--ink);letter-spacing:-.03em;line-height:1.1;max-width:24ch;margin:0 auto}
+.section-title strong{font-weight:500;color:var(--accent)}
+.section-sub{font-size:1rem;color:var(--ink-soft);max-width:48ch;margin:1.25rem auto 0;font-weight:300;line-height:1.6}
 
-/* === Section header === */
-.section-head{display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:baseline;margin-bottom:4rem;padding-bottom:2rem;border-bottom:1px solid var(--gray-light)}
-.section-num{font-size:.8rem;font-weight:500;color:var(--gray);font-variant-numeric:tabular-nums;letter-spacing:.05em}
-.section-head h2{font-weight:600;font-size:clamp(2.25rem,4.5vw,3.5rem);letter-spacing:-.035em;line-height:1.05}
+.section.alt{background:var(--bg-deep);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
 
-/* === Índice === */
-.toc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-light);border:1px solid var(--gray-light);margin-top:3rem}
-.toc-item{background:var(--paper);padding:2.5rem 2rem;text-decoration:none;color:var(--ink);transition:all .3s;display:flex;flex-direction:column;min-height:200px}
-.toc-item:hover{background:var(--white);transform:translateY(-2px)}
-.toc-number{font-size:2.75rem;font-weight:300;color:var(--primary);line-height:1;margin-bottom:1rem;letter-spacing:-.03em}
-.toc-item h3{font-size:1.1rem;margin-bottom:.5rem}
-.toc-item p{font-size:.85rem;color:var(--gray);margin-top:auto}
+/* === BOTONES === */
+.btn{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 1.75rem;text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;border-radius:2px;transition:all .3s cubic-bezier(.2,.8,.2,1);position:relative;overflow:hidden;cursor:pointer;border:none;font-family:inherit}
+.btn svg{width:15px;height:15px;transition:transform .3s}
+.btn:hover svg{transform:translateX(4px)}
+.btn-primary{background:var(--ink);color:var(--bg)}
+.btn-primary::before{content:"";position:absolute;inset:0;background:var(--accent);transform:translateX(-101%);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.btn-primary span,.btn-primary svg{position:relative;z-index:1}
+.btn-primary:hover::before{transform:translateX(0)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink);background:rgba(26,35,50,.04)}
 
-/* === Intro / Pull quote === */
-.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
-.intro-text p{margin-bottom:1.5rem;color:#333}
-.pull-quote{padding:3rem;background:var(--white);border-left:3px solid var(--primary);position:relative}
-.pull-quote .quote-mark{font-weight:800;font-size:5rem;line-height:.5;color:var(--primary);position:absolute;top:2rem;left:2rem}
-.pull-quote p{font-style:italic;font-size:1.4rem;line-height:1.45;padding-top:2rem;letter-spacing:-.01em}
-.pull-quote footer{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--gray-light);font-size:.85rem;color:var(--gray);letter-spacing:.05em}
+/* === ÍNDICE === */
+.toc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1rem}
+.toc-item{background:var(--bg);border:1px solid var(--line-soft);border-radius:2px;padding:2.25rem 1.75rem;text-decoration:none;color:var(--ink);transition:all .3s;display:flex;flex-direction:column;gap:.5rem;position:relative;overflow:hidden;min-height:200px}
+.toc-item::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.toc-item:hover{border-color:var(--accent);transform:translateY(-4px);background:var(--bg-card)}
+.toc-item:hover::before{transform:scaleY(1)}
+.toc-num{font-weight:200;font-size:3rem;line-height:1;color:var(--accent);letter-spacing:-.04em;margin-bottom:.5rem}
+.toc-item h3{font-size:1.15rem;font-weight:500;color:var(--ink);letter-spacing:-.015em}
+.toc-item p{font-size:.88rem;color:var(--ink-soft);line-height:1.55;margin-top:auto}
 
-/* === Misión / Visión / Valores === */
-.mvv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
-.mvv-card{background:var(--white);padding:3rem 2.5rem;border-top:4px solid var(--primary);transition:transform .3s}
-.mvv-card:hover{transform:translateY(-4px)}
-.mvv-card.gray-accent{border-top-color:var(--gray)}
-.mvv-card h3{font-size:1.75rem;margin-bottom:1.5rem;letter-spacing:-.03em}
-.mvv-card p,.mvv-card li{color:#333;font-size:.95rem}
-.mvv-card li{padding:.75rem 0;border-bottom:1px solid var(--gray-lighter);display:flex;gap:.75rem}
-.mvv-card li:last-child{border-bottom:0}
-.mvv-card li::before{content:'';width:6px;height:6px;background:var(--primary);border-radius:50%;margin-top:.6rem;flex-shrink:0}
+/* === INTRO === */
+.intro-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:3.5rem;align-items:start;margin-top:2rem}
+.intro-text p{margin-bottom:1.25rem;color:var(--ink-soft);font-weight:300;font-size:1rem;line-height:1.75}
+.pull-quote{background:var(--ink);color:var(--bg);padding:2.5rem 2rem;border-radius:2px;position:relative;overflow:hidden}
+.pull-quote::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent)}
+.pull-quote .qm{font-weight:200;font-size:4.5rem;line-height:.5;color:var(--bg);opacity:.4;display:block;margin-bottom:.5rem}
+.pull-quote p{font-weight:200;font-size:1.4rem;line-height:1.45;letter-spacing:-.01em;font-style:italic}
+.pull-quote cite{display:block;margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid rgba(244,241,236,.15);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;font-style:normal;opacity:.6}
 
-/* === Logos === */
-.logo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2rem}
-.logo-card{background:var(--white);border:1px solid var(--gray-light);overflow:hidden}
-.logo-display{padding:4rem 2rem;display:flex;align-items:center;justify-content:center;min-height:260px;background:var(--white)}
+/* === MVV === */
+.mvv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.mvv-card{background:var(--bg);border:1px solid var(--line-soft);border-radius:2px;padding:2.5rem 2rem;display:flex;flex-direction:column;gap:1rem;min-height:280px;position:relative;overflow:hidden;transition:all .3s}
+.mvv-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.mvv-card:hover{border-color:var(--accent);transform:translateY(-4px);background:var(--bg-card)}
+.mvv-card:hover::before{transform:scaleY(1)}
+.mvv-num{font-weight:200;font-size:3rem;line-height:1;color:var(--accent);letter-spacing:-.04em;margin-bottom:.25rem}
+.mvv-eyebrow{font-size:.7rem;font-weight:600;color:var(--ink-soft);letter-spacing:.22em;text-transform:uppercase}
+.mvv-card h3{font-size:1.3rem;font-weight:500;color:var(--ink);line-height:1.25;letter-spacing:-.015em;margin-bottom:.25rem}
+.mvv-card p{font-size:.92rem;color:var(--ink-soft);font-weight:300;line-height:1.6;margin-top:auto}
+.mvv-card ul{margin-top:auto;display:flex;flex-direction:column;gap:.5rem}
+.mvv-card li{font-size:.88rem;color:var(--ink-soft);font-weight:300;line-height:1.5;padding-left:1rem;position:relative}
+.mvv-card li::before{content:"";position:absolute;left:0;top:.6em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+
+/* === LOGOS === */
+.subsection-header{margin:0 0 2rem}
+.subsection-eyebrow{font-size:.72rem;font-weight:600;color:var(--accent);letter-spacing:.22em;text-transform:uppercase;margin-bottom:.75rem;display:block}
+.subsection-title{font-weight:200;font-size:clamp(1.4rem,3vw,2.1rem);color:var(--ink);letter-spacing:-.025em;line-height:1.15;margin-bottom:.5rem}
+.subsection-sub{font-size:.95rem;color:var(--ink-soft);max-width:60ch;font-weight:300}
+
+.logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin:0 0 4rem}
+.logo-card{background:var(--bg);border:1px solid var(--line-soft);border-radius:2px;overflow:hidden;transition:all .3s}
+.logo-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.logo-display{padding:3rem 1.75rem;display:flex;align-items:center;justify-content:center;min-height:240px;background:var(--bg)}
 .logo-display.dark{background:var(--ink)}
-.logo-display.primary-bg{background:var(--primary)}
-.logo-display.gray-bg{background:var(--gray)}
-.logo-display img{max-width:70%;max-height:180px;object-fit:contain}
-.logo-display.grayscale img{filter:grayscale(100%)}
-.logo-meta{padding:1.5rem 2rem;border-top:1px solid var(--gray-light);display:flex;justify-content:space-between;align-items:center}
-.logo-meta h4{font-size:.9rem}
-.logo-meta p{font-size:.8rem;color:var(--gray);margin-top:.25rem}
-.badge{font-size:.7rem;font-weight:600;padding:.25rem .75rem;border-radius:100px;background:var(--primary-soft);color:var(--primary-dark);letter-spacing:.05em;text-transform:uppercase}
+.logo-display.aterym-bg{background:var(--aterym)}
+.logo-display.gray-bg{background:var(--muted)}
+.logo-display img{max-width:75%;max-height:160px;object-fit:contain;filter:saturate(.95)}
+.logo-display.grayscale img{filter:grayscale(1) saturate(.85)}
+.logo-meta{padding:1.25rem 1.5rem;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+.logo-meta h4{font-size:.92rem;font-weight:500;color:var(--ink);letter-spacing:-.005em;margin-bottom:.2rem}
+.logo-meta p{font-size:.78rem;color:var(--ink-soft);font-weight:300;line-height:1.5}
+.badge{font-size:.6rem;font-weight:600;padding:.3rem .65rem;border:1px solid var(--accent);color:var(--accent);border-radius:2px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
 
-/* === 25 años === */
-.anniversary{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);padding:5rem 0;margin-top:4rem;position:relative;overflow:hidden}
-.anniversary::before{content:'25';position:absolute;font-weight:200;font-size:40rem;line-height:.8;right:-3rem;bottom:-8rem;color:rgba(255,255,255,.08);pointer-events:none;letter-spacing:-.05em}
-.anniversary .container{position:relative;z-index:1}
-.anniversary-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.anniversary .eyebrow{color:rgba(255,255,255,.8)}
-.anniversary h3{font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.05;margin:1rem 0 1.5rem;letter-spacing:-.035em}
-.anniversary p{opacity:.9;font-size:1.05rem;margin-bottom:2rem}
-.anniversary-logos{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.logo-box{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);padding:2rem;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
-.logo-box.solid{background:var(--white)}
-.logo-box img{max-width:100%;max-height:100%;object-fit:contain}
+/* === ZONA DE PROTECCIÓN === */
+.protection-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:4rem}
+.protection-demo{background:var(--bg);border:1px solid var(--line-soft);border-radius:2px;padding:3rem;display:flex;align-items:center;justify-content:center;min-height:380px}
+.protection-visual{position:relative;display:inline-block}
+.protection-visual img{max-width:200px;position:relative;z-index:2}
+.protection-box{position:absolute;inset:-30px;border:1px dashed var(--accent);z-index:1}
+.measure{position:absolute;font-size:.7rem;font-weight:500;color:var(--accent);background:var(--bg);padding:.1rem .45rem;letter-spacing:.05em;font-variant-numeric:tabular-nums}
+.measure-top{top:-40px;left:50%;transform:translateX(-50%)}
+.measure-left{left:-50px;top:50%;transform:translateY(-50%) rotate(-90deg)}
+.protection-text p{margin-bottom:1.25rem;color:var(--ink-soft);font-weight:300;line-height:1.7}
+.formula-box{background:var(--accent-tint);border-left:2px solid var(--accent);padding:1.25rem 1.5rem;margin-top:1.75rem;border-radius:0 2px 2px 0}
+.formula-box .formula{font-weight:500;font-style:italic;font-size:1.1rem;color:var(--accent-deep);margin-bottom:.4rem;letter-spacing:-.005em}
+.formula-box p{font-size:.85rem;color:var(--ink-soft);font-weight:300;margin:0}
 
-/* === Don'ts === */
-.donts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
-.dont-card{background:var(--white);border:1px solid var(--gray-light);padding:2rem;position:relative}
-.dont-card::before{content:'✕';position:absolute;top:1rem;right:1rem;width:28px;height:28px;background:#f44;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700}
-.dont-preview{background:var(--gray-lighter);height:120px;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.dont-preview img{max-width:60%;max-height:80%;object-fit:contain}
+/* === PROPORCIONES === */
+.proportions-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:4rem}
+.proportion-card{background:var(--bg);border:1px solid var(--line-soft);border-radius:2px;padding:2.5rem 2rem;display:flex;flex-direction:column;align-items:center;text-align:center;transition:all .3s}
+.proportion-card:hover{border-color:var(--accent)}
+.proportion-card .min-logo{padding:1.5rem;display:flex;align-items:center;justify-content:center;min-height:160px;margin-bottom:1.5rem}
+.proportion-card .min-logo img{max-height:90px}
+.proportion-card h4{font-size:1.05rem;font-weight:500;margin-bottom:.5rem;letter-spacing:-.01em}
+.proportion-card .size{font-weight:200;font-size:2.4rem;color:var(--accent);letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin:.25rem 0 .75rem}
+.proportion-card p{font-size:.85rem;color:var(--ink-soft);font-weight:300}
+
+/* === ANIVERSARIO === */
+.anniversary{background:var(--ink);color:var(--bg);position:relative;overflow:hidden;border-radius:2px;margin:4rem 0}
+.anniversary::before{content:"25";position:absolute;font-weight:200;font-size:32rem;line-height:.8;right:-3rem;bottom:-7rem;color:rgba(244,241,236,.05);pointer-events:none;letter-spacing:-.05em}
+.anniversary-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;padding:clamp(2.5rem,5vw,4rem);position:relative;z-index:1}
+.anniversary-eyebrow{font-size:.72rem;font-weight:600;color:var(--bg);opacity:.6;letter-spacing:.22em;text-transform:uppercase;margin-bottom:1.25rem;display:block}
+.anniversary h3{font-weight:200;font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1.25rem}
+.anniversary h3 em{font-style:italic;font-weight:400;color:var(--accent-tint)}
+.anniversary p{font-weight:300;line-height:1.7;opacity:.8;font-size:.95rem;max-width:42ch}
+.anniversary-logos{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.anniv-box{background:var(--bg);border-radius:2px;padding:1.75rem;aspect-ratio:1;display:flex;align-items:center;justify-content:center;transition:transform .4s}
+.anniv-box:hover{transform:translateY(-3px)}
+.anniv-box img{max-width:100%;max-height:100%;object-fit:contain}
+
+/* === USOS INCORRECTOS === */
+.donts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.dont-card{background:var(--bg);border:1px solid var(--line-soft);border-radius:2px;padding:1.5rem;position:relative;transition:all .3s}
+.dont-card:hover{border-color:var(--line)}
+.dont-card::before{content:"✕";position:absolute;top:1rem;right:1rem;width:26px;height:26px;background:var(--ink);color:var(--bg);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:500;z-index:2}
+.dont-preview{background:var(--bg-deep);height:110px;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:2px}
+.dont-preview img{max-width:55%;max-height:75%;object-fit:contain}
 .dont-preview.tilted img{transform:rotate(12deg)}
-.dont-preview.stretched img{transform:scaleX(1.5)}
-.dont-preview.bad-bg{background:repeating-linear-gradient(45deg,#d4d4d4,#d4d4d4 10px,#a0a0a0 10px,#a0a0a0 20px)}
-.dont-preview.wrong-color img{filter:hue-rotate(180deg) saturate(2)}
-.dont-card h4{font-size:.95rem;margin-bottom:.5rem}
-.dont-card p{font-size:.85rem;color:var(--gray)}
+.dont-preview.stretched img{transform:scaleX(1.6)}
+.dont-preview.bad-bg{background:repeating-linear-gradient(45deg,var(--bg-deep),var(--bg-deep) 8px,#c4bdac 8px,#c4bdac 16px)}
+.dont-preview.wrong-color img{filter:hue-rotate(180deg) saturate(1.6)}
+.dont-card h4{font-size:.9rem;font-weight:500;letter-spacing:-.005em;margin-bottom:.4rem;color:var(--ink)}
+.dont-card p{font-size:.8rem;color:var(--ink-soft);font-weight:300;line-height:1.5}
 
-/* === Colores === */
-.color-intro{max-width:620px;font-size:1.05rem;color:#444;margin-bottom:4rem}
-.color-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.color-card{border:1px solid var(--gray-light);overflow:hidden;background:var(--white)}
-.color-swatch{height:300px;display:flex;align-items:flex-end;padding:2rem;position:relative}
-.color-swatch.primary{background:var(--primary)}
-.color-swatch.gray{background:var(--gray)}
-.color-swatch .hex-large{font-weight:300;font-size:2.75rem;color:var(--white);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.color-swatch::before{content:'';position:absolute;top:2rem;left:2rem;width:60px;height:60px;border:1px solid rgba(255,255,255,.3);border-radius:50%}
-.color-swatch::after{content:attr(data-label);position:absolute;top:2rem;right:2rem;color:#fff;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
-.color-data{padding:2rem}
-.color-data h4{font-size:1.35rem;margin-bottom:.3rem;letter-spacing:-.02em}
-.color-data>p{font-size:.85rem;color:var(--gray);margin-bottom:1.5rem}
-.color-codes{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-light);border:1px solid var(--gray-light)}
-.color-codes>div{background:var(--white);padding:1rem}
-.code-label{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);margin-bottom:.25rem}
-.code-value{font-variant-numeric:tabular-nums;font-size:.95rem;font-weight:500}
+/* === COLORES === */
+.color-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+.color-card{background:var(--bg);border:1px solid var(--line-soft);border-radius:2px;overflow:hidden;transition:all .3s}
+.color-card:hover{border-color:var(--accent)}
+.color-swatch{height:280px;display:flex;align-items:flex-end;padding:2rem;position:relative}
+.color-swatch.celeste{background:var(--aterym)}
+.color-swatch.gris{background:var(--muted)}
+.color-swatch .hex-large{font-weight:200;font-size:2.5rem;color:#fff;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.color-swatch::before{content:"";position:absolute;top:1.5rem;left:1.5rem;width:50px;height:50px;border:1px solid rgba(255,255,255,.35);border-radius:50%}
+.color-swatch::after{content:attr(data-label);position:absolute;top:1.5rem;right:1.5rem;color:#fff;font-size:.65rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;opacity:.85}
+.color-data{padding:1.75rem}
+.color-data h4{font-size:1.2rem;font-weight:500;margin-bottom:.25rem;letter-spacing:-.015em}
+.color-data > p{font-size:.82rem;color:var(--ink-soft);font-weight:300;margin-bottom:1.5rem}
+.color-codes{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:2px}
+.color-codes > div{background:var(--bg);padding:.85rem 1rem}
+.code-label{font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.2rem}
+.code-value{font-variant-numeric:tabular-nums;font-size:.88rem;font-weight:500;color:var(--ink)}
 
-/* === Tipografía showcase === */
-.type-showcase{background:var(--white);padding:4rem 3rem;border:1px solid var(--gray-light)}
-.type-sample{font-size:clamp(4rem,12vw,9rem);font-weight:700;line-height:1;letter-spacing:-.04em;margin-bottom:2rem}
-.type-sample em{font-style:italic;font-weight:300;color:var(--primary)}
-.type-alphabet{font-size:1.1rem;letter-spacing:.05em;color:var(--gray);padding-top:2rem;border-top:1px solid var(--gray-light);word-break:break-all}
-.type-weights{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3rem}
-.weight-sample{padding:2rem 1.5rem;background:var(--paper)}
-.weight-sample .glyph{font-size:3.5rem;line-height:1;margin-bottom:1rem}
-.weight-sample .weight-label{font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gray)}
+/* === TIPOGRAFÍA === */
+.type-showcase{background:var(--bg);border:1px solid var(--line-soft);border-radius:2px;padding:3rem 2.5rem;margin-top:2rem}
+.type-sample{font-weight:200;font-size:clamp(3rem,10vw,7rem);line-height:1;letter-spacing:-.04em;margin-bottom:2rem;color:var(--ink)}
+.type-sample em{font-style:italic;font-weight:300;color:var(--accent)}
+.type-alphabet{font-size:1rem;letter-spacing:.04em;color:var(--ink-soft);font-weight:300;padding-top:1.5rem;border-top:1px solid var(--line-soft);word-break:break-all}
+.type-weights{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.5rem}
+.weight-sample{background:var(--bg);border:1px solid var(--line-soft);border-radius:2px;padding:1.75rem 1.25rem;text-align:center;transition:all .3s}
+.weight-sample:hover{border-color:var(--accent)}
+.weight-sample .glyph{font-size:3rem;line-height:1;margin-bottom:.85rem;color:var(--ink)}
+.weight-sample .weight-label{font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+.weight-sample.w200 .glyph{font-weight:200}
 .weight-sample.w300 .glyph{font-weight:300}
 .weight-sample.w400 .glyph{font-weight:400}
 .weight-sample.w500 .glyph{font-weight:500}
 .weight-sample.w700 .glyph{font-weight:700}
-.type-downloads{margin-top:3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.type-downloads{margin-top:1.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
 
-/* === Buttons === */
-.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.5rem;background:var(--white);border:1px solid var(--gray-light);text-decoration:none;color:var(--ink);font-size:.9rem;font-weight:500;transition:all .2s}
-.btn:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
-.btn.btn-primary{background:var(--primary);color:var(--white);border-color:var(--primary)}
-.btn.btn-primary:hover{background:var(--primary-dark);border-color:var(--primary-dark)}
-.btn .arrow{transition:transform .2s}
-.btn:hover .arrow{transform:translateX(4px)}
+/* === RECURSOS === */
+.resources-cat{margin-bottom:3.5rem}
+.resources-cat:last-child{margin-bottom:0}
+.cat-head{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:1rem;margin-bottom:1.5rem;border-bottom:1px solid var(--line-soft);gap:1rem;flex-wrap:wrap}
+.cat-head h3{font-weight:300;font-size:1.4rem;color:var(--ink);letter-spacing:-.02em}
+.cat-head .count{font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+.resources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.resource-card{background:var(--bg);border:1px solid var(--line-soft);border-radius:2px;padding:1.75rem;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;transition:all .3s;position:relative;overflow:hidden;min-height:240px}
+.resource-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.resource-card:hover{border-color:var(--accent);transform:translateY(-3px);background:var(--bg-card)}
+.resource-card:hover::before{transform:scaleY(1)}
+.resource-card .cat-tag{font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.resource-card h4{font-size:1.15rem;font-weight:500;line-height:1.25;margin-bottom:.5rem;letter-spacing:-.015em}
+.resource-card .desc{font-size:.85rem;color:var(--ink-soft);font-weight:300;line-height:1.55;margin-bottom:1.25rem;flex-grow:1}
+.resource-card .specs{font-size:.72rem;color:var(--ink-soft);font-weight:400;letter-spacing:.04em;padding-top:.85rem;border-top:1px dashed var(--line-soft);margin-bottom:1rem;font-variant-numeric:tabular-nums}
+.resource-card .row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;gap:.75rem}
+.resource-card .open{font-size:.78rem;font-weight:500;letter-spacing:.04em;color:var(--ink)}
+.resource-card .platform{font-size:.65rem;font-weight:500;color:var(--ink-soft);padding:.25rem .55rem;border:1px solid var(--line-soft);border-radius:2px;letter-spacing:.06em;text-transform:uppercase}
 
-/* === Recursos === */
-.resources-intro{max-width:680px;color:#444;margin-bottom:3rem;font-size:1.05rem}
-.resources-cat{margin-bottom:3rem}
-.resources-cat h3{font-size:1.5rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--gray-light);display:flex;justify-content:space-between;align-items:baseline;letter-spacing:-.02em}
-.resources-cat h3 .count{font-size:.75rem;font-weight:600;letter-spacing:.2em;color:var(--gray)}
-.resources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.resource-card{background:var(--white);border:1px solid var(--gray-light);padding:2rem;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;transition:all .25s;position:relative;overflow:hidden}
-.resource-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--primary);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.resource-card:hover::after{transform:scaleX(1)}
-.resource-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
-.resource-card .cat-tag{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem}
-.resource-card h4{font-size:1.3rem;line-height:1.2;margin-bottom:.75rem;letter-spacing:-.02em}
-.resource-card p{font-size:.85rem;color:var(--gray);margin-bottom:2rem;flex-grow:1}
-.resource-card .specs{font-size:.75rem;color:var(--gray);padding-top:1rem;border-top:1px dashed var(--gray-light);margin-bottom:1.5rem;font-variant-numeric:tabular-nums}
-.resource-card .footer-row{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
-.resource-card .open-link{font-size:.85rem;font-weight:600;display:inline-flex;align-items:center;gap:.5rem}
-.resource-card .platform-tag{font-size:.7rem;color:var(--gray);padding:.25rem .6rem;border:1px solid var(--gray-light);border-radius:2px}
+/* === CTA descarga === */
+.cta-download{text-align:center;padding:clamp(3rem,5vw,4rem) 0;margin-top:clamp(3rem,5vw,4rem);border-top:1px solid var(--line-soft)}
+.cta-download p{color:var(--ink-soft);margin-bottom:1.5rem;font-size:.95rem;font-weight:300}
 
-/* === Zona de protección === */
-.protection-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.protection-demo{background:var(--white);padding:3rem;border:1px solid var(--gray-light);display:flex;align-items:center;justify-content:center;min-height:400px}
-.protection-visual{position:relative;display:inline-block}
-.protection-visual img{max-width:220px;position:relative;z-index:2}
-.protection-box{position:absolute;inset:-30px;border:1px dashed var(--primary);z-index:1}
-.measure{position:absolute;font-size:.7rem;color:var(--primary);font-weight:600;background:var(--white);padding:0 .4rem}
-.measure-top{top:-40px;left:50%;transform:translateX(-50%)}
-.measure-left{left:-50px;top:50%;transform:translateY(-50%) rotate(-90deg)}
-.protection-text p{margin-bottom:1.25rem;color:#333}
-.formula-box{background:var(--primary-soft);padding:1.5rem 2rem;margin-top:2rem;border-left:3px solid var(--primary)}
-.formula-box .formula{font-weight:500;font-style:italic;font-size:1.25rem;color:var(--primary-dark);margin-bottom:.5rem;letter-spacing:-.01em}
-.formula-box p{font-size:.85rem;color:var(--gray);margin:0}
+/* === FOOTER === */
+footer{background:var(--ink);color:var(--bg);padding:clamp(3rem,6vw,5rem) clamp(1.25rem,4vw,2.5rem) 2rem;position:relative;z-index:2}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(244,241,236,.12)}
+.footer-logo img{height:42px;width:auto;margin-bottom:1.25rem}
+.footer-logo p{font-size:.88rem;opacity:.65;line-height:1.6;font-weight:300;max-width:32ch}
+.footer-col h4{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--bg);opacity:.5;margin-bottom:1.25rem}
+.footer-col ul{display:flex;flex-direction:column;gap:.6rem}
+.footer-col a,.footer-col span{color:var(--bg);text-decoration:none;font-size:.88rem;opacity:.8;font-weight:300;transition:opacity .25s}
+.footer-col a:hover{opacity:1}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;font-size:.78rem;opacity:.5;flex-wrap:wrap;gap:1rem}
+.footer-socials{display:flex;gap:1.25rem}
+.footer-socials a{opacity:.7;transition:opacity .25s}
+.footer-socials a:hover{opacity:1}
+.footer-socials svg{width:18px;height:18px}
 
-/* === Proporciones === */
-.proportions-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
-.proportion-card{background:var(--white);border:1px solid var(--gray-light);padding:2.5rem;display:flex;flex-direction:column;align-items:center;text-align:center}
-.proportion-card .min-logo{padding:2rem;display:flex;align-items:center;justify-content:center;min-height:180px;margin-bottom:2rem}
-.proportion-card .min-logo img{max-height:110px}
-.proportion-card h4{font-size:1.25rem;margin-bottom:.5rem;letter-spacing:-.02em}
-.proportion-card .size{font-size:2.5rem;color:var(--primary);font-weight:300;margin:.5rem 0;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.proportion-card p{font-size:.85rem;color:var(--gray)}
-
-/* === Footer === */
-footer.site-footer{background:var(--ink);color:var(--white);padding:5rem 0 2rem}
-footer .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;margin-bottom:4rem}
-footer h4{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:1.5rem}
-footer .brand{font-weight:700;font-size:2.5rem;line-height:1;margin-bottom:1rem;letter-spacing:-.035em}
-footer .brand span{color:var(--primary)}
-footer .tagline{font-style:italic;font-weight:300;font-size:1.1rem;max-width:320px;opacity:.7;letter-spacing:-.01em}
-footer a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;transition:color .2s}
-footer a:hover{color:var(--primary)}
-footer .contact-item{font-size:.9rem;opacity:.7;padding:.3rem 0}
-footer .footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.8rem;opacity:.5}
-
-/* === Animations === */
-.fade-in{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+/* === ANIMS === */
+@keyframes fadeDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s}
 .fade-in.visible{opacity:1;transform:none}
-
-/* === Responsive: tablet === */
-@media (max-width:900px){
-  .container{padding:0 1.5rem}
-  .toc-grid,.donts-grid,.resources-grid{grid-template-columns:repeat(2,1fr)}
-  .intro-grid,.mvv-grid,.protection-grid,.anniversary-grid,.footer-grid{grid-template-columns:1fr;gap:2.5rem}
-  .section-head{grid-template-columns:1fr;gap:.75rem}
-  section{padding:4.5rem 0}
-  .anniversary::before{font-size:24rem;right:-2rem;bottom:-5rem}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 
-/* === Responsive: mobile === */
+/* === RESPONSIVE === */
+@media (max-width:900px){
+  .toc-grid,.mvv-grid,.logo-grid,.donts-grid,.resources-grid{grid-template-columns:repeat(2,1fr)}
+  .intro-grid,.protection-grid,.anniversary-grid,.color-grid{grid-template-columns:1fr;gap:2rem}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .anniversary::before{font-size:22rem;right:-2rem;bottom:-4rem}
+}
 @media (max-width:640px){
-  .container{padding:0 1.25rem}
-  /* Nav */
-  nav .container{padding:.85rem 1.25rem}
-  .nav-logo{font-size:1rem}
-  .nav-toggle{display:block}
-  .nav-links{position:fixed;top:0;right:0;bottom:0;width:78%;max-width:320px;background:var(--paper);flex-direction:column;justify-content:flex-start;padding:5rem 2rem 2rem;gap:0;transform:translateX(100%);transition:transform .35s ease;box-shadow:-8px 0 30px rgba(0,0,0,.08);overflow-y:auto;z-index:100}
-  .nav-links.open{transform:none}
-  .nav-links li{border-bottom:1px solid var(--gray-light)}
-  .nav-links a{display:block;padding:1.1rem 0;font-size:.95rem;color:var(--ink);letter-spacing:-.01em}
-  body.nav-open::after{content:'';position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:99;backdrop-filter:blur(2px)}
-  body.nav-open nav{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;border-bottom-color:transparent}
-
-  section{padding:3.5rem 0}
-  .hero{min-height:auto;padding:6rem 0 3rem}
-  .hero h1{font-size:clamp(2.4rem,11vw,3.75rem);margin-bottom:1.5rem}
-
-  .section-head{margin-bottom:2.5rem;padding-bottom:1.25rem}
-  .section-head h2{font-size:clamp(1.7rem,7.5vw,2.25rem)}
-
-  .toc-grid{grid-template-columns:1fr;margin-top:2rem}
-  .toc-item{padding:1.75rem 1.5rem;min-height:auto}
-  .toc-number{font-size:2.25rem;margin-bottom:.5rem}
-
-  .intro-grid{gap:2rem}
-  .pull-quote{padding:2.5rem 1.5rem 2rem}
-  .pull-quote .quote-mark{font-size:3.5rem;top:1.25rem;left:1.25rem}
-  .pull-quote p{font-size:1.1rem;padding-top:1.5rem}
-
-  .mvv-grid{gap:1.25rem}
-  .mvv-card{padding:2rem 1.75rem}
-  .mvv-card h3{font-size:1.5rem;margin-bottom:1rem}
-
-  .logo-grid{grid-template-columns:1fr;gap:1rem;margin-top:1.5rem}
-  .logo-display{padding:2.5rem 1.5rem;min-height:200px}
-  .logo-display img{max-height:130px;max-width:80%}
-  .logo-meta{padding:1.25rem 1.5rem}
-
-  .protection-grid{gap:2rem}
-  .protection-demo{padding:3.5rem 2rem 2.5rem;min-height:auto}
-  .protection-visual img{max-width:150px}
+  .nav-inner{padding:.85rem 1.25rem}
+  .nav-logo{height:32px}
+  .hero{min-height:80vh;padding:5rem 1.25rem 4rem}
+  .hero h1{font-size:clamp(2.2rem,9vw,3.5rem)}
+  .hero-meta{gap:1rem;font-size:.7rem}
+  .section{padding:3.5rem 1.25rem}
+  .toc-grid,.mvv-grid,.logo-grid,.proportions-grid,.color-grid,.resources-grid,.type-downloads{grid-template-columns:1fr}
+  .donts-grid{grid-template-columns:repeat(2,1fr);gap:.85rem}
+  .type-weights{grid-template-columns:repeat(2,1fr)}
+  .type-showcase{padding:2rem 1.25rem}
+  .pull-quote{padding:2rem 1.5rem}
+  .pull-quote p{font-size:1.15rem}
+  .protection-demo{padding:2.5rem 1.5rem;min-height:auto}
+  .protection-visual img{max-width:140px}
   .protection-box{inset:-20px}
   .measure-top{top:-28px}
   .measure-left{left:-36px}
-  .formula-box{padding:1.25rem 1.5rem}
-  .formula-box .formula{font-size:1.05rem}
-
-  .proportions-grid{grid-template-columns:1fr;gap:1rem}
-  .proportion-card{padding:2rem 1.5rem}
-  .proportion-card .min-logo{padding:1rem;min-height:140px;margin-bottom:1.25rem}
-  .proportion-card .size{font-size:2rem}
-
-  .anniversary{padding:3.5rem 0;margin-top:3rem}
-  .anniversary::before{font-size:14rem;right:-1.5rem;bottom:-3rem}
-  .anniversary-grid{gap:2.5rem}
-  .anniversary-logos{gap:1rem}
-  .logo-box{padding:1.25rem}
-
-  .donts-grid{grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem}
-  .dont-card{padding:1.25rem}
-  .dont-preview{height:90px;margin-bottom:1rem}
-  .dont-card h4{font-size:.85rem}
-  .dont-card p{font-size:.78rem;line-height:1.45}
-
-  .color-grid{grid-template-columns:1fr;gap:1.25rem}
-  .color-swatch{height:200px;padding:1.5rem}
-  .color-swatch .hex-large{font-size:2rem}
-  .color-swatch::before{width:44px;height:44px;top:1.5rem;left:1.5rem}
-  .color-swatch::after{top:1.5rem;right:1.5rem;font-size:.65rem}
-  .color-data{padding:1.5rem}
-  .color-data h4{font-size:1.2rem}
-  .color-codes>div{padding:.85rem}
-  .code-value{font-size:.85rem}
-
-  .type-showcase{padding:2rem 1.5rem}
-  .type-sample{font-size:clamp(2.5rem,14vw,4.5rem);margin-bottom:1.5rem}
-  .type-alphabet{font-size:.85rem;padding-top:1.5rem;letter-spacing:.03em}
-  .type-weights{grid-template-columns:repeat(2,1fr);gap:.85rem;margin-top:2rem}
-  .weight-sample{padding:1.5rem 1rem}
-  .weight-sample .glyph{font-size:2.5rem}
-  .type-downloads{grid-template-columns:1fr;gap:.75rem;margin-top:2rem}
-  .btn{padding:.9rem 1.25rem;font-size:.85rem}
-
-  .resources-cat{margin-bottom:2.25rem}
-  .resources-cat h3{font-size:1.2rem;flex-wrap:wrap;gap:.5rem;padding-bottom:.85rem;margin-bottom:1.25rem}
-  .resources-cat h3 .count{font-size:.65rem}
-  .resources-grid{grid-template-columns:1fr;gap:1rem}
-  .resource-card{padding:1.5rem}
-  .resource-card h4{font-size:1.15rem}
-  .resource-card p,.resource-card .specs{margin-bottom:1.25rem}
-
-  footer.site-footer{padding:3.5rem 0 1.5rem}
-  footer .footer-grid{grid-template-columns:1fr;gap:2.5rem;margin-bottom:2.5rem}
-  footer .brand{font-size:2rem}
-  footer .tagline{font-size:1rem}
-  footer .footer-bottom{flex-direction:column;align-items:flex-start;font-size:.75rem}
+  .anniversary{margin:3rem 0}
+  .anniversary-grid{padding:2.5rem 1.5rem;gap:2rem}
+  .anniversary::before{font-size:14rem;right:-1rem;bottom:-2rem}
+  .footer-grid{grid-template-columns:1fr;gap:2.25rem}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .cat-head{flex-direction:column;align-items:flex-start;gap:.4rem}
 }
-
 @media (max-width:380px){
-  .container{padding:0 1rem}
   .donts-grid{grid-template-columns:1fr}
-  .hero h1{font-size:2.15rem}
-  .section-head h2{font-size:1.55rem}
 }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="container">
-    <a href="#top" class="nav-logo">ATERYM<span>.</span></a>
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
-    <ul class="nav-links">
-      <li><a href="#intro">01 Intro</a></li>
-      <li><a href="#institucional">02 Institucional</a></li>
-      <li><a href="#identidad">03 Identidad</a></li>
-      <li><a href="#colores">04 Color</a></li>
-      <li><a href="#tipografia">05 Tipografía</a></li>
-      <li><a href="#recursos">06 Recursos</a></li>
+<!-- ============== NAV ============== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" aria-label="Aterym Alta Gracia"><img class="nav-logo" src="https://aterym.com/wp-content/uploads/2025/12/Logo-blanco-Aterym.webp" alt="Aterym Alta Gracia"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#intro">Intro</a></li>
+      <li><a href="#institucional">Institucional</a></li>
+      <li><a href="#identidad">Identidad</a></li>
+      <li><a href="#colores">Color</a></li>
+      <li><a href="#tipografia">Tipografía</a></li>
+      <li><a class="nav-cta" href="#recursos">Recursos</a></li>
     </ul>
+    <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('mobile-show')" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ============== HERO ============== -->
 <section class="hero" id="top">
-  <div class="container">
-    <div class="eyebrow" style="margin-bottom:2rem">Manual de Imagen Institucional · Edición 2026</div>
-    <h1 class="display">Una identidad <em>que cuida</em>, como lo hacemos nosotros.</h1>
-  </div>
-</section>
-
-<!-- ÍNDICE -->
-<section id="indice">
-  <div class="container">
-    <div class="section-head"><div class="section-num">00 — Índice</div><h2>Qué vas a encontrar</h2></div>
-    <div class="toc-grid">
-      <a href="#intro" class="toc-item"><div class="toc-number">01</div><h3>Introducción</h3><p>Objetivo, importancia de la identidad visual y alcance del documento.</p></a>
-      <a href="#institucional" class="toc-item"><div class="toc-number">02</div><h3>Institucional</h3><p>Misión, visión y valores que sostienen el trabajo cotidiano.</p></a>
-      <a href="#identidad" class="toc-item"><div class="toc-number">03</div><h3>Identidad Visual</h3><p>Isologotipo, versiones, zona de protección, proporciones y usos incorrectos.</p></a>
-      <a href="#colores" class="toc-item"><div class="toc-number">04</div><h3>Paleta de Colores</h3><p>Colores institucionales primarios y códigos en Pantone / CMYK / RGB / HEX.</p></a>
-      <a href="#tipografia" class="toc-item"><div class="toc-number">05</div><h3>Tipografía</h3><p>Inter como tipografía corporativa. Pesos, estilos y descargas.</p></a>
-      <a href="#recursos" class="toc-item"><div class="toc-number">06</div><h3>Recursos Descargables</h3><p>Archivos editables y plantillas listas para usar.</p></a>
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span class="pulse"></span><span>Manual de Imagen Institucional · Edición 2026</span></div>
+    <h1>Una identidad <strong>que cuida</strong></h1>
+    <p class="hero-sub">Sistema de identidad visual de Aterym Alta Gracia. Una guía de uso para todos los equipos que comunican, diseñan y transmiten nuestra marca.</p>
+    <div class="hero-meta">
+      <span>v<strong>1.0</strong></span>
+      <span><strong>25 años</strong> de trayectoria</span>
+      <span>Área de <strong>Imagen Institucional</strong></span>
     </div>
   </div>
 </section>
 
-<!-- INTRODUCCIÓN -->
-<section id="intro">
-  <div class="container">
-    <div class="section-head"><div class="section-num">01 — Introducción</div><h2>Cuidar la imagen es cuidar a quienes confían.</h2></div>
+<!-- ============== ÍNDICE ============== -->
+<section class="section" id="indice">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">00 · Contenidos</span>
+      <h2 class="section-title">Qué vas a encontrar en este <strong>manual</strong>.</h2>
+      <p class="section-sub">Seis secciones que recorren los componentes esenciales de la identidad visual y los recursos descargables disponibles para los equipos.</p>
+    </div>
+    <div class="toc-grid">
+      <a href="#intro" class="toc-item"><div class="toc-num">01</div><h3>Introducción</h3><p>Objetivo, importancia de la identidad visual y alcance del documento.</p></a>
+      <a href="#institucional" class="toc-item"><div class="toc-num">02</div><h3>Institucional</h3><p>Misión, visión y valores que sostienen el trabajo cotidiano.</p></a>
+      <a href="#identidad" class="toc-item"><div class="toc-num">03</div><h3>Identidad Visual</h3><p>Isologotipo, versiones, zona de protección, proporciones y usos incorrectos.</p></a>
+      <a href="#colores" class="toc-item"><div class="toc-num">04</div><h3>Paleta de Colores</h3><p>Colores institucionales primarios y códigos en Pantone, CMYK, RGB y HEX.</p></a>
+      <a href="#tipografia" class="toc-item"><div class="toc-num">05</div><h3>Tipografía</h3><p>Inter como tipografía corporativa. Pesos, estilos y descargas.</p></a>
+      <a href="#recursos" class="toc-item"><div class="toc-num">06</div><h3>Recursos descargables</h3><p>Archivos editables y plantillas listas para usar.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== INTRODUCCIÓN ============== -->
+<section class="section alt" id="intro">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">01 · Introducción</span>
+      <h2 class="section-title">Cuidar la imagen es <strong>cuidar a quienes confían</strong>.</h2>
+    </div>
     <div class="intro-grid">
       <div class="intro-text">
         <p>Queremos llevar la identidad de Aterym Alta Gracia tan lejos como lleguen nuestros valores: hacia cada paciente, familia y persona que forma parte del sistema de salud. Imaginamos una institución en la que sus elementos visuales hablen con la misma voz: clara, profesional y coherente con nuestro compromiso con la calidad.</p>
         <p>Este manual nace de la necesidad de consolidar una identidad visual fuerte, ordenada y estandarizada. Una identidad que acompañe el crecimiento sostenido de Aterym Alta Gracia, y que esté a la altura de los procesos de calidad que venimos construyendo desde hace más de una década.</p>
         <p>En una organización donde se trabaja con personas, para personas, la comunicación debe ser la norma. Una forma concreta de cuidar. Por eso, esta herramienta busca proponer un marco común que nos permita proyectar, con consistencia, quiénes somos y cómo queremos que nos reconozcan.</p>
-        <p>Este documento es una guía accesible y aplicable para todos los equipos que comunican, diseñan, imprimen o transmiten la imagen institucional.</p>
+        <p>Es una guía accesible y aplicable para todos los equipos que comunican, diseñan, imprimen o transmiten la imagen institucional.</p>
       </div>
-      <div class="pull-quote">
-        <div class="quote-mark">"</div>
+      <aside class="pull-quote">
+        <span class="qm">"</span>
         <p>Escuchar con humildad, ser de verdad y transmitir con coherencia.</p>
-        <footer>Área de Imagen Institucional · ATERYM Alta Gracia</footer>
-      </div>
+        <cite>Área de Imagen Institucional · ATERYM Alta Gracia</cite>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- INSTITUCIONAL -->
-<section id="institucional" style="background:var(--gray-lighter)">
-  <div class="container">
-    <div class="section-head"><div class="section-num">02 — Institucional</div><h2>Quiénes somos antes de cómo nos vemos.</h2></div>
+<!-- ============== INSTITUCIONAL ============== -->
+<section class="section" id="institucional">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">02 · Institucional</span>
+      <h2 class="section-title">Quiénes somos antes de <strong>cómo nos vemos</strong>.</h2>
+      <p class="section-sub">La identidad visual nace de aquello que somos. Tres pilares que sostienen el trabajo y guían cada decisión.</p>
+    </div>
     <div class="mvv-grid">
-      <div class="mvv-card">
-        <div class="eyebrow">01 / Misión</div>
+      <article class="mvv-card">
+        <div class="mvv-num">01</div>
+        <span class="mvv-eyebrow">Misión</span>
         <h3>Nuestra misión</h3>
         <p>Porque sabemos sobre el cuidado del paciente renal y estamos comprometidos en mejorar su calidad de vida, hacemos nefrología y hemodiálisis jerarquizada.</p>
-      </div>
-      <div class="mvv-card">
-        <div class="eyebrow">02 / Visión</div>
+      </article>
+      <article class="mvv-card">
+        <div class="mvv-num">02</div>
+        <span class="mvv-eyebrow">Visión</span>
         <h3>Nuestra visión</h3>
-        <p>Ser reconocidos, en el ámbito regional, como una institución de referencia en el cuidado personalizado del paciente renal, que pone énfasis en la prevención y en la educación continua, que dispone de recursos humanos y tecnológicos adecuados y que respeta la dignidad de las personas.</p>
-      </div>
-      <div class="mvv-card gray-accent">
-        <div class="eyebrow" style="color:var(--gray)">03 / Valores</div>
+        <p>Ser reconocidos, en el ámbito regional, como una institución de referencia en el cuidado personalizado del paciente renal, con énfasis en la prevención y la educación continua.</p>
+      </article>
+      <article class="mvv-card">
+        <div class="mvv-num">03</div>
+        <span class="mvv-eyebrow">Valores</span>
         <h3>Lo que nos guía</h3>
         <ul>
           <li>Ética profesional en todas nuestras acciones.</li>
           <li>Compromiso con la salud y el bienestar del paciente.</li>
           <li>Transparencia y responsabilidad.</li>
-          <li>Creatividad, trabajando en equipo creamos nuevas oportunidades de mejora.</li>
+          <li>Creatividad: en equipo creamos nuevas oportunidades de mejora.</li>
         </ul>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- IDENTIDAD VISUAL -->
-<section id="identidad">
-  <div class="container">
-    <div class="section-head"><div class="section-num">03 — Identidad Visual</div><h2>El isologotipo es el elemento clave.</h2></div>
-    <p style="max-width:680px;color:#333;font-size:1.05rem;margin-bottom:4rem">Es una combinación del símbolo y el nombre de nuestra empresa que tienen una relación fija que nunca debe ser cambiada de ninguna manera. Este es el elemento visual primario que nos identifica.</p>
-
-    <div class="eyebrow" style="margin-bottom:1rem">Versión principal y versiones alternativas</div>
-    <div class="logo-grid">
-      <div class="logo-card">
-        <div class="logo-display"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Versión principal vertical"></div>
-        <div class="logo-meta"><div><h4>Versión principal · Vertical</h4><p>Color · Uso prioritario</p></div><span class="badge">Principal</span></div>
-      </div>
-      <div class="logo-card">
-        <div class="logo-display"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorhorizonta%C3%B1" alt="Versión principal horizontal"></div>
-        <div class="logo-meta"><div><h4>Versión principal · Horizontal</h4><p>Color · Formatos apaisados</p></div><span class="badge">Principal</span></div>
-      </div>
-      <div class="logo-card">
-        <div class="logo-display grayscale"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Versión escala de grises"></div>
-        <div class="logo-meta"><div><h4>Versión escala de grises</h4><p>Impresión a una tinta, conservando degradados del isotipo.</p></div></div>
-      </div>
-      <div class="logo-card">
-        <div class="logo-display"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Versión positivo"></div>
-        <div class="logo-meta"><div><h4>Versión positivo</h4><p>Se utiliza sobre fondos de color claro.</p></div></div>
-      </div>
-      <div class="logo-card">
-        <div class="logo-display dark"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciablancovertical.png" alt="Versión negativo"></div>
-        <div class="logo-meta"><div><h4>Versión negativo</h4><p>Se utiliza sobre fondos de color oscuro.</p></div></div>
-      </div>
-      <div class="logo-card">
-        <div class="logo-display primary-bg"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciablancovertical.png" alt="Versión sobre color institucional"></div>
-        <div class="logo-meta"><div><h4>Sobre color institucional</h4><p>Versión en blanco sobre el color primario.</p></div></div>
-      </div>
+<!-- ============== IDENTIDAD VISUAL ============== -->
+<section class="section alt" id="identidad">
+  <div class="section-inner wide">
+    <div class="section-header">
+      <span class="section-eyebrow">03 · Identidad Visual</span>
+      <h2 class="section-title">El isologotipo es el <strong>elemento clave</strong>.</h2>
+      <p class="section-sub">Es una combinación del símbolo y el nombre que tienen una relación fija. Nunca debe ser modificada de ninguna manera. Este es el elemento visual primario que nos identifica.</p>
     </div>
 
-    <div class="eyebrow" style="margin:5rem 0 1rem">Zona de protección</div>
+    <header class="subsection-header">
+      <span class="subsection-eyebrow">3.1 · Versiones</span>
+      <h3 class="subsection-title">Versión principal y alternativas</h3>
+      <p class="subsection-sub">Distintas variantes del isologotipo según el medio y el fondo de aplicación.</p>
+    </header>
+    <div class="logo-grid">
+      <article class="logo-card">
+        <div class="logo-display"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Versión principal vertical" onerror="this.style.display='none'"></div>
+        <div class="logo-meta"><div><h4>Principal · Vertical</h4><p>Color · Uso prioritario</p></div><span class="badge">Principal</span></div>
+      </article>
+      <article class="logo-card">
+        <div class="logo-display"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorhorizonta%C3%B1" alt="Versión principal horizontal" onerror="this.style.display='none'"></div>
+        <div class="logo-meta"><div><h4>Principal · Horizontal</h4><p>Color · Formatos apaisados</p></div><span class="badge">Principal</span></div>
+      </article>
+      <article class="logo-card">
+        <div class="logo-display grayscale"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Versión escala de grises" onerror="this.style.display='none'"></div>
+        <div class="logo-meta"><div><h4>Escala de grises</h4><p>Impresión a una tinta, conservando degradados.</p></div></div>
+      </article>
+      <article class="logo-card">
+        <div class="logo-display"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Versión positivo" onerror="this.style.display='none'"></div>
+        <div class="logo-meta"><div><h4>Versión positivo</h4><p>Para uso sobre fondos de color claro.</p></div></div>
+      </article>
+      <article class="logo-card">
+        <div class="logo-display dark"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciablancovertical.png" alt="Versión negativo" onerror="this.style.display='none'"></div>
+        <div class="logo-meta"><div><h4>Versión negativo</h4><p>Para uso sobre fondos oscuros.</p></div></div>
+      </article>
+      <article class="logo-card">
+        <div class="logo-display aterym-bg"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciablancovertical.png" alt="Sobre color institucional" onerror="this.style.display='none'"></div>
+        <div class="logo-meta"><div><h4>Sobre color institucional</h4><p>Versión en blanco sobre el celeste primario.</p></div></div>
+      </article>
+    </div>
+
+    <header class="subsection-header">
+      <span class="subsection-eyebrow">3.2 · Zona de protección</span>
+      <h3 class="subsection-title">Espacio de respiro alrededor de la marca</h3>
+    </header>
     <div class="protection-grid">
       <div class="protection-demo">
         <div class="protection-visual">
           <div class="protection-box"></div>
           <span class="measure measure-top">X / 2</span>
           <span class="measure measure-left">X / 2</span>
-          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Zona de protección">
+          <img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Zona de protección" onerror="this.style.display='none'">
         </div>
       </div>
       <div class="protection-text">
         <p>Es importante mantener las marcas corporativas libres de cualquier otro elemento gráfico. Para regular esto, se ha establecido una zona de exclusión alrededor de la marca corporativa.</p>
-        <p>Esta zona de exclusión indica la proximidad máxima que cualquier otro elemento gráfico o mensaje tendrá al ser colocado en relación con el isologotipo de nuestra empresa. Tienen una relación fija que nunca debe violarse.</p>
+        <p>Esta zona indica la proximidad máxima que cualquier otro elemento gráfico o mensaje tendrá al ser colocado en relación con el isologotipo. Tienen una relación fija que nunca debe violarse.</p>
         <div class="formula-box">
           <div class="formula">Área de protección = Altura / 2</div>
           <p>Tomá la altura del logotipo y dividila por la mitad. Ningún elemento gráfico debe invadir esta zona.</p>
@@ -481,60 +500,67 @@ footer .footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)
       </div>
     </div>
 
-    <div class="eyebrow" style="margin:5rem 0 1rem">Proporciones mínimas de uso</div>
-    <p style="max-width:680px;color:#444;margin-bottom:1.5rem">Para imprimir es importante mantener legible y reproducible la marca. Respetá las dimensiones mínimas según la orientación utilizada.</p>
+    <header class="subsection-header">
+      <span class="subsection-eyebrow">3.3 · Proporciones</span>
+      <h3 class="subsection-title">Tamaños mínimos de uso</h3>
+      <p class="subsection-sub">Para imprimir es importante mantener legible y reproducible la marca. Respetá estas dimensiones según la orientación.</p>
+    </header>
     <div class="proportions-grid">
-      <div class="proportion-card">
-        <div class="min-logo"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Mínimo vertical"></div>
-        <h4>Versión vertical</h4><div class="size">2 cm</div>
+      <article class="proportion-card">
+        <div class="min-logo"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Mínimo vertical" onerror="this.style.display='none'"></div>
+        <h4>Versión vertical</h4>
+        <div class="size">2 cm</div>
         <p>Altura mínima para mantener legibilidad en impresión.</p>
-      </div>
-      <div class="proportion-card">
-        <div class="min-logo"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorhorizonta%C3%B1" alt="Mínimo horizontal"></div>
-        <h4>Versión horizontal</h4><div class="size">1,2 cm</div>
+      </article>
+      <article class="proportion-card">
+        <div class="min-logo"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorhorizonta%C3%B1" alt="Mínimo horizontal" onerror="this.style.display='none'"></div>
+        <h4>Versión horizontal</h4>
+        <div class="size">1,2 cm</div>
         <p>Altura mínima recomendada en orientación apaisada.</p>
-      </div>
+      </article>
     </div>
 
     <div class="anniversary">
-      <div class="container">
-        <div class="anniversary-grid">
-          <div>
-            <div class="eyebrow">Edición especial aniversario</div>
-            <h3>25 años <em style="font-style:italic">cuidando</em> con excelencia.</h3>
-            <p>Esta versión conmemorativa del isologotipo celebra 25 años de trayectoria de Aterym Alta Gracia. Su uso se reserva para piezas institucionales seleccionadas durante el año aniversario, manteniendo siempre la zona de protección y las proporciones definidas para la versión principal.</p>
-          </div>
-          <div class="anniversary-logos">
-            <div class="logo-box solid"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(3).png" alt="Logo 25 años v1"></div>
-            <div class="logo-box solid"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(6).png" alt="Logo 25 años v2"></div>
-            <div class="logo-box"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(5).png" alt="Logo 25 años v3"></div>
-            <div class="logo-box"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(4).png" alt="Logo 25 años v4"></div>
-          </div>
+      <div class="anniversary-grid">
+        <div>
+          <span class="anniversary-eyebrow">Edición especial · Aniversario</span>
+          <h3>25 años <em>cuidando</em> con excelencia.</h3>
+          <p>Esta versión conmemorativa del isologotipo celebra 25 años de trayectoria. Su uso se reserva para piezas institucionales seleccionadas durante el año aniversario, manteniendo siempre la zona de protección y las proporciones definidas para la versión principal.</p>
+        </div>
+        <div class="anniversary-logos">
+          <div class="anniv-box"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(3).png" alt="Logo 25 años · vertical" onerror="this.style.display='none'"></div>
+          <div class="anniv-box"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/logo%2025%20an%CC%83os%20aterym%20alta%20gracia%20(5).png" alt="Logo 25 años · horizontal" onerror="this.style.display='none'"></div>
         </div>
       </div>
     </div>
 
-    <div class="eyebrow" style="margin:5rem 0 1rem">Usos incorrectos</div>
-    <p style="max-width:680px;color:#444;margin-bottom:1.5rem">Para preservar la integridad del isologotipo, evitá estas modificaciones. Ninguna intervención al logo está permitida fuera de las versiones oficiales.</p>
+    <header class="subsection-header">
+      <span class="subsection-eyebrow">3.4 · Usos incorrectos</span>
+      <h3 class="subsection-title">Modificaciones que evitamos</h3>
+      <p class="subsection-sub">Para preservar la integridad del isologotipo, ninguna intervención está permitida fuera de las versiones oficiales.</p>
+    </header>
     <div class="donts-grid">
-      <div class="dont-card"><div class="dont-preview tilted"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No inclinar"></div><h4>No inclinar</h4><p>No se debe utilizar el isologotipo inclinado ni rotado.</p></div>
-      <div class="dont-card"><div class="dont-preview wrong-color"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No alterar color"></div><h4>No alterar los colores</h4><p>No se deben modificar los colores predeterminados, salvo casos previstos.</p></div>
-      <div class="dont-card"><div class="dont-preview stretched"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No deformar"></div><h4>No deformar</h4><p>No se deben modificar las proporciones en la escala del isologotipo.</p></div>
-      <div class="dont-card"><div class="dont-preview"><div style="font-family:'Courier New',monospace;font-size:1.5rem">aLtA GrAcIa</div></div><h4>No cambiar la tipografía</h4><p>No se debe modificar la tipografía original del isologotipo.</p></div>
-      <div class="dont-card"><div class="dont-preview bad-bg"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Fondo ilegible"></div><h4>No aplicar sobre fondos ilegibles</h4><p>No debe aplicarse sobre fondos donde se pierdan sus elementos.</p></div>
-      <div class="dont-card"><div class="dont-preview"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No modificar" style="filter:blur(2px)"></div><h4>No modificar el isologotipo</h4><p>No se debe modificar el isologotipo por ningún motivo.</p></div>
+      <article class="dont-card"><div class="dont-preview tilted"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No inclinar" onerror="this.style.display='none'"></div><h4>No inclinar</h4><p>No se debe utilizar el isologotipo inclinado ni rotado.</p></article>
+      <article class="dont-card"><div class="dont-preview wrong-color"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No alterar el color" onerror="this.style.display='none'"></div><h4>No alterar los colores</h4><p>No se deben modificar los colores predeterminados, salvo casos previstos.</p></article>
+      <article class="dont-card"><div class="dont-preview stretched"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No deformar" onerror="this.style.display='none'"></div><h4>No deformar</h4><p>No se deben modificar las proporciones en la escala del isologotipo.</p></article>
+      <article class="dont-card"><div class="dont-preview"><div style="font-family:'Courier New',monospace;font-size:1.4rem;color:var(--ink-soft)">aLtA GrAcIa</div></div><h4>No cambiar la tipografía</h4><p>No se debe modificar la tipografía original del isologotipo.</p></article>
+      <article class="dont-card"><div class="dont-preview bad-bg"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="Fondo ilegible" onerror="this.style.display='none'"></div><h4>Fondos ilegibles</h4><p>No debe aplicarse sobre fondos donde se pierdan sus elementos.</p></article>
+      <article class="dont-card"><div class="dont-preview"><img src="https://raw.githubusercontent.com/candelaboni6/aterymaltagracia/main/altagraciacolorvertical.png" alt="No modificar" style="filter:blur(2px)" onerror="this.style.display='none'"></div><h4>No modificar</h4><p>No se debe modificar el isologotipo por ningún motivo.</p></article>
     </div>
   </div>
 </section>
 
-<!-- COLORES -->
-<section id="colores" style="background:var(--gray-lighter)">
-  <div class="container">
-    <div class="section-head"><div class="section-num">04 — Paleta de Colores</div><h2>El color comunica quiénes somos.</h2></div>
-    <p class="color-intro">El color juega un papel importante en el programa de identidad corporativa de la organización. Se ha desarrollado una paleta que refleja el espíritu institucional. Su uso consistente contribuye al aspecto cohesivo y armonioso de la marca en todos los medios relevantes.</p>
+<!-- ============== COLORES ============== -->
+<section class="section" id="colores">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">04 · Paleta de Colores</span>
+      <h2 class="section-title">El color comunica <strong>quiénes somos</strong>.</h2>
+      <p class="section-sub">Una paleta consistente que refleja el espíritu institucional y contribuye al aspecto cohesivo de la marca en todos los medios.</p>
+    </div>
     <div class="color-grid">
-      <div class="color-card">
-        <div class="color-swatch primary" data-label="Primario"><span class="hex-large">#00AEEA</span></div>
+      <article class="color-card">
+        <div class="color-swatch celeste" data-label="Primario"><span class="hex-large">#00AEEA</span></div>
         <div class="color-data">
           <h4>Celeste institucional</h4>
           <p>Color primario · Uso principal en comunicaciones e identidad</p>
@@ -545,9 +571,9 @@ footer .footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)
             <div><div class="code-label">RGB</div><div class="code-value">0 · 174 · 234</div></div>
           </div>
         </div>
-      </div>
-      <div class="color-card">
-        <div class="color-swatch gray" data-label="Primario"><span class="hex-large">#868686</span></div>
+      </article>
+      <article class="color-card">
+        <div class="color-swatch gris" data-label="Primario"><span class="hex-large">#868686</span></div>
         <div class="color-data">
           <h4>Gris institucional</h4>
           <p>Color primario · Apoyo tipográfico y estructura visual</p>
@@ -558,195 +584,222 @@ footer .footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)
             <div><div class="code-label">RGB</div><div class="code-value">134 · 134 · 134</div></div>
           </div>
         </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- TIPOGRAFÍA -->
-<section id="tipografia">
-  <div class="container">
-    <div class="section-head"><div class="section-num">05 — Tipografía Corporativa</div><h2>Inter es nuestra voz escrita.</h2></div>
-    <p style="max-width:680px;color:#444;font-size:1.05rem;margin-bottom:3rem">La tipografía es uno de los elementos de la marca que determinan y muestran fielmente su carácter y estilo. Inter es una fuente de uso libre, gratuita, que se emplea en todas nuestras producciones gráficas, editoriales y audiovisuales.</p>
+<!-- ============== TIPOGRAFÍA ============== -->
+<section class="section alt" id="tipografia">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">05 · Tipografía</span>
+      <h2 class="section-title">Inter es nuestra <strong>voz escrita</strong>.</h2>
+      <p class="section-sub">Inter es una fuente de uso libre, gratuita, que se emplea en todas nuestras producciones gráficas, editoriales y audiovisuales.</p>
+    </div>
     <div class="type-showcase">
       <div class="type-sample">Hola, soy <em>Inter</em></div>
-      <div class="type-alphabet">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 0123456789 &amp; ? ! @</div>
+      <div class="type-alphabet">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ · 0123456789 · &amp; ? ! @</div>
     </div>
     <div class="type-weights">
-      <div class="weight-sample w300"><div class="glyph">Aa</div><div class="weight-label">Light · 300</div></div>
-      <div class="weight-sample w400"><div class="glyph">Aa</div><div class="weight-label">Regular · 400</div></div>
+      <div class="weight-sample w200"><div class="glyph">Aa</div><div class="weight-label">Light · 200</div></div>
+      <div class="weight-sample w300"><div class="glyph">Aa</div><div class="weight-label">Regular · 300</div></div>
       <div class="weight-sample w500"><div class="glyph">Aa</div><div class="weight-label">Medium · 500</div></div>
       <div class="weight-sample w700"><div class="glyph">Aa</div><div class="weight-label">Bold · 700</div></div>
     </div>
     <div class="type-downloads">
-      <a href="https://drive.google.com/uc?export=download&id=1vRtNchDmkJlpuYxRrSLRfPX9rSen0-oN" class="btn" target="_blank" rel="noopener"><span>Inter Regular · descarga directa</span><span class="arrow">→</span></a>
-      <a href="https://drive.google.com/uc?export=download&id=1GvM816EO2pnK346MwjpdXMj8pxk7cxCk" class="btn" target="_blank" rel="noopener"><span>Inter Italic · descarga directa</span><span class="arrow">→</span></a>
-      <a href="https://fonts.google.com/selection?query=inter" class="btn btn-primary" target="_blank" rel="noopener"><span>Inter · Google Fonts</span><span class="arrow">→</span></a>
+      <a href="https://drive.google.com/uc?export=download&id=1vRtNchDmkJlpuYxRrSLRfPX9rSen0-oN" class="btn btn-ghost" target="_blank" rel="noopener"><span>Inter Regular</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="https://drive.google.com/uc?export=download&id=1GvM816EO2pnK346MwjpdXMj8pxk7cxCk" class="btn btn-ghost" target="_blank" rel="noopener"><span>Inter Italic</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="https://fonts.google.com/selection?query=inter" class="btn btn-primary" target="_blank" rel="noopener"><span>Google Fonts</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
   </div>
 </section>
 
-<!-- RECURSOS -->
-<section id="recursos" style="background:var(--gray-lighter)">
-  <div class="container">
-    <div class="section-head"><div class="section-num">06 — Recursos Descargables</div><h2>Plantillas listas para usar.</h2></div>
-    <p class="resources-intro">Los siguientes recursos descargables amplían los contenidos de este Manual de Imagen Institucional. Todos cuentan con un botón de descarga o acceso directo al material correspondiente. Antes de utilizarlos, verificá siempre que sea la última versión disponible.</p>
+<!-- ============== RECURSOS ============== -->
+<section class="section" id="recursos">
+  <div class="section-inner wide">
+    <div class="section-header">
+      <span class="section-eyebrow">06 · Recursos</span>
+      <h2 class="section-title">Plantillas <strong>listas para usar</strong>.</h2>
+      <p class="section-sub">Recursos descargables que amplían el manual. Antes de utilizarlos, verificá siempre que sea la última versión disponible.</p>
+    </div>
 
     <div class="resources-cat">
-      <h3>Archivos editables <span class="count">AI · PDF · PNG · SVG</span></h3>
+      <div class="cat-head"><h3>Archivos editables</h3><span class="count">AI · PDF · PNG · SVG</span></div>
       <div class="resources-grid">
         <a href="https://drive.google.com/drive/folders/1GJgzfpVTcVgJcFxnboCdGv39Fa0F-Cc3?usp=sharing" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Logos</div>
           <h4>Kit de logos ATERYM</h4>
-          <p>Versiones originales del isologotipo en todos los formatos de archivo.</p>
+          <p class="desc">Versiones originales del isologotipo en todos los formatos de archivo.</p>
           <div class="specs">AI · PDF · PNG · SVG</div>
-          <div class="footer-row"><span class="open-link">Abrir carpeta →</span><span class="platform-tag">Google Drive</span></div>
+          <div class="row"><span class="open">Abrir carpeta →</span><span class="platform">Google Drive</span></div>
         </a>
       </div>
     </div>
 
     <div class="resources-cat">
-      <h3>Papelería institucional <span class="count">6 recursos</span></h3>
+      <div class="cat-head"><h3>Papelería institucional</h3><span class="count">6 recursos</span></div>
       <div class="resources-grid">
         <a href="https://docs.google.com/document/d/1rkQvWsSNt6RqxI8I9aGKOLPEGwIK7217/copy" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Online editable</div>
           <h4>Hoja membretada</h4>
-          <p>Plantilla oficial para trabajo colaborativo desde Google Docs o Word.</p>
-          <div class="specs">Formato A4 · Uso digital e impresión</div>
-          <div class="footer-row"><span class="open-link">Crear copia →</span><span class="platform-tag">Google Docs</span></div>
+          <p class="desc">Plantilla oficial para trabajo colaborativo desde Google Docs o Word.</p>
+          <div class="specs">A4 · Uso digital e impresión</div>
+          <div class="row"><span class="open">Crear copia →</span><span class="platform">Google Docs</span></div>
         </a>
         <a href="https://drive.google.com/file/d/1l-qGjepCRhOjxkETMfDzpjrSmbEmR-GZ/view?usp=sharing" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Para imprenta</div>
           <h4>Hoja membretada · Impresión</h4>
-          <p>Archivo listo para enviar a imprenta en caso de reimpresión.</p>
+          <p class="desc">Archivo listo para enviar a imprenta en caso de reimpresión.</p>
           <div class="specs">A4 · Alta resolución</div>
-          <div class="footer-row"><span class="open-link">Descargar →</span><span class="platform-tag">Google Drive</span></div>
+          <div class="row"><span class="open">Descargar →</span><span class="platform">Google Drive</span></div>
         </a>
         <a href="https://drive.google.com/file/d/1mJbakCAwODtr00Y5mnuc90Dw0dgU3G-D/view?usp=sharing" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Impreso</div>
           <h4>RP Institucional</h4>
-          <p>Diseño del RP de la institución. Uso exclusivamente impreso.</p>
+          <p class="desc">Diseño del RP de la institución. Uso exclusivamente impreso.</p>
           <div class="specs">16 cm × 22 cm</div>
-          <div class="footer-row"><span class="open-link">Descargar →</span><span class="platform-tag">Google Drive</span></div>
+          <div class="row"><span class="open">Descargar →</span><span class="platform">Google Drive</span></div>
         </a>
         <a href="https://drive.google.com/file/d/1zKx4A-TrBPjyxhzqcwWXc4yz_r9wlP4t/view?usp=drive_link" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Impreso</div>
           <h4>Turnero</h4>
-          <p>Documento para entrega de turnos. Uso exclusivamente impreso.</p>
+          <p class="desc">Documento para entrega de turnos. Uso exclusivamente impreso.</p>
           <div class="specs">10 cm × 5 cm</div>
-          <div class="footer-row"><span class="open-link">Descargar →</span><span class="platform-tag">Google Drive</span></div>
+          <div class="row"><span class="open">Descargar →</span><span class="platform">Google Drive</span></div>
         </a>
         <a href="https://drive.google.com/file/d/1RRz-6r4Qr4Idj5g2Sl--Y_1k7gCaabmj/view?usp=drive_link" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Impreso</div>
-          <h4>Tarjeta Aterym Alta Gracia</h4>
-          <p>Tarjeta con información de contacto institucional.</p>
+          <h4>Tarjeta institucional</h4>
+          <p class="desc">Tarjeta con información de contacto institucional.</p>
           <div class="specs">8,5 cm × 5,5 cm</div>
-          <div class="footer-row"><span class="open-link">Descargar →</span><span class="platform-tag">Google Drive</span></div>
+          <div class="row"><span class="open">Descargar →</span><span class="platform">Google Drive</span></div>
         </a>
         <a href="https://drive.google.com/file/d/1wIb1qaBA97mLqXSSDi6ge1QXLAezym5K/view?usp=drive_link" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Impreso</div>
           <h4>Carpeta institucional</h4>
-          <p>Carpeta color mate, sin OPP, con solapa interna blanca.</p>
+          <p class="desc">Carpeta color mate, sin OPP, con solapa interna blanca.</p>
           <div class="specs">Color mate · Solapa interna</div>
-          <div class="footer-row"><span class="open-link">Descargar →</span><span class="platform-tag">Google Drive</span></div>
+          <div class="row"><span class="open">Descargar →</span><span class="platform">Google Drive</span></div>
         </a>
       </div>
     </div>
 
     <div class="resources-cat">
-      <h3>Eventos y presentaciones <span class="count">2 recursos</span></h3>
+      <div class="cat-head"><h3>Eventos y presentaciones</h3><span class="count">2 recursos</span></div>
       <div class="resources-grid">
         <a href="https://drive.google.com/file/d/1vsGXTk94fOcE_sn72Qz9AHMFf9doEs5S/view?usp=sharing" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Eventos</div>
           <h4>Banners roll-up</h4>
-          <p>Banners para complementar el kit de eventos de Aterym Alta Gracia.</p>
+          <p class="desc">Banners para complementar el kit de eventos de Aterym Alta Gracia.</p>
           <div class="specs">85 cm × 200 cm</div>
-          <div class="footer-row"><span class="open-link">Descargar →</span><span class="platform-tag">Google Drive</span></div>
+          <div class="row"><span class="open">Descargar →</span><span class="platform">Google Drive</span></div>
         </a>
         <a href="https://docs.google.com/presentation/d/1F_BmGW8OylB0c79aVO7dCgvvPpUOQdVd/copy" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Editable online</div>
           <h4>Plantilla PowerPoint</h4>
-          <p>Plantilla oficial. Editable en Google Slides o descargable como PPTX.</p>
+          <p class="desc">Plantilla oficial. Editable en Google Slides o descargable como PPTX.</p>
           <div class="specs">PPTX · Google Slides</div>
-          <div class="footer-row"><span class="open-link">Crear copia →</span><span class="platform-tag">Google Slides</span></div>
+          <div class="row"><span class="open">Crear copia →</span><span class="platform">Google Slides</span></div>
         </a>
       </div>
     </div>
 
     <div class="resources-cat">
-      <h3>Credenciales y firmas <span class="count">Diseñadas en Canva</span></h3>
+      <div class="cat-head"><h3>Credenciales y firmas</h3><span class="count">Diseñadas en Canva</span></div>
       <div class="resources-grid">
-        <a href="https://www.canva.com/design/DAG3GJgMTZs/cT3NqQsOwltUODZ6QfeHLw/view?utm_content=DAG3GJgMTZs&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" class="resource-card" target="_blank" rel="noopener">
+        <a href="https://www.canva.com/design/DAG3GJgMTZs/cT3NqQsOwltUODZ6QfeHLw/view" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Canva</div>
           <h4>Credenciales verticales</h4>
-          <p>Plantilla oficial en Canva. Se pedirá crear una copia al abrir.</p>
+          <p class="desc">Plantilla oficial en Canva. Se pedirá crear una copia al abrir.</p>
           <div class="specs">8 cm × 11 cm</div>
-          <div class="footer-row"><span class="open-link">Crear copia →</span><span class="platform-tag">Canva</span></div>
+          <div class="row"><span class="open">Crear copia →</span><span class="platform">Canva</span></div>
         </a>
-        <a href="https://www.canva.com/design/DAG4ZQHeLb4/BC6WkNz1hoT3oHvZa-0aDg/view?utm_content=DAG4ZQHeLb4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" class="resource-card" target="_blank" rel="noopener">
+        <a href="https://www.canva.com/design/DAG4ZQHeLb4/BC6WkNz1hoT3oHvZa-0aDg/view" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Canva</div>
           <h4>Credenciales horizontales</h4>
-          <p>Plantilla oficial en Canva. Se pedirá crear una copia al abrir.</p>
+          <p class="desc">Plantilla oficial en Canva. Se pedirá crear una copia al abrir.</p>
           <div class="specs">9 cm × 5,5 cm</div>
-          <div class="footer-row"><span class="open-link">Crear copia →</span><span class="platform-tag">Canva</span></div>
+          <div class="row"><span class="open">Crear copia →</span><span class="platform">Canva</span></div>
         </a>
-        <a href="https://www.canva.com/design/DAG4ZZlKdTw/EMjdLrEq8vuGLxF1DuBplA/view?utm_content=DAG4ZZlKdTw&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" class="resource-card" target="_blank" rel="noopener">
+        <a href="https://www.canva.com/design/DAG4ZZlKdTw/EMjdLrEq8vuGLxF1DuBplA/view" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Canva</div>
           <h4>Firma de mail</h4>
-          <p>Plantilla oficial de firma de correo institucional.</p>
+          <p class="desc">Plantilla oficial de firma de correo institucional.</p>
           <div class="specs">Firma digital · PNG exportable</div>
-          <div class="footer-row"><span class="open-link">Crear copia →</span><span class="platform-tag">Canva</span></div>
+          <div class="row"><span class="open">Crear copia →</span><span class="platform">Canva</span></div>
         </a>
-        <a href="https://www.canva.com/design/DAG4ZXbhdoM/RNTNLXe42hfrBCnzMybnFQ/view?utm_content=DAG4ZXbhdoM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" class="resource-card" target="_blank" rel="noopener">
+        <a href="https://www.canva.com/design/DAG4ZXbhdoM/RNTNLXe42hfrBCnzMybnFQ/view" class="resource-card" target="_blank" rel="noopener">
           <div class="cat-tag">Canva</div>
           <h4>Plantilla adicional</h4>
-          <p>Recurso complementario en Canva para piezas institucionales.</p>
+          <p class="desc">Recurso complementario en Canva para piezas institucionales.</p>
           <div class="specs">Editable · Canva</div>
-          <div class="footer-row"><span class="open-link">Crear copia →</span><span class="platform-tag">Canva</span></div>
+          <div class="row"><span class="open">Crear copia →</span><span class="platform">Canva</span></div>
         </a>
       </div>
+    </div>
+
+    <div class="cta-download">
+      <p>¿Necesitás algo que no está acá? Escribinos y lo agregamos.</p>
+      <a class="btn btn-primary" href="mailto:info@aterym.com">
+        <span>Contactar al área</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="container">
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="footer-inner">
     <div class="footer-grid">
-      <div>
-        <div class="brand">ATERYM<span>.</span></div>
-        <p class="tagline">Apasionados por la nefrología. Comprometidos con el cuidado humano.</p>
+      <div class="footer-logo">
+        <img src="https://aterym.com/wp-content/uploads/2025/12/Logo-blanco-Aterym.webp" alt="Aterym Alta Gracia">
+        <p>Institución acreditada en calidad y seguridad del paciente. Centro de nefrología y hemodiálisis en Alta Gracia, Córdoba.</p>
       </div>
-      <div>
+      <div class="footer-col">
+        <h4>Manual</h4>
+        <ul>
+          <li><a href="#identidad">Identidad visual</a></li>
+          <li><a href="#colores">Paleta de color</a></li>
+          <li><a href="#tipografia">Tipografía</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
         <h4>Contacto</h4>
-        <div class="contact-item">Brasil 151, Alta Gracia</div>
-        <div class="contact-item">351 5649322</div>
-        <div class="contact-item"><a href="mailto:info@aterym.com">info@aterym.com</a></div>
-        <div class="contact-item"><a href="https://www.aterym.com" target="_blank" rel="noopener">www.aterym.com</a></div>
+        <ul>
+          <li><a href="https://maps.google.com/?q=Brasil+151+Alta+Gracia" target="_blank" rel="noopener">Brasil 151, Alta Gracia</a></li>
+          <li><a href="tel:+543515649322">351 564 9322</a></li>
+          <li><a href="mailto:info@aterym.com">info@aterym.com</a></li>
+          <li><a href="https://www.aterym.com" target="_blank" rel="noopener">www.aterym.com</a></li>
+        </ul>
       </div>
-      <div>
+      <div class="footer-col">
         <h4>Acreditación</h4>
-        <p style="font-size:.9rem;opacity:.7">Centro de diálisis acreditado en calidad y seguridad del paciente por el ITAES.</p>
+        <ul>
+          <li><span>Centro de diálisis acreditado en calidad y seguridad del paciente por el ITAES.</span></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div>Manual de Imagen Institucional · Edición 2026 · ATERYM Alta Gracia</div>
-      <div>© 25 años de trayectoria</div>
+      <div>© 2026 Aterym Alta Gracia · Manual de Imagen Institucional · 25 años</div>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/aterymnefrologia" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/81579909/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://www.instagram.com/aterymnefrologia/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      </div>
     </div>
   </div>
 </footer>
 
 <script>
 // Fade-in on scroll
-const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')), {threshold:.1, rootMargin:'0px 0px -50px 0px'});
-document.querySelectorAll('section,.resource-card,.mvv-card,.logo-card,.color-card').forEach(el => { el.classList.add('fade-in'); io.observe(el); });
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')), {threshold:.1, rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.toc-item,.mvv-card,.logo-card,.color-card,.proportion-card,.dont-card,.resource-card,.weight-sample').forEach(el => { el.classList.add('fade-in'); io.observe(el); });
 
-// Nav shadow + mobile toggle
-const nav = document.querySelector('nav'), tog = document.querySelector('.nav-toggle'), links = document.querySelector('.nav-links');
-addEventListener('scroll', () => nav.style.boxShadow = scrollY > 50 ? '0 1px 0 rgba(0,0,0,.04)' : 'none');
-const closeNav = () => { tog.classList.remove('open'); links.classList.remove('open'); document.body.classList.remove('nav-open'); tog.setAttribute('aria-expanded','false'); };
-tog.addEventListener('click', e => { e.stopPropagation(); const o = links.classList.toggle('open'); tog.classList.toggle('open', o); document.body.classList.toggle('nav-open', o); tog.setAttribute('aria-expanded', o); });
-links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
-document.addEventListener('click', e => { if (links.classList.contains('open') && !links.contains(e.target) && !tog.contains(e.target)) closeNav(); });
+// Cerrar menú mobile al hacer click en link
+document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('mobile-show')));
 </script>
 </body>
 </html>
